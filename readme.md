@@ -134,7 +134,7 @@ amx-dvx-listener
 #####Description:
 Contains dev arrays for listening to traffic returned from the AMX DVX switcher.
 
-You should copy the required dev arrays to their main program and instantiate them with dev values corresponding to the DVX switcher components they wish to listen to.
+You should copy the required dev arrays to their main program and instantiate them with dev values corresponding to the DVX switcher components you wish to listen to.
 
 Contains commented out callback functions and events required to capture information from the AMX Enova DVX switcher. The events (data_events, channel_events, & level_events) will parse the information returned from the DVX and call the associated callback functions passing the information through as arguments to the call back functions' parameter list.
 
