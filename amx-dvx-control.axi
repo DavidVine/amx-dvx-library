@@ -17,7 +17,7 @@ define_constant
 char VERSION_AMX_DVX_CONTROL[] = 'v1.0.0'
 
 #include 'amx-dvx-api'
-#include 'amx-master-control'
+#include 'amx-device-control'
 
 
 /*
@@ -57,7 +57,7 @@ char VERSION_AMX_DVX_CONTROL[] = 'v1.0.0'
  */
 define_function dvxRequestFrontPanelLockout (dev dvxPort1)
 {
-    amxSendCommand (dvxPort1, "DVX_COMMAND_FRONT_PANEL_LOCKOUT_REQUEST")
+    sendCommand (dvxPort1, "DVX_COMMAND_FRONT_PANEL_LOCKOUT_REQUEST")
 }
 
 /*
@@ -69,7 +69,7 @@ define_function dvxRequestFrontPanelLockout (dev dvxPort1)
  */
 define_function dvxEnableFrontPanelLockout (dev dvxPort1)
 {
-    amxSendCommand (dvxPort1, "DVX_COMMAND_FRONT_PANEL_LOCKOUT,cENABLE")
+    sendCommand (dvxPort1, "DVX_COMMAND_FRONT_PANEL_LOCKOUT,cENABLE")
 }
 
 /*
@@ -81,7 +81,7 @@ define_function dvxEnableFrontPanelLockout (dev dvxPort1)
  */
 define_function dvxDisableFrontPanelLockout (dev dvxPort1)
 {
-    amxSendCommand (dvxPort1, "DVX_COMMAND_FRONT_PANEL_LOCKOUT,cDISABLE")
+    sendCommand (dvxPort1, "DVX_COMMAND_FRONT_PANEL_LOCKOUT,cDISABLE")
 }
 
 /*
@@ -94,7 +94,7 @@ define_function dvxDisableFrontPanelLockout (dev dvxPort1)
  */
 define_function dvxRequestFrontPanelLockoutType (dev dvxPort1)
 {
-    amxSendCommand (dvxPort1, "DVX_COMMAND_FRONT_PANEL_LOCKOUT_TYPE_REQUEST")
+    sendCommand (dvxPort1, "DVX_COMMAND_FRONT_PANEL_LOCKOUT_TYPE_REQUEST")
 }
 
 /*
@@ -113,7 +113,7 @@ define_function dvxSetFrontPanelLockoutType (dev dvxPort1, integer lockoutType)
 		case DVX_LOCKTYPE_RESERVED:
 		case DVX_LOCKTYPE_CONFIGURE_MENUS_ONLY:
 		{
-			amxSendCommand (dvxPort1, "DVX_COMMAND_FRONT_PANEL_LOCKOUT_TYPE,itoa(lockoutType)")
+			sendCommand (dvxPort1, "DVX_COMMAND_FRONT_PANEL_LOCKOUT_TYPE,itoa(lockoutType)")
 		}
     }
 }
@@ -127,7 +127,7 @@ define_function dvxSetFrontPanelLockoutType (dev dvxPort1, integer lockoutType)
  */
 define_function dvxRequestFrontPanelIntensityLcd (dev dvxPort1)
 {
-    amxSendCommand (dvxPort1, "DVX_COMMAND_FRONT_PANEL_INTENSITY_LCD_REQUEST")
+    sendCommand (dvxPort1, "DVX_COMMAND_FRONT_PANEL_INTENSITY_LCD_REQUEST")
 }
 
 /*
@@ -144,7 +144,7 @@ define_function dvxSetFrontPanelIntensityLcd (dev dvxPort1, integer intensity)
     if(intensity > 100)
 	intensity = 100
     
-    amxSendCommand (dvxPort1, "DVX_COMMAND_FRONT_PANEL_INTENSITY_LCD,itoa(intensity)")
+    sendCommand (dvxPort1, "DVX_COMMAND_FRONT_PANEL_INTENSITY_LCD,itoa(intensity)")
 }
 
 /*
@@ -156,7 +156,7 @@ define_function dvxSetFrontPanelIntensityLcd (dev dvxPort1, integer intensity)
  */
 define_function dvxRequestFrontPanelIntensityLeds (dev dvxPort1)
 {
-    amxSendCommand (dvxPort1, "DVX_COMMAND_FRONT_PANEL_INTENSITY_LEDS_REQUEST")
+    sendCommand (dvxPort1, "DVX_COMMAND_FRONT_PANEL_INTENSITY_LEDS_REQUEST")
 }
 
 /*
@@ -173,7 +173,7 @@ define_function dvxSetFrontPanelIntensityLeds (dev dvxPort1, integer intensity)
     if(intensity > 100)
 	intensity = 100
     
-    amxSendCommand (dvxPort1, "DVX_COMMAND_FRONT_PANEL_INTENSITY_LEDS,itoa(intensity)")
+    sendCommand (dvxPort1, "DVX_COMMAND_FRONT_PANEL_INTENSITY_LEDS,itoa(intensity)")
 }
 
 
@@ -193,7 +193,7 @@ define_function dvxSetFrontPanelIntensityLeds (dev dvxPort1, integer intensity)
  */
 define_function dvxRequestDxlinkInputPortEthernetStatus (dev dvxDxLinkInputPort)
 {
-    amxSendCommand (dvxDxLinkInputPort, "DVX_COMMAND_DXLINK_INPUT_ETHERNET_REQUEST")
+    sendCommand (dvxDxLinkInputPort, "DVX_COMMAND_DXLINK_INPUT_ETHERNET_REQUEST")
 }
 
 /*
@@ -205,7 +205,7 @@ define_function dvxRequestDxlinkInputPortEthernetStatus (dev dvxDxLinkInputPort)
  */
 define_function dvxEnableDxlinkInputPortEthernet (dev dvxDxLinkInputPort)
 {
-    amxSendCommand (dvxDxLinkInputPort, "DVX_COMMAND_DXLINK_INPUT_ETHERNET,DVX_DXLINK_ETHERNET_AUTO")
+    sendCommand (dvxDxLinkInputPort, "DVX_COMMAND_DXLINK_INPUT_ETHERNET,DVX_DXLINK_ETHERNET_AUTO")
 }
 
 /*
@@ -217,7 +217,7 @@ define_function dvxEnableDxlinkInputPortEthernet (dev dvxDxLinkInputPort)
  */
 define_function dvxDisableDxlinkInputPortEthernet (dev dvxDxLinkInputPort)
 {
-    amxSendCommand (dvxDxLinkInputPort, "DVX_COMMAND_DXLINK_INPUT_ETHERNET,DVX_DXLINK_ETHERNET_OFF")
+    sendCommand (dvxDxLinkInputPort, "DVX_COMMAND_DXLINK_INPUT_ETHERNET,DVX_DXLINK_ETHERNET_OFF")
 }
 
 /*
@@ -229,7 +229,7 @@ define_function dvxDisableDxlinkInputPortEthernet (dev dvxDxLinkInputPort)
  */
 define_function dvxRequestDxlinkOutputPortEthernetStatus (dev dvxDxLinkOutputPort)
 {
-    amxSendCommand (dvxDxLinkOutputPort, "DVX_COMMAND_DXLINK_OUTPUT_ETHERNET_REQUEST")
+    sendCommand (dvxDxLinkOutputPort, "DVX_COMMAND_DXLINK_OUTPUT_ETHERNET_REQUEST")
 }
 
 /*
@@ -241,7 +241,7 @@ define_function dvxRequestDxlinkOutputPortEthernetStatus (dev dvxDxLinkOutputPor
  */
 define_function dvxEnableDxlinkOutputPortEthernet (dev dvxDxLinkOutputPort)
 {
-    amxSendCommand (dvxDxLinkOutputPort, "DVX_COMMAND_DXLINK_OUTPUT_ETHERNET,DVX_DXLINK_ETHERNET_AUTO")
+    sendCommand (dvxDxLinkOutputPort, "DVX_COMMAND_DXLINK_OUTPUT_ETHERNET,DVX_DXLINK_ETHERNET_AUTO")
 }
 
 /*
@@ -253,7 +253,7 @@ define_function dvxEnableDxlinkOutputPortEthernet (dev dvxDxLinkOutputPort)
  */
 define_function dvxDisableDxlinkOutputPortEthernet (dev dvxDxLinkOutputPort)
 {
-    amxSendCommand (dvxDxLinkOutputPort, "DVX_COMMAND_DXLINK_OUTPUT_ETHERNET,DVX_DXLINK_ETHERNET_OFF")
+    sendCommand (dvxDxLinkOutputPort, "DVX_COMMAND_DXLINK_OUTPUT_ETHERNET,DVX_DXLINK_ETHERNET_OFF")
 }
 
 /*
@@ -265,7 +265,7 @@ define_function dvxDisableDxlinkOutputPortEthernet (dev dvxDxLinkOutputPort)
  */
 define_function dvxRequestFanSpeed (dev dvxPort1)
 {
-    amxSendCommand (dvxPort1, "DVX_COMMAND_FAN_SPEED_REQUEST")
+    sendCommand (dvxPort1, "DVX_COMMAND_FAN_SPEED_REQUEST")
 }
 
 /*
@@ -277,7 +277,7 @@ define_function dvxRequestFanSpeed (dev dvxPort1)
  */
 define_function dvxRequestTemperature (dev dvxPort1)
 {
-    amxSendCommand (dvxPort1, "DVX_COMMAND_TEMPERATURE_REQUEST")
+    sendCommand (dvxPort1, "DVX_COMMAND_TEMPERATURE_REQUEST")
 }
 
 
@@ -300,8 +300,8 @@ define_function dvxRequestTemperature (dev dvxPort1)
  */
 define_function dvxSwitchVideoOnly(dev dvxPort1, integer input, integer output)
 {
-    amxSendCommand (dvxPort1, "DVX_COMMAND_SWITCH_VIDEO_ONLY,itoa(input),'O',itoa(output)")
-    //amxSendCommand (dvxPort1, "DVX_COMMAND_SWITCH_VIDEO,itoa(input),'O',itoa(output)")
+    sendCommand (dvxPort1, "DVX_COMMAND_SWITCH_VIDEO_ONLY,itoa(input),'O',itoa(output)")
+    //sendCommand (dvxPort1, "DVX_COMMAND_SWITCH_VIDEO,itoa(input),'O',itoa(output)")
 }
 
 /*
@@ -316,8 +316,8 @@ define_function dvxSwitchVideoOnly(dev dvxPort1, integer input, integer output)
  */
 define_function dvxSwitchAudioOnly(dev dvxPort1, integer input, integer output)
 {
-    amxSendCommand (dvxPort1, "DVX_COMMAND_SWITCH_AUDIO_ONLY,itoa(input),'O',itoa(output)")
-    //amxSendCommand (dvxPort1, "DVX_COMMAND_SWITCH_AUDIO,itoa(input),'O',itoa(output)")
+    sendCommand (dvxPort1, "DVX_COMMAND_SWITCH_AUDIO_ONLY,itoa(input),'O',itoa(output)")
+    //sendCommand (dvxPort1, "DVX_COMMAND_SWITCH_AUDIO,itoa(input),'O',itoa(output)")
 }
 
 /*
@@ -332,8 +332,8 @@ define_function dvxSwitchAudioOnly(dev dvxPort1, integer input, integer output)
  */
 define_function dvxSwitchAll(dev dvxPort1, integer input, integer output)
 {
-    amxSendCommand (dvxPort1, "DVX_COMMAND_SWITCH_ALL,itoa(input),'O',itoa(output)")
-    //amxSendCommand (dvxPort1, "DVX_COMMAND_SWITCH_AUDIO_AND_VIDEO,itoa(input),'O',itoa(output)")
+    sendCommand (dvxPort1, "DVX_COMMAND_SWITCH_ALL,itoa(input),'O',itoa(output)")
+    //sendCommand (dvxPort1, "DVX_COMMAND_SWITCH_AUDIO_AND_VIDEO,itoa(input),'O',itoa(output)")
 }
 
 /*
@@ -356,9 +356,9 @@ define_function dvxSwitch (dev dvxPort1, char cSignalType[], integer input, inte
 {
     switch (cSignalType)
     {
-		case cSIGNAL_TYPE_VIDEO:	amxSendCommand (dvxPort1, "DVX_COMMAND_SWITCH_VIDEO_ONLY,itoa(input),'O',itoa(output)")
-		case cSIGNAL_TYPE_AUDIO:	amxSendCommand (dvxPort1, "DVX_COMMAND_SWITCH_AUDIO_ONLY,itoa(input),'O',itoa(output)")
-		case cSIGNAL_TYPE_ALL:		amxSendCommand (dvxPort1, "DVX_COMMAND_SWITCH_ALL,itoa(input),'O',itoa(output)")
+		case cSIGNAL_TYPE_VIDEO:	sendCommand (dvxPort1, "DVX_COMMAND_SWITCH_VIDEO_ONLY,itoa(input),'O',itoa(output)")
+		case cSIGNAL_TYPE_AUDIO:	sendCommand (dvxPort1, "DVX_COMMAND_SWITCH_AUDIO_ONLY,itoa(input),'O',itoa(output)")
+		case cSIGNAL_TYPE_ALL:		sendCommand (dvxPort1, "DVX_COMMAND_SWITCH_ALL,itoa(input),'O',itoa(output)")
     }
 }
 
@@ -381,7 +381,7 @@ define_function dvxSwitch (dev dvxPort1, char cSignalType[], integer input, inte
  */
 define_function dvxRequestInputVideo (dev dvxPort1, integer output)
 {
-    amxSendCommand (dvxPort1, "DVX_COMMAND_INPUT_REQUEST,cSIGNAL_TYPE_VIDEO,',',itoa(output)")
+    sendCommand (dvxPort1, "DVX_COMMAND_INPUT_REQUEST,cSIGNAL_TYPE_VIDEO,',',itoa(output)")
 }
 
 /*
@@ -395,7 +395,7 @@ define_function dvxRequestInputVideo (dev dvxPort1, integer output)
  */
 define_function dvxRequestOutputVideo (dev dvxPort1, integer input)
 {
-    amxSendCommand (dvxPort1, "DVX_COMMAND_OUTPUT_REQUEST,cSIGNAL_TYPE_VIDEO,',',itoa(input)")
+    sendCommand (dvxPort1, "DVX_COMMAND_OUTPUT_REQUEST,cSIGNAL_TYPE_VIDEO,',',itoa(input)")
 }
 
 /*
@@ -409,7 +409,7 @@ define_function dvxRequestOutputVideo (dev dvxPort1, integer input)
  */
 define_function dvxRequestInputAudio (dev dvxPort1, integer output)
 {
-    amxSendCommand (dvxPort1, "DVX_COMMAND_INPUT_REQUEST,cSIGNAL_TYPE_AUDIO,',',itoa(output)")
+    sendCommand (dvxPort1, "DVX_COMMAND_INPUT_REQUEST,cSIGNAL_TYPE_AUDIO,',',itoa(output)")
 }
 
 /*
@@ -423,7 +423,7 @@ define_function dvxRequestInputAudio (dev dvxPort1, integer output)
  */
 define_function dvxRequestOutputAudio (dev dvxPort1, integer input)
 {
-    amxSendCommand (dvxPort1, "DVX_COMMAND_OUTPUT_REQUEST,cSIGNAL_TYPE_AUDIO,',',itoa(input)")
+    sendCommand (dvxPort1, "DVX_COMMAND_OUTPUT_REQUEST,cSIGNAL_TYPE_AUDIO,',',itoa(input)")
 }
 
 /*
@@ -437,7 +437,7 @@ define_function dvxRequestOutputAudio (dev dvxPort1, integer input)
  */
 define_function dvxRequestOutputAll (dev dvxPort1, integer input)
 {
-    amxSendCommand (dvxPort1, "DVX_COMMAND_OUTPUT_REQUEST,cSIGNAL_TYPE_ALL,',',itoa(input)")
+    sendCommand (dvxPort1, "DVX_COMMAND_OUTPUT_REQUEST,cSIGNAL_TYPE_ALL,',',itoa(input)")
 }
 
 /*
@@ -459,8 +459,8 @@ define_function dvxRequestInput (dev dvxPort1, char signalType[], integer output
 {
     switch (signalType)
     {
-		case cSIGNAL_TYPE_VIDEO:	amxSendCommand (dvxPort1, "DVX_COMMAND_INPUT_REQUEST,cSIGNAL_TYPE_VIDEO,',',itoa(output)")
-		case cSIGNAL_TYPE_AUDIO:	amxSendCommand (dvxPort1, "DVX_COMMAND_INPUT_REQUEST,cSIGNAL_TYPE_AUDIO,',',itoa(output)")
+		case cSIGNAL_TYPE_VIDEO:	sendCommand (dvxPort1, "DVX_COMMAND_INPUT_REQUEST,cSIGNAL_TYPE_VIDEO,',',itoa(output)")
+		case cSIGNAL_TYPE_AUDIO:	sendCommand (dvxPort1, "DVX_COMMAND_INPUT_REQUEST,cSIGNAL_TYPE_AUDIO,',',itoa(output)")
     }
 }
 
@@ -483,9 +483,9 @@ define_function dvxRequestOutput (dev dvxPort1, char signalType[], integer input
 {
     switch (signalType)
     {
-		case cSIGNAL_TYPE_VIDEO:	amxSendCommand (dvxPort1, "DVX_COMMAND_OUTPUT_REQUEST,cSIGNAL_TYPE_VIDEO,',',itoa(input)")
-		case cSIGNAL_TYPE_AUDIO:	amxSendCommand (dvxPort1, "DVX_COMMAND_OUTPUT_REQUEST,cSIGNAL_TYPE_AUDIO,',',itoa(input)")
-		case cSIGNAL_TYPE_ALL:		amxSendCommand (dvxPort1, "DVX_COMMAND_OUTPUT_REQUEST,cSIGNAL_TYPE_ALL,',',itoa(input)")
+		case cSIGNAL_TYPE_VIDEO:	sendCommand (dvxPort1, "DVX_COMMAND_OUTPUT_REQUEST,cSIGNAL_TYPE_VIDEO,',',itoa(input)")
+		case cSIGNAL_TYPE_AUDIO:	sendCommand (dvxPort1, "DVX_COMMAND_OUTPUT_REQUEST,cSIGNAL_TYPE_AUDIO,',',itoa(input)")
+		case cSIGNAL_TYPE_ALL:		sendCommand (dvxPort1, "DVX_COMMAND_OUTPUT_REQUEST,cSIGNAL_TYPE_ALL,',',itoa(input)")
     }
 }
 
@@ -506,7 +506,7 @@ define_function dvxRequestOutput (dev dvxPort1, char signalType[], integer input
  */
 define_function dvxRequestVideoOutputAspectRatio (dev dvxVideoOutputPort)
 {
-    amxSendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_ASPECT_RATIO_REQUEST")
+    sendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_ASPECT_RATIO_REQUEST")
 }
 
 /*
@@ -531,7 +531,7 @@ define_function dvxSetVideoOutputAspectRatio (dev dvxVideoOutputPort, char aspec
 		case DVX_ASPECT_RATIO_STRETCH:
 		case DVX_ASPECT_RATIO_ZOOM:
 		{
-			amxSendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_ASPECT_RATIO,aspectRatioSetting")
+			sendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_ASPECT_RATIO,aspectRatioSetting")
 		}
     }
 }
@@ -546,7 +546,7 @@ define_function dvxSetVideoOutputAspectRatio (dev dvxVideoOutputPort, char aspec
  */
 define_function dvxRequestVideoOutputBlankImage (dev dvxVideoOutputPort)
 {
-    amxSendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_BLANK_IMAGE_REQUEST")
+    sendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_BLANK_IMAGE_REQUEST")
 }
 
 /*
@@ -574,7 +574,7 @@ define_function dvxSetVideoOutputBlankImage (dev dvxVideoOutputPort, char blankI
 		case DVX_BLANK_IMAGE_LOGO_2:
 		case DVX_BLANK_IMAGE_LOGO_3:
 		{
-			amxSendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_BLANK_IMAGE,blankImage")
+			sendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_BLANK_IMAGE,blankImage")
 		}
     }
 }
@@ -588,7 +588,7 @@ define_function dvxSetVideoOutputBlankImage (dev dvxVideoOutputPort, char blankI
  */
 define_function dvxRequestVideoOutputBrightness (dev dvxVideoOutputPort)
 {
-    amxSendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_BRIGHTNESS_REQUEST")
+    sendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_BRIGHTNESS_REQUEST")
 }
 
 /*
@@ -601,7 +601,7 @@ define_function dvxRequestVideoOutputBrightness (dev dvxVideoOutputPort)
  */
 define_function dvxSetVideoOutputBrightness (dev dvxVideoOutputPort, integer brightness)
 {
-    amxSendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_BRIGHTNESS,itoa(brightness)")
+    sendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_BRIGHTNESS,itoa(brightness)")
 }
 
 /*
@@ -613,7 +613,7 @@ define_function dvxSetVideoOutputBrightness (dev dvxVideoOutputPort, integer bri
  */
 define_function dvxRequestVideoOutputContrast (dev dvxVideoOutputPort)
 {
-    amxSendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_CONTRAST_REQUEST")
+    sendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_CONTRAST_REQUEST")
 }
 
 /*
@@ -626,7 +626,7 @@ define_function dvxRequestVideoOutputContrast (dev dvxVideoOutputPort)
  */
 define_function dvxSetVideoOutputContrast (dev dvxVideoOutputPort, integer contrast)
 {
-    amxSendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_CONTRAST,itoa(contrast)")
+    sendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_CONTRAST,itoa(contrast)")
 }
 
 /*
@@ -639,7 +639,7 @@ define_function dvxSetVideoOutputContrast (dev dvxVideoOutputPort, integer contr
  */
 define_function dvxRequestVideoOutputFreeze (dev dvxVideoOutputPort)
 {
-    amxSendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_FREEZE_REQUEST")
+    sendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_FREEZE_REQUEST")
 }
 
 /*
@@ -651,7 +651,7 @@ define_function dvxRequestVideoOutputFreeze (dev dvxVideoOutputPort)
  */
 define_function dvxEnableVideoOutputFreeze (dev dvxVideoOutputPort)
 {
-    amxSendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_FREEZE,cENABLE")
+    sendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_FREEZE,cENABLE")
 }
 
 /*
@@ -663,7 +663,7 @@ define_function dvxEnableVideoOutputFreeze (dev dvxVideoOutputPort)
  */
 define_function dvxDisableVideoOutputFreeze (dev dvxVideoOutputPort)
 {
-    amxSendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_FREEZE,cDISABLE")
+    sendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_FREEZE,cDISABLE")
 }
 
 /*
@@ -676,7 +676,7 @@ define_function dvxDisableVideoOutputFreeze (dev dvxVideoOutputPort)
  */
 define_function dvxRequestVideoOutputHorizontalShift (dev dvxVideoOutputPort)
 {
-    amxSendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_HORIZONTAL_SHIFT_REQUEST")
+    sendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_HORIZONTAL_SHIFT_REQUEST")
 }
 
 /*
@@ -689,7 +689,7 @@ define_function dvxRequestVideoOutputHorizontalShift (dev dvxVideoOutputPort)
  */
 define_function dvxSetVideoOutputHorizontalShift (dev dvxVideoOutputPort, sinteger horizontalShift)
 {
-    amxSendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_HORIZONTAL_SHIFT,itoa(horizontalShift)")
+    sendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_HORIZONTAL_SHIFT,itoa(horizontalShift)")
 }
 
 /*
@@ -702,7 +702,7 @@ define_function dvxSetVideoOutputHorizontalShift (dev dvxVideoOutputPort, sinteg
  */
 define_function dvxRequestVideoOutputHorizontalSize (dev dvxVideoOutputPort)
 {
-    amxSendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_HORIZONTAL_SIZE_REQUEST")
+    sendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_HORIZONTAL_SIZE_REQUEST")
 }
 
 /*
@@ -716,7 +716,7 @@ define_function dvxRequestVideoOutputHorizontalSize (dev dvxVideoOutputPort)
  */
 define_function dvxSetVideoOutputHorizontalSize (dev dvxVideoOutputPort, integer horizontalSize)
 {
-    amxSendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_HORIZONTAL_SIZE,itoa(horizontalSize)")
+    sendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_HORIZONTAL_SIZE,itoa(horizontalSize)")
 }
 
 /*
@@ -728,7 +728,7 @@ define_function dvxSetVideoOutputHorizontalSize (dev dvxVideoOutputPort, integer
  */
 define_function dvxRequestVideoOutputMute (dev dvxVideoOutputPort)
 {
-    amxSendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_MUTE_REQUEST")
+    sendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_MUTE_REQUEST")
 }
 
 /*
@@ -740,7 +740,7 @@ define_function dvxRequestVideoOutputMute (dev dvxVideoOutputPort)
  */
 define_function dvxEnableVideoOutputMute (dev dvxVideoOutputPort)
 {
-    amxSendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_MUTE,cENABLE")
+    sendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_MUTE,cENABLE")
 }
 
 /*
@@ -752,7 +752,7 @@ define_function dvxEnableVideoOutputMute (dev dvxVideoOutputPort)
  */
 define_function dvxDisableVideoOutputMute (dev dvxVideoOutputPort)
 {
-    amxSendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_MUTE,cDISABLE")
+    sendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_MUTE,cDISABLE")
 }
 
 /*
@@ -764,7 +764,7 @@ define_function dvxDisableVideoOutputMute (dev dvxVideoOutputPort)
  */
 define_function dvxRequestVideoOutputOn (dev dvxVideoOutputPort)
 {
-    amxSendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_ON_REQUEST")
+    sendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_ON_REQUEST")
 }
 
 /*
@@ -776,7 +776,7 @@ define_function dvxRequestVideoOutputOn (dev dvxVideoOutputPort)
  */
 define_function dvxEnableVideoOutputOn (dev dvxVideoOutputPort)
 {
-    amxSendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_ON,cON")
+    sendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_ON,cON")
 }
 
 /*
@@ -788,7 +788,7 @@ define_function dvxEnableVideoOutputOn (dev dvxVideoOutputPort)
  */
 define_function dvxDisableVideoOutputOn (dev dvxVideoOutputPort)
 {
-    amxSendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_ON,cOFF")
+    sendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_ON,cOFF")
 }
 
 /*
@@ -801,7 +801,7 @@ define_function dvxDisableVideoOutputOn (dev dvxVideoOutputPort)
  */
 define_function dvxRequestVideoOutputOsd (dev dvxVideoOutputPort)
 {
-    amxSendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_OSD_REQUEST")
+    sendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_OSD_REQUEST")
 }
 
 /*
@@ -813,7 +813,7 @@ define_function dvxRequestVideoOutputOsd (dev dvxVideoOutputPort)
  */
 define_function dvxEnableVideoOutputOsd (dev dvxVideoOutputPort)
 {
-    amxSendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_OSD,cENABLE")
+    sendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_OSD,cENABLE")
 }
 
 /*
@@ -825,7 +825,7 @@ define_function dvxEnableVideoOutputOsd (dev dvxVideoOutputPort)
  */
 define_function dvxDisableVideoOutputOsd (dev dvxVideoOutputPort)
 {
-    amxSendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_OSD,cDISABLE")
+    sendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_OSD,cDISABLE")
 }
 
 /*
@@ -837,7 +837,7 @@ define_function dvxDisableVideoOutputOsd (dev dvxVideoOutputPort)
  */
 define_function dvxRequestVideoOutputOsdColor (dev dvxVideoOutputPort)
 {
-    amxSendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_OSD_COLOR_REQUEST")
+    sendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_OSD_COLOR_REQUEST")
 }
 
 /*
@@ -862,7 +862,7 @@ define_function dvxSetVideoOutputOsdColor (dev dvxVideoOutputPort, char osdColor
 		case DVX_OSD_COLOR_WHITE:
 		case DVX_OSD_COLOR_YELLOW:
 		{
-			amxSendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_OSD_COLOR,osdColor")
+			sendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_OSD_COLOR,osdColor")
 		}
     }
 }
@@ -876,7 +876,7 @@ define_function dvxSetVideoOutputOsdColor (dev dvxVideoOutputPort, char osdColor
  */
 define_function dvxRequestVideoOutputOsdPosition (dev dvxVideoOutputPort)
 {
-    amxSendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_OSD_POSITION_REQUEST")
+    sendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_OSD_POSITION_REQUEST")
 }
 
 /*
@@ -901,7 +901,7 @@ define_function dvxSetVideoOutputOsdPosition (dev dvxVideoOutputPort, char osdPo
 		case DVX_OSD_POSITION_BOTTOM_LEFT:
 		case DVX_OSD_POSITION_BOTTOM_RIGHT:
 		{
-			amxSendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_OSD_COLOR,osdPosition")
+			sendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_OSD_COLOR,osdPosition")
 		}
     }
 }
@@ -916,7 +916,7 @@ define_function dvxSetVideoOutputOsdPosition (dev dvxVideoOutputPort, char osdPo
  */
 define_function dvxRequestVideoOutputResolution (dev dvxVideoOutputPort)
 {
-    amxSendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_RESOLUTION_REQUEST")
+    sendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_RESOLUTION_REQUEST")
 }
 
 /*
@@ -933,15 +933,15 @@ define_function dvxRequestVideoOutputResolution (dev dvxVideoOutputPort)
  */
 define_function dvxSetVideoOutputResolution (dev dvxVideoOutputPort, char resolution[])
 {
-    amxSendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_RESOLUTION,resolution")
+    sendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_RESOLUTION,resolution")
 }
 
 /*define_function dvxSetVideoOutputResolution (dev dvxVideoOutputPort, integer horizontal, integer vertical, integer progressiveFlag, integer refresh)
 {
     if (progressiveFlag == FALSE)
-		amxSendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_RESOLUTION,itoa(horizontal),'x',itoa(vertical),',',itoa(refresh)")
+		sendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_RESOLUTION,itoa(horizontal),'x',itoa(vertical),',',itoa(refresh)")
     else if (progressiveFlag == TRUE)
-		amxSendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_RESOLUTION,itoa(horizontal),'x',itoa(vertical),'p,',itoa(refresh)")
+		sendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_RESOLUTION,itoa(horizontal),'x',itoa(vertical),'p,',itoa(refresh)")
 }*/
 
 /*
@@ -954,7 +954,7 @@ define_function dvxSetVideoOutputResolution (dev dvxVideoOutputPort, char resolu
  */
 define_function dvxRequestVideoOutputScaleMode (dev dvxVideoOutputPort)
 {
-    amxSendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_SCALE_MODE_REQUEST")
+    sendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_SCALE_MODE_REQUEST")
 }
 
 /*
@@ -977,7 +977,7 @@ define_function dvxSetVideoOutputScaleMode (dev dvxVideoOutputPort, char scaleMo
 		case DVX_SCALE_MODE_BYPASS:
 		case DVX_SCALE_MODE_MANUAL:
 		{
-			amxSendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_SCALE_MODE,scaleMode")
+			sendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_SCALE_MODE,scaleMode")
 		}
     }
 }
@@ -992,7 +992,7 @@ define_function dvxSetVideoOutputScaleMode (dev dvxVideoOutputPort, char scaleMo
  */
 define_function dvxRequestVideoOutputTestPattern (dev dvxVideoOutputPort)
 {
-    amxSendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_TEST_PATTERN_REQUEST")
+    sendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_TEST_PATTERN_REQUEST")
 }
 
 /*
@@ -1029,7 +1029,7 @@ define_function dvxSetVideoOutputTestPattern (dev dvxVideoOutputPort, char testP
 		case DVX_TEST_PATTERN_LOGO_2:
 		case DVX_TEST_PATTERN_LOGO_3:
 		{
-			amxSendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_TEST_PATTERN,testPattern")
+			sendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_TEST_PATTERN,testPattern")
 		}
     }
 }
@@ -1043,7 +1043,7 @@ define_function dvxSetVideoOutputTestPattern (dev dvxVideoOutputPort, char testP
  */
 define_function dvxRequestVideoOutputVerticalShift (dev dvxVideoOutputPort)
 {
-    amxSendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_VERTICAL_SHIFT_REQUEST")
+    sendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_VERTICAL_SHIFT_REQUEST")
 }
 
 /*
@@ -1056,7 +1056,7 @@ define_function dvxRequestVideoOutputVerticalShift (dev dvxVideoOutputPort)
  */
 define_function dvxSetVideoOutputVerticalShift (dev dvxVideoOutputPort, sinteger verticalShift)
 {
-    amxSendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_VERTICAL_SHIFT,itoa(verticalShift)")
+    sendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_VERTICAL_SHIFT,itoa(verticalShift)")
 }
 
 /*
@@ -1069,7 +1069,7 @@ define_function dvxSetVideoOutputVerticalShift (dev dvxVideoOutputPort, sinteger
  */
 define_function dvxRequestVideoOutputVerticalSize (dev dvxVideoOutputPort)
 {
-    amxSendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_VERTICAL_SIZE_REQUEST")
+    sendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_VERTICAL_SIZE_REQUEST")
 }
 
 /*
@@ -1083,7 +1083,7 @@ define_function dvxRequestVideoOutputVerticalSize (dev dvxVideoOutputPort)
  */
 define_function dvxSetVideoOutputVerticalSize (dev dvxVideoOutputPort, integer verticalSize)
 {
-    amxSendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_VERTICAL_SIZE,itoa(verticalSize)")
+    sendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_VERTICAL_SIZE,itoa(verticalSize)")
 }
 
 /*
@@ -1095,7 +1095,7 @@ define_function dvxSetVideoOutputVerticalSize (dev dvxVideoOutputPort, integer v
  */
 define_function dvxRequestVideoOutputZoom (dev dvxVideoOutputPort)
 {
-    amxSendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_ZOOM_REQUEST")
+    sendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_ZOOM_REQUEST")
 }
 
 /*
@@ -1108,7 +1108,7 @@ define_function dvxRequestVideoOutputZoom (dev dvxVideoOutputPort)
  */
 define_function dvxSetVideoOutputZoom (dev dvxVideoOutputPort, integer zoom)
 {
-    amxSendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_ZOOM,itoa(zoom)")
+    sendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_ZOOM,itoa(zoom)")
 }
 
 
@@ -1128,7 +1128,7 @@ define_function dvxSetVideoOutputZoom (dev dvxVideoOutputPort, integer zoom)
  */
 define_function dvxRequestVideoInputBrightness (dev dvxVideoInputPort)
 {
-    amxSendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_BRIGHTNESS_REQUEST")
+    sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_BRIGHTNESS_REQUEST")
 }
 
 /*
@@ -1141,7 +1141,7 @@ define_function dvxRequestVideoInputBrightness (dev dvxVideoInputPort)
  */
 define_function dvxSetVideoInputBrightness (dev dvxVideoInputPort, integer brightness)
 {
-    amxSendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_BRIGHTNESS,itoa(brightness)")
+    sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_BRIGHTNESS,itoa(brightness)")
 }
 
 /*
@@ -1154,7 +1154,7 @@ define_function dvxSetVideoInputBrightness (dev dvxVideoInputPort, integer brigh
  */
 define_function dvxRequestVideoInputBlackAndWhiteState (dev dvxVideoInputPort)
 {
-    amxSendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_BLACK_AND_WHITE_STATE_REQUEST")
+    sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_BLACK_AND_WHITE_STATE_REQUEST")
 }
 
 /*
@@ -1167,7 +1167,7 @@ define_function dvxRequestVideoInputBlackAndWhiteState (dev dvxVideoInputPort)
  */
 define_function dvxEnableVideoInputBlackAndWhiteState (dev dvxVideoInputPort)
 {
-    amxSendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_BLACK_AND_WHITE_STATE,cENABLE")
+    sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_BLACK_AND_WHITE_STATE,cENABLE")
 }
 
 /*
@@ -1180,7 +1180,7 @@ define_function dvxEnableVideoInputBlackAndWhiteState (dev dvxVideoInputPort)
  */
 define_function dvxDisableVideoInputBlackAndWhite (dev dvxVideoInputPort)
 {
-    amxSendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_BLACK_AND_WHITE_STATE,cDISABLE")
+    sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_BLACK_AND_WHITE_STATE,cDISABLE")
 }
 
 /*
@@ -1193,7 +1193,7 @@ define_function dvxDisableVideoInputBlackAndWhite (dev dvxVideoInputPort)
  */
 define_function dvxRequestVideoInputColor (dev dvxVideoInputPort)
 {
-    amxSendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_COLOR_REQUEST")
+    sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_COLOR_REQUEST")
 }
 
 /*
@@ -1205,7 +1205,7 @@ define_function dvxRequestVideoInputColor (dev dvxVideoInputPort)
  */
 define_function dvxEnableVideoInputColor (dev dvxVideoInputPort)
 {
-    amxSendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_COLOR,cENABLE")
+    sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_COLOR,cENABLE")
 }
 
 /*
@@ -1217,7 +1217,7 @@ define_function dvxEnableVideoInputColor (dev dvxVideoInputPort)
  */
 define_function dvxDisableVideoInputColor (dev dvxVideoInputPort)
 {
-    amxSendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_COLOR,cDISABLE")
+    sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_COLOR,cDISABLE")
 }
 
 /*
@@ -1229,7 +1229,7 @@ define_function dvxDisableVideoInputColor (dev dvxVideoInputPort)
  */
 define_function dvxRequestVideoInputContrast (dev dvxVideoInputPort)
 {
-    amxSendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_CONTRAST_REQUEST")
+    sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_CONTRAST_REQUEST")
 }
 
 /*
@@ -1242,7 +1242,7 @@ define_function dvxRequestVideoInputContrast (dev dvxVideoInputPort)
  */
 define_function dvxSetVideoInputContrast (dev dvxVideoInputPort, integer contrast)
 {
-    amxSendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_CONTRAST,itoa(contrast)")
+    sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_CONTRAST,itoa(contrast)")
 }
 
 /*
@@ -1254,7 +1254,7 @@ define_function dvxSetVideoInputContrast (dev dvxVideoInputPort, integer contras
  */
 define_function dvxRequestVideoInputEdidSource (dev dvxVideoInputPort)
 {
-    amxSendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_EDID_SOURCE_REQUEST")
+    sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_EDID_SOURCE_REQUEST")
 }
 
 /*
@@ -1276,7 +1276,7 @@ define_function dvxSetVideoInputEdidSource (dev dvxVideoInputPort, char edidSour
 		case DVX_EDID_SOURCE_MIRROR_OUTPUT_3:
 		case DVX_EDID_SOURCE_MIRROR_OUTPUT_4:
 		{
-			amxSendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_EDID_SOURCE,edidSource")
+			sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_EDID_SOURCE,edidSource")
 		}
     }
 }
@@ -1292,7 +1292,7 @@ define_function dvxSetVideoInputEdidSource (dev dvxVideoInputPort, char edidSour
  */
 define_function dvxRequestEdidAutoUpdate (dev dvxVideoInputPort)
 {
-    amxSendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_EDID_UPDATE_AUTO_REQUEST")
+    sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_EDID_UPDATE_AUTO_REQUEST")
 }
 
 /*
@@ -1305,7 +1305,7 @@ define_function dvxRequestEdidAutoUpdate (dev dvxVideoInputPort)
  */
 define_function dvxEnableEdidAutoUpdate (dev dvxVideoInputPort)
 {
-    amxSendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_EDID_UPDATE_AUTO,cENABLE")
+    sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_EDID_UPDATE_AUTO,cENABLE")
 }
 
 /*
@@ -1318,7 +1318,7 @@ define_function dvxEnableEdidAutoUpdate (dev dvxVideoInputPort)
  */
 define_function dvxDisableEdidAutoUpdate (dev dvxVideoInputPort)
 {
-    amxSendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_EDID_UPDATE_AUTO,cDISABLE")
+    sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_EDID_UPDATE_AUTO,cDISABLE")
 }
 
 /*
@@ -1331,7 +1331,7 @@ define_function dvxDisableEdidAutoUpdate (dev dvxVideoInputPort)
  */
 define_function dvxRequestVideoInputEdidPreferredResolution (dev dvxVideoInputPort)
 {
-    amxSendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_EDID_PREFERRED_RESOLUTION_REQUEST")
+    sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_EDID_PREFERRED_RESOLUTION_REQUEST")
 }
 
 /*
@@ -1344,7 +1344,7 @@ define_function dvxRequestVideoInputEdidPreferredResolution (dev dvxVideoInputPo
  */
 define_function dvxSetVideoInputEdidPreferredResolution (dev dvxVideoInputPort, char resolution[])
 {
-    amxSendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_EDID_PREFERRED_RESOLUTION,resolution")
+    sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_EDID_PREFERRED_RESOLUTION,resolution")
 }
 
 /*
@@ -1356,7 +1356,7 @@ define_function dvxSetVideoInputEdidPreferredResolution (dev dvxVideoInputPort, 
  */
 define_function dvxRequestVideoFormat (dev dvxVideoInputPort)
 {
-    amxSendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_FORMAT_REQUEST")
+    sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_FORMAT_REQUEST")
 }
 
 /*
@@ -1385,7 +1385,7 @@ define_function dvxSetVideoInputFormat (dev dvxVideoInputPort, char signalFormat
 		case cVIDEO_SIGNAL_FORMAT_COMPONENT:
 		case cVIDEO_SIGNAL_FORMAT_SVIDEO:
 		{
-			amxSendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_FORMAT,signalFormat")
+			sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_FORMAT,signalFormat")
 		}
     }
 }
@@ -1399,7 +1399,7 @@ define_function dvxSetVideoInputFormat (dev dvxVideoInputPort, char signalFormat
  */
 define_function dvxRequestVideoInputHdcpCompliance (dev dvxVideoInputPort)
 {
-    amxSendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_HDCP_COMPLIANCE_REQUEST")
+    sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_HDCP_COMPLIANCE_REQUEST")
 }
 
 /*
@@ -1411,7 +1411,7 @@ define_function dvxRequestVideoInputHdcpCompliance (dev dvxVideoInputPort)
  */
 define_function dvxEnableVideoInputHdcpCompliance (dev dvxVideoInputPort)
 {
-    amxSendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_HDCP_COMPLIANCE,cENABLE")
+    sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_HDCP_COMPLIANCE,cENABLE")
 }
 
 /*
@@ -1423,7 +1423,7 @@ define_function dvxEnableVideoInputHdcpCompliance (dev dvxVideoInputPort)
  */
 define_function dvxDisableVideoHdcpCompliance (dev dvxVideoInputPort)
 {
-    amxSendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_HDCP_COMPLIANCE,cDISABLE")
+    sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_HDCP_COMPLIANCE,cDISABLE")
 }
 
 /*
@@ -1436,7 +1436,7 @@ define_function dvxDisableVideoHdcpCompliance (dev dvxVideoInputPort)
  */
 define_function dvxRequestVideoInputHorizontalShift (dev dvxVideoInputPort)
 {
-    amxSendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_HORIZONTAL_SHIFT_REQUEST")
+    sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_HORIZONTAL_SHIFT_REQUEST")
 }
 
 /*
@@ -1449,7 +1449,7 @@ define_function dvxRequestVideoInputHorizontalShift (dev dvxVideoInputPort)
  */
 define_function dvxSetVideoInputHorizontalShift (dev dvxVideoInputPort, sinteger horizontalShift)
 {
-    amxSendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_HORIZONTAL_SHIFT,itoa(horizontalShift)")
+    sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_HORIZONTAL_SHIFT,itoa(horizontalShift)")
 }
 
 /*
@@ -1461,7 +1461,7 @@ define_function dvxSetVideoInputHorizontalShift (dev dvxVideoInputPort, sinteger
  */
 define_function dvxRequestVideoInputHue (dev dvxVideoInputPort)
 {
-    amxSendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_HUE_REQUEST")
+    sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_HUE_REQUEST")
 }
 
 /*
@@ -1474,7 +1474,7 @@ define_function dvxRequestVideoInputHue (dev dvxVideoInputPort)
  */
 define_function dvxSetVideoInputHue (dev dvxVideoInputPort, integer hue)
 {
-    amxSendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_HUE,itoa(hue)")
+    sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_HUE,itoa(hue)")
 }
 
 /*
@@ -1486,7 +1486,7 @@ define_function dvxSetVideoInputHue (dev dvxVideoInputPort, integer hue)
  */
 define_function dvxRequestVideoInputName (dev dvxVideoInputPort)
 {
-    amxSendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_NAME_REQUEST")
+    sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_NAME_REQUEST")
 }
 
 /*
@@ -1498,16 +1498,16 @@ define_function dvxRequestVideoInputName (dev dvxVideoInputPort)
  */
 define_function dvxRequestVideoInputNameAll (dev dvxPort1)
 {
-    amxSendCommand (dvxPort1.number:DVX_PORT_VID_IN_1:dvxPort1.system, "DVX_COMMAND_VIDEO_IN_NAME_REQUEST")
-    amxSendCommand (dvxPort1.number:DVX_PORT_VID_IN_2:dvxPort1.system, "DVX_COMMAND_VIDEO_IN_NAME_REQUEST")
-    amxSendCommand (dvxPort1.number:DVX_PORT_VID_IN_3:dvxPort1.system, "DVX_COMMAND_VIDEO_IN_NAME_REQUEST")
-    amxSendCommand (dvxPort1.number:DVX_PORT_VID_IN_4:dvxPort1.system, "DVX_COMMAND_VIDEO_IN_NAME_REQUEST")
-    amxSendCommand (dvxPort1.number:DVX_PORT_VID_IN_5:dvxPort1.system, "DVX_COMMAND_VIDEO_IN_NAME_REQUEST")
-    amxSendCommand (dvxPort1.number:DVX_PORT_VID_IN_6:dvxPort1.system, "DVX_COMMAND_VIDEO_IN_NAME_REQUEST")
-    amxSendCommand (dvxPort1.number:DVX_PORT_VID_IN_7:dvxPort1.system, "DVX_COMMAND_VIDEO_IN_NAME_REQUEST")
-    amxSendCommand (dvxPort1.number:DVX_PORT_VID_IN_8:dvxPort1.system, "DVX_COMMAND_VIDEO_IN_NAME_REQUEST")
-    amxSendCommand (dvxPort1.number:DVX_PORT_VID_IN_9:dvxPort1.system, "DVX_COMMAND_VIDEO_IN_NAME_REQUEST")
-    amxSendCommand (dvxPort1.number:DVX_PORT_VID_IN_10:dvxPort1.system, "DVX_COMMAND_VIDEO_IN_NAME_REQUEST")
+    sendCommand (dvxPort1.number:DVX_PORT_VID_IN_1:dvxPort1.system, "DVX_COMMAND_VIDEO_IN_NAME_REQUEST")
+    sendCommand (dvxPort1.number:DVX_PORT_VID_IN_2:dvxPort1.system, "DVX_COMMAND_VIDEO_IN_NAME_REQUEST")
+    sendCommand (dvxPort1.number:DVX_PORT_VID_IN_3:dvxPort1.system, "DVX_COMMAND_VIDEO_IN_NAME_REQUEST")
+    sendCommand (dvxPort1.number:DVX_PORT_VID_IN_4:dvxPort1.system, "DVX_COMMAND_VIDEO_IN_NAME_REQUEST")
+    sendCommand (dvxPort1.number:DVX_PORT_VID_IN_5:dvxPort1.system, "DVX_COMMAND_VIDEO_IN_NAME_REQUEST")
+    sendCommand (dvxPort1.number:DVX_PORT_VID_IN_6:dvxPort1.system, "DVX_COMMAND_VIDEO_IN_NAME_REQUEST")
+    sendCommand (dvxPort1.number:DVX_PORT_VID_IN_7:dvxPort1.system, "DVX_COMMAND_VIDEO_IN_NAME_REQUEST")
+    sendCommand (dvxPort1.number:DVX_PORT_VID_IN_8:dvxPort1.system, "DVX_COMMAND_VIDEO_IN_NAME_REQUEST")
+    sendCommand (dvxPort1.number:DVX_PORT_VID_IN_9:dvxPort1.system, "DVX_COMMAND_VIDEO_IN_NAME_REQUEST")
+    sendCommand (dvxPort1.number:DVX_PORT_VID_IN_10:dvxPort1.system, "DVX_COMMAND_VIDEO_IN_NAME_REQUEST")
 }
 
 /*
@@ -1519,7 +1519,7 @@ define_function dvxRequestVideoInputNameAll (dev dvxPort1)
  */
 define_function dvxSetVideoInputName (dev dvxVideoInputPort, char name[])
 {
-    amxSendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_NAME,name")
+    sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_NAME,name")
 }
 
 /*
@@ -1531,7 +1531,7 @@ define_function dvxSetVideoInputName (dev dvxVideoInputPort, char name[])
  */
 define_function dvxRequestVideoInputPhase (dev dvxVideoInputPort)
 {
-    amxSendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_PHASE_REQUEST")
+    sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_PHASE_REQUEST")
 }
 
 /*
@@ -1544,7 +1544,7 @@ define_function dvxRequestVideoInputPhase (dev dvxVideoInputPort)
  */
 define_function dvxSetVideoInputPhase (dev dvxVideoInputPort, integer phase)
 {
-    amxSendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_PHASE,itoa(phase)")
+    sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_PHASE,itoa(phase)")
 }
 
 /*
@@ -1557,7 +1557,7 @@ define_function dvxSetVideoInputPhase (dev dvxVideoInputPort, integer phase)
  */
 define_function dvxRequestVideoInputResolutionAuto (dev dvxVideoInputPort)
 {
-    amxSendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_RESOLUTION_AUTO_REQUEST")
+    sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_RESOLUTION_AUTO_REQUEST")
 }
 
 /*
@@ -1570,7 +1570,7 @@ define_function dvxRequestVideoInputResolutionAuto (dev dvxVideoInputPort)
  */
 define_function dvxEnableVideoInputResolutionAuto (dev dvxVideoInputPort)
 {
-    amxSendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_RESOLUTION_AUTO,cENABLE")
+    sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_RESOLUTION_AUTO,cENABLE")
 }
 
 /*
@@ -1583,7 +1583,7 @@ define_function dvxEnableVideoInputResolutionAuto (dev dvxVideoInputPort)
  */
 define_function dvxDisableVideoResolutionAuto (dev dvxVideoInputPort)
 {
-    amxSendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_RESOLUTION_AUTO,cDISABLE")
+    sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_RESOLUTION_AUTO,cDISABLE")
 }
 
 /*
@@ -1595,7 +1595,7 @@ define_function dvxDisableVideoResolutionAuto (dev dvxVideoInputPort)
  */
 define_function dvxRequestVideoInputResolution (dev dvxVideoInputPort)
 {
-    amxSendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_RESOLUTION_REQUEST")
+    sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_RESOLUTION_REQUEST")
 }
 
 /*
@@ -1609,7 +1609,7 @@ define_function dvxRequestVideoInputResolution (dev dvxVideoInputPort)
  */
 define_function dvxSetVideoInputResolution (dev dvxVideoInputPort, char resolution[])
 {
-    amxSendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_RESOLUTION,resolution")
+    sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_RESOLUTION,resolution")
 }
 
 /*
@@ -1621,7 +1621,7 @@ define_function dvxSetVideoInputResolution (dev dvxVideoInputPort, char resoluti
  */
 define_function dvxRequestVideoInputSaturation (dev dvxVideoInputPort)
 {
-    amxSendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_SATURATION_REQUEST")
+    sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_SATURATION_REQUEST")
 }
 
 /*
@@ -1634,7 +1634,7 @@ define_function dvxRequestVideoInputSaturation (dev dvxVideoInputPort)
  */
 define_function dvxSetVideoInputSaturation (dev dvxVideoInputPort, integer saturation)
 {
-    amxSendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_SATURATION,itoa(saturation)")
+    sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_SATURATION,itoa(saturation)")
 }
 
 /*
@@ -1646,7 +1646,7 @@ define_function dvxSetVideoInputSaturation (dev dvxVideoInputPort, integer satur
  */
 define_function dvxRequestVideoInputStatus (dev dvxVideoInputPort)
 {
-    amxSendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_STATUS_REQUEST")
+    sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_STATUS_REQUEST")
 }
 
 /*
@@ -1658,16 +1658,16 @@ define_function dvxRequestVideoInputStatus (dev dvxVideoInputPort)
  */
 define_function dvxRequestVideoInputStatusAll (dev dvxPort1)
 {
-    amxSendCommand (dvxPort1.number:DVX_PORT_VID_IN_1:dvxPort1.system, "DVX_COMMAND_VIDEO_IN_STATUS_REQUEST")
-    amxSendCommand (dvxPort1.number:DVX_PORT_VID_IN_2:dvxPort1.system, "DVX_COMMAND_VIDEO_IN_STATUS_REQUEST")
-    amxSendCommand (dvxPort1.number:DVX_PORT_VID_IN_3:dvxPort1.system, "DVX_COMMAND_VIDEO_IN_STATUS_REQUEST")
-    amxSendCommand (dvxPort1.number:DVX_PORT_VID_IN_4:dvxPort1.system, "DVX_COMMAND_VIDEO_IN_STATUS_REQUEST")
-    amxSendCommand (dvxPort1.number:DVX_PORT_VID_IN_5:dvxPort1.system, "DVX_COMMAND_VIDEO_IN_STATUS_REQUEST")
-    amxSendCommand (dvxPort1.number:DVX_PORT_VID_IN_6:dvxPort1.system, "DVX_COMMAND_VIDEO_IN_STATUS_REQUEST")
-    amxSendCommand (dvxPort1.number:DVX_PORT_VID_IN_7:dvxPort1.system, "DVX_COMMAND_VIDEO_IN_STATUS_REQUEST")
-    amxSendCommand (dvxPort1.number:DVX_PORT_VID_IN_8:dvxPort1.system, "DVX_COMMAND_VIDEO_IN_STATUS_REQUEST")
-    amxSendCommand (dvxPort1.number:DVX_PORT_VID_IN_9:dvxPort1.system, "DVX_COMMAND_VIDEO_IN_STATUS_REQUEST")
-    amxSendCommand (dvxPort1.number:DVX_PORT_VID_IN_10:dvxPort1.system, "DVX_COMMAND_VIDEO_IN_STATUS_REQUEST")
+    sendCommand (dvxPort1.number:DVX_PORT_VID_IN_1:dvxPort1.system, "DVX_COMMAND_VIDEO_IN_STATUS_REQUEST")
+    sendCommand (dvxPort1.number:DVX_PORT_VID_IN_2:dvxPort1.system, "DVX_COMMAND_VIDEO_IN_STATUS_REQUEST")
+    sendCommand (dvxPort1.number:DVX_PORT_VID_IN_3:dvxPort1.system, "DVX_COMMAND_VIDEO_IN_STATUS_REQUEST")
+    sendCommand (dvxPort1.number:DVX_PORT_VID_IN_4:dvxPort1.system, "DVX_COMMAND_VIDEO_IN_STATUS_REQUEST")
+    sendCommand (dvxPort1.number:DVX_PORT_VID_IN_5:dvxPort1.system, "DVX_COMMAND_VIDEO_IN_STATUS_REQUEST")
+    sendCommand (dvxPort1.number:DVX_PORT_VID_IN_6:dvxPort1.system, "DVX_COMMAND_VIDEO_IN_STATUS_REQUEST")
+    sendCommand (dvxPort1.number:DVX_PORT_VID_IN_7:dvxPort1.system, "DVX_COMMAND_VIDEO_IN_STATUS_REQUEST")
+    sendCommand (dvxPort1.number:DVX_PORT_VID_IN_8:dvxPort1.system, "DVX_COMMAND_VIDEO_IN_STATUS_REQUEST")
+    sendCommand (dvxPort1.number:DVX_PORT_VID_IN_9:dvxPort1.system, "DVX_COMMAND_VIDEO_IN_STATUS_REQUEST")
+    sendCommand (dvxPort1.number:DVX_PORT_VID_IN_10:dvxPort1.system, "DVX_COMMAND_VIDEO_IN_STATUS_REQUEST")
 }
 
 /*
@@ -1680,7 +1680,7 @@ define_function dvxRequestVideoInputStatusAll (dev dvxPort1)
  */
 define_function dvxRequestVideoInputVerticalShift (dev dvxVideoInputPort)
 {
-    amxSendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_VERTICAL_SHIFT_REQUEST")
+    sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_VERTICAL_SHIFT_REQUEST")
 }
 
 /*
@@ -1693,7 +1693,7 @@ define_function dvxRequestVideoInputVerticalShift (dev dvxVideoInputPort)
  */
 define_function dvxSetVideoInputVerticalShift (dev dvxVideoInputPort, sinteger verticalShift)
 {
-    amxSendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_VERTICAL_SHIFT,itoa(verticalShift)")
+    sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_VERTICAL_SHIFT,itoa(verticalShift)")
 }
 
 
@@ -1713,7 +1713,7 @@ define_function dvxSetVideoInputVerticalShift (dev dvxVideoInputPort, sinteger v
  */
 define_function dvxRequestAudioInputCompression (dev dvxAudioInputPort)
 {
-    amxSendCommand (dvxAudioInputPort, "DVX_COMMAND_AUDIO_IN_COMPRESSION_REQUEST")
+    sendCommand (dvxAudioInputPort, "DVX_COMMAND_AUDIO_IN_COMPRESSION_REQUEST")
 }
 
 /*
@@ -1740,7 +1740,7 @@ define_function dvxSetAudioInputCompression (dev dvxAudioInputPort, CHAR compres
 		case DVX_COMPRESSION_HIGH:
 		case DVX_COMPRESSION_CUSTOM:
 		{
-			amxSendCommand (dvxAudioInputPort, "DVX_COMMAND_AUDIO_IN_COMPRESSION,compressionSetting")
+			sendCommand (dvxAudioInputPort, "DVX_COMMAND_AUDIO_IN_COMPRESSION,compressionSetting")
 		}
     }
 }
@@ -1754,7 +1754,7 @@ define_function dvxSetAudioInputCompression (dev dvxAudioInputPort, CHAR compres
  */
 define_function dvxRequestAudioInputCompressionAttack (dev dvxAudioInputPort)
 {
-    amxSendCommand (dvxAudioInputPort, "DVX_COMMAND_AUDIO_IN_COMPRESSION_ATTACK_REQUEST")
+    sendCommand (dvxAudioInputPort, "DVX_COMMAND_AUDIO_IN_COMPRESSION_ATTACK_REQUEST")
 }
 
 /*
@@ -1768,7 +1768,7 @@ define_function dvxRequestAudioInputCompressionAttack (dev dvxAudioInputPort)
 define_function dvxSetAudioInputCompressionAttack (dev dvxAudioInputPort, integer attack)
 {
 
-    amxSendCommand (dvxAudioInputPort, "DVX_COMMAND_AUDIO_IN_COMPRESSION_ATTACK,itoa(attack)")
+    sendCommand (dvxAudioInputPort, "DVX_COMMAND_AUDIO_IN_COMPRESSION_ATTACK,itoa(attack)")
 }
 
 /*
@@ -1780,7 +1780,7 @@ define_function dvxSetAudioInputCompressionAttack (dev dvxAudioInputPort, intege
  */
 define_function dvxRequestAudioInputCompressionRatio (dev dvxAudioInputPort)
 {
-    amxSendCommand (dvxAudioInputPort, "DVX_COMMAND_AUDIO_IN_COMPRESSION_RATIO_REQUEST")
+    sendCommand (dvxAudioInputPort, "DVX_COMMAND_AUDIO_IN_COMPRESSION_RATIO_REQUEST")
 }
 
 /*
@@ -1794,7 +1794,7 @@ define_function dvxRequestAudioInputCompressionRatio (dev dvxAudioInputPort)
 define_function dvxSetAudioInputCompressionRatio (dev dvxAudioInputPort, integer ratio)
 {
 
-    amxSendCommand (dvxAudioInputPort, "DVX_COMMAND_AUDIO_IN_COMPRESSION_RATIO,itoa(ratio)")
+    sendCommand (dvxAudioInputPort, "DVX_COMMAND_AUDIO_IN_COMPRESSION_RATIO,itoa(ratio)")
 }
 
 /*
@@ -1806,7 +1806,7 @@ define_function dvxSetAudioInputCompressionRatio (dev dvxAudioInputPort, integer
  */
 define_function dvxRequestAudioInputCompressionRelease (dev dvxAudioInputPort)
 {
-    amxSendCommand (dvxAudioInputPort, "DVX_COMMAND_AUDIO_IN_COMPRESSION_RELEASE_REQUEST")
+    sendCommand (dvxAudioInputPort, "DVX_COMMAND_AUDIO_IN_COMPRESSION_RELEASE_REQUEST")
 }
 
 /*
@@ -1820,7 +1820,7 @@ define_function dvxRequestAudioInputCompressionRelease (dev dvxAudioInputPort)
 define_function dvxSetAudioInputCompressionRelease (dev dvxAudioInputPort, integer nReleaseValue)
 {
 
-    amxSendCommand (dvxAudioInputPort, "DVX_COMMAND_AUDIO_IN_COMPRESSION_RELEASE,itoa(nReleaseValue)")
+    sendCommand (dvxAudioInputPort, "DVX_COMMAND_AUDIO_IN_COMPRESSION_RELEASE,itoa(nReleaseValue)")
 }
 
 /*
@@ -1833,7 +1833,7 @@ define_function dvxSetAudioInputCompressionRelease (dev dvxAudioInputPort, integ
  */
 define_function dvxRequestAudioInputCompressionThreshold (dev dvxAudioInputPort)
 {
-    amxSendCommand (dvxAudioInputPort, "DVX_COMMAND_AUDIO_IN_COMPRESSION_THRESHOLD_REQUEST")
+    sendCommand (dvxAudioInputPort, "DVX_COMMAND_AUDIO_IN_COMPRESSION_THRESHOLD_REQUEST")
 }
 
 /*
@@ -1847,7 +1847,7 @@ define_function dvxRequestAudioInputCompressionThreshold (dev dvxAudioInputPort)
 define_function dvxSetAudioInputCompressionThreshold (dev dvxAudioInputPort, sinteger threshold)
 {
 
-    amxSendCommand (dvxAudioInputPort, "DVX_COMMAND_AUDIO_IN_COMPRESSION_THRESHOLD,itoa(threshold)")
+    sendCommand (dvxAudioInputPort, "DVX_COMMAND_AUDIO_IN_COMPRESSION_THRESHOLD,itoa(threshold)")
 }
 
 /*
@@ -1859,7 +1859,7 @@ define_function dvxSetAudioInputCompressionThreshold (dev dvxAudioInputPort, sin
  */
 define_function dvxRequestAudioInputGain (dev dvxAudioInputPort)
 {
-    amxSendCommand (dvxAudioInputPort, "DVX_COMMAND_AUDIO_IN_GAIN_REQUEST")
+    sendCommand (dvxAudioInputPort, "DVX_COMMAND_AUDIO_IN_GAIN_REQUEST")
 }
 
 /*
@@ -1873,7 +1873,7 @@ define_function dvxRequestAudioInputGain (dev dvxAudioInputPort)
 define_function dvxSetAudioInputGain (dev dvxAudioInputPort, sinteger gain)
 {
 
-    amxSendCommand (dvxAudioInputPort, "DVX_COMMAND_AUDIO_IN_GAIN,itoa(gain)")
+    sendCommand (dvxAudioInputPort, "DVX_COMMAND_AUDIO_IN_GAIN,itoa(gain)")
 }
 
 /*
@@ -1885,7 +1885,7 @@ define_function dvxSetAudioInputGain (dev dvxAudioInputPort, sinteger gain)
  */
 define_function dvxRequestAudioInputStereo (dev dvxAudioInputPort)
 {
-    amxSendCommand (dvxAudioInputPort, "DVX_COMMAND_AUDIO_IN_STEREO_REQUEST")
+    sendCommand (dvxAudioInputPort, "DVX_COMMAND_AUDIO_IN_STEREO_REQUEST")
 }
 
 /*
@@ -1906,7 +1906,7 @@ define_function dvxSetAudioInputStereo (dev dvxAudioInputPort, CHAR stereoSettin
 		case DVX_AUDIO_MONO:
 		case DVX_AUDIO_STEREO:
 		{
-			amxSendCommand (dvxAudioInputPort, "DVX_COMMAND_AUDIO_IN_STEREO,stereoSetting")
+			sendCommand (dvxAudioInputPort, "DVX_COMMAND_AUDIO_IN_STEREO,stereoSetting")
 		}
     }
 }
@@ -1929,7 +1929,7 @@ define_function dvxSetAudioInputStereo (dev dvxAudioInputPort, CHAR stereoSettin
  */
 define_function dvxRequestAudioOutputBalance (dev dvxAudioOutputPort)
 {
-    amxSendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_BALANCE_REQUEST")
+    sendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_BALANCE_REQUEST")
 }
 
 /*
@@ -1942,7 +1942,7 @@ define_function dvxRequestAudioOutputBalance (dev dvxAudioOutputPort)
  */
 define_function dvxSetAudioOutputBalance (dev dvxAudioOutputPort, sinteger balance)
 {
-    amxSendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_BALANCE,itoa(balance)")
+    sendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_BALANCE,itoa(balance)")
 }
 
 /*
@@ -1954,7 +1954,7 @@ define_function dvxSetAudioOutputBalance (dev dvxAudioOutputPort, sinteger balan
  */
 define_function dvxRequestAudioOutputDelay (dev dvxAudioOutputPort)
 {
-    amxSendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_DELAY_REQUEST")
+    sendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_DELAY_REQUEST")
 }
 
 /*
@@ -1967,7 +1967,7 @@ define_function dvxRequestAudioOutputDelay (dev dvxAudioOutputPort)
  ***/
 define_function dvxSetAudioOutputDelay (dev dvxAudioOutputPort, integer delay)
 {
-    amxSendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_DELAY,itoa(delay)")
+    sendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_DELAY,itoa(delay)")
 }
 
 /*
@@ -1981,7 +1981,7 @@ define_function dvxSetAudioOutputDelay (dev dvxAudioOutputPort, integer delay)
  */
 define_function dvxSetAudioOutputDuckingAttack (dev dvxAudioOutputPort, integer attack)
 {
-    amxSendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_DUCKING_ATTACK,itoa(attack)")
+    sendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_DUCKING_ATTACK,itoa(attack)")
 }
 
 /*
@@ -1995,7 +1995,7 @@ define_function dvxSetAudioOutputDuckingAttack (dev dvxAudioOutputPort, integer 
  */
 define_function dvxSetAudioOutputDuckingHold (dev dvxAudioOutputPort, integer holdValue)
 {
-    amxSendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_DUCKING_HOLD,itoa(holdValue)")
+    sendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_DUCKING_HOLD,itoa(holdValue)")
 }
 
 /*
@@ -2008,7 +2008,7 @@ define_function dvxSetAudioOutputDuckingHold (dev dvxAudioOutputPort, integer ho
  */
 define_function dvxSetAudioOutputDuckingLevel (dev dvxAudioOutputPort, integer duckingLevel)
 {
-    amxSendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_DUCKING_LEVEL,itoa(duckingLevel)")
+    sendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_DUCKING_LEVEL,itoa(duckingLevel)")
 }
 
 /*
@@ -2022,7 +2022,7 @@ define_function dvxSetAudioOutputDuckingLevel (dev dvxAudioOutputPort, integer d
  */
 define_function dvxSetAudioOutputDuckingRelease (dev dvxAudioOutputPort, integer releaseValue)
 {
-    amxSendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_DUCKING_RELEASE,itoa(releaseValue)")
+    sendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_DUCKING_RELEASE,itoa(releaseValue)")
 }
 
 /*
@@ -2035,7 +2035,7 @@ define_function dvxSetAudioOutputDuckingRelease (dev dvxAudioOutputPort, integer
  */
 define_function dvxRequestAudioOutputDuckingThreshold (dev dvxAudioOutputPort)
 {
-    amxSendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_DUCKING_THRESHOLD_REQUEST")
+    sendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_DUCKING_THRESHOLD_REQUEST")
 }
 
 /*
@@ -2049,7 +2049,7 @@ define_function dvxRequestAudioOutputDuckingThreshold (dev dvxAudioOutputPort)
  */
 define_function dvxSetAudioOutputDuckingThreshold (dev dvxAudioOutputPort, sinteger threshold)
 {
-    amxSendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_DUCKING_THRESHOLD_REQUEST,itoa(threshold)")
+    sendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_DUCKING_THRESHOLD_REQUEST,itoa(threshold)")
 }
 
 /*
@@ -2062,7 +2062,7 @@ define_function dvxSetAudioOutputDuckingThreshold (dev dvxAudioOutputPort, sinte
  */
 define_function dvxRequestAudioOutputDucking (dev dvxAudioOutputPort)
 {
-    amxSendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_DUCKING_REQUEST")
+    sendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_DUCKING_REQUEST")
 }
 
 /*
@@ -2089,7 +2089,7 @@ define_function dvxSetAudioOutputDucking (dev dvxAudioOutputPort, char duckingSe
 		case DVX_DUCKING_HIGH:
 		case DVX_DUCKING_CUSTOM:
 		{
-			amxSendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_DUCKING,duckingSetting")
+			sendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_DUCKING,duckingSetting")
 		}
     }
 }
@@ -2105,7 +2105,7 @@ define_function dvxSetAudioOutputDucking (dev dvxAudioOutputPort, char duckingSe
  */
 define_function dvxRequestAudioOutputEqCenterFrequency (dev dvxAudioOutputPort, integer eqBand)
 {
-    amxSendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_EQ_CENTER_FREQUENCY_REQUEST,itoa(eqBand)")
+    sendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_EQ_CENTER_FREQUENCY_REQUEST,itoa(eqBand)")
 }
 
 /*
@@ -2120,7 +2120,7 @@ define_function dvxRequestAudioOutputEqCenterFrequency (dev dvxAudioOutputPort, 
  */
 define_function dvxSetAudioOutputEqCenterFrequency (dev dvxAudioOutputPort, integer eqBand, integer frequency)
 {
-    amxSendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_EQ_CENTER_FREQUENCY,itoa(eqBand),',',itoa(frequency)")
+    sendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_EQ_CENTER_FREQUENCY,itoa(eqBand),',',itoa(frequency)")
 }
 
 /*
@@ -2134,7 +2134,7 @@ define_function dvxSetAudioOutputEqCenterFrequency (dev dvxAudioOutputPort, inte
  */
 define_function dvxRequestAudioOutputEqFilterType (dev dvxAudioOutputPort, integer eqBand)
 {
-    amxSendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_EQ_FILTER_TYPE_REQUEST,itoa(eqBand)")
+    sendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_EQ_FILTER_TYPE_REQUEST,itoa(eqBand)")
 }
 
 /*
@@ -2167,7 +2167,7 @@ define_function dvxSetAudioOutputEqFilterType (dev dvxAudioOutputPort, integer e
 		case DVX_EQ_FILTER_TYPE_TREBLE_SHELF:
 		case DVX_EQ_FILTER_TYPE_BASS_SHELF:
 		{
-			amxSendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_EQ_FILTER_TYPE,itoa(eqBand),',',filterType")
+			sendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_EQ_FILTER_TYPE,itoa(eqBand),',',filterType")
 		}
     }
 }
@@ -2183,7 +2183,7 @@ define_function dvxSetAudioOutputEqFilterType (dev dvxAudioOutputPort, integer e
  */
 define_function dvxRequestAudioOutputEqGain (dev dvxAudioOutputPort, integer eqBand)
 {
-    amxSendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_EQ_GAIN_REQUEST,itoa(eqBand)")
+    sendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_EQ_GAIN_REQUEST,itoa(eqBand)")
 }
 
 /*
@@ -2198,7 +2198,7 @@ define_function dvxRequestAudioOutputEqGain (dev dvxAudioOutputPort, integer eqB
  */
 define_function dvxSetAudioOutputEqGain (dev dvxAudioOutputPort, integer eqBand, sinteger gain)
 {
-    amxSendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_EQ_GAIN,itoa(eqBand),',',itoa(gain)")
+    sendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_EQ_GAIN,itoa(eqBand),',',itoa(gain)")
 }
 
 /*
@@ -2212,7 +2212,7 @@ define_function dvxSetAudioOutputEqGain (dev dvxAudioOutputPort, integer eqBand,
  */
 define_function dvxRequestAudioOutputEqMode (dev dvxAudioOutputPort)
 {
-    amxSendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_EQ_MODE_REQUEST")
+    sendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_EQ_MODE_REQUEST")
 }
 
 /*
@@ -2239,7 +2239,7 @@ define_function dvxSetAudioOutputEqMode (dev dvxAudioOutputPort, char mode[])
 		case DVX_EQ_MODE_MUSIC:
 		case DVX_EQ_MODE_VOICE:
 		{
-			amxSendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_EQ_MODE,mode")
+			sendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_EQ_MODE,mode")
 		}
     }
 }
@@ -2255,7 +2255,7 @@ define_function dvxSetAudioOutputEqMode (dev dvxAudioOutputPort, char mode[])
  */
 define_function dvxRequestAudioOutputEqQualityFactor (dev dvxAudioOutputPort, integer eqBand)
 {
-    amxSendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_EQ_QUALITY_FACTOR_REQUEST,itoa(eqBand)")
+    sendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_EQ_QUALITY_FACTOR_REQUEST,itoa(eqBand)")
 }
 
 /*
@@ -2277,7 +2277,7 @@ define_function dvxRequestAudioOutputEqQualityFactor (dev dvxAudioOutputPort, in
  */
 define_function dvxSetAudioOutputEqQualityFactor (dev dvxAudioOutputPort, integer eqBand, float qualityFactor)
 {
-    amxSendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_EQ_QUALITY_FACTOR,itoa(eqBand),',',format('%01.1f',qualityFactor)")
+    sendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_EQ_QUALITY_FACTOR,itoa(eqBand),',',format('%01.1f',qualityFactor)")
 }
 
 /*
@@ -2289,7 +2289,7 @@ define_function dvxSetAudioOutputEqQualityFactor (dev dvxAudioOutputPort, intege
  */
 define_function dvxRequestAudioOutputMaximumVolume (dev dvxAudioOutputPort)
 {
-    amxSendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_MAXIMUM_VOLUME_REQUEST")
+    sendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_MAXIMUM_VOLUME_REQUEST")
 }
 
 /*
@@ -2302,7 +2302,7 @@ define_function dvxRequestAudioOutputMaximumVolume (dev dvxAudioOutputPort)
  */
 define_function dvxSetAudioOutputMaximumVolume (dev dvxAudioOutputPort, integer volume)
 {
-    amxSendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_MAXIMUM_VOLUME,itoa(volume)")
+    sendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_MAXIMUM_VOLUME,itoa(volume)")
 }
 
 /*
@@ -2314,7 +2314,7 @@ define_function dvxSetAudioOutputMaximumVolume (dev dvxAudioOutputPort, integer 
  */
 define_function dvxRequestAudioOutputMinimumVolume (dev dvxAudioOutputPort)
 {
-    amxSendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_MINIMUM_VOLUME_REQUEST")
+    sendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_MINIMUM_VOLUME_REQUEST")
 }
 
 /*
@@ -2327,7 +2327,7 @@ define_function dvxRequestAudioOutputMinimumVolume (dev dvxAudioOutputPort)
  */
 define_function dvxSetAudioOutputMinimumVolume (dev dvxAudioOutputPort, integer volume)
 {
-    amxSendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_MINIMUM_VOLUME,itoa(volume)")
+    sendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_MINIMUM_VOLUME,itoa(volume)")
 }
 
 /*
@@ -2339,7 +2339,7 @@ define_function dvxSetAudioOutputMinimumVolume (dev dvxAudioOutputPort, integer 
  */
 define_function dvxRequestAudioOutputMute (dev dvxAudioOutputPort)
 {
-    amxSendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_MUTE_REQUEST")
+    sendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_MUTE_REQUEST")
 }
 
 /*
@@ -2351,7 +2351,7 @@ define_function dvxRequestAudioOutputMute (dev dvxAudioOutputPort)
  */
 define_function dvxEnableAudioOutputMute (dev dvxAudioOutputPort)
 {
-    amxSendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_MUTE,cENABLE")
+    sendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_MUTE,cENABLE")
 }
 
 /*
@@ -2363,7 +2363,7 @@ define_function dvxEnableAudioOutputMute (dev dvxAudioOutputPort)
  */
 define_function dvxDisableAudioOutputMute (dev dvxAudioOutputPort)
 {
-    amxSendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_MUTE,cDISABLE")
+    sendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_MUTE,cDISABLE")
 }
 
 /*
@@ -2375,7 +2375,7 @@ define_function dvxDisableAudioOutputMute (dev dvxAudioOutputPort)
  */
 define_function dvxRequestAudioOutputStereo (dev dvxAudioOutputPort)
 {
-    amxSendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_STEREO_REQUEST")
+    sendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_STEREO_REQUEST")
 }
 
 /*
@@ -2387,7 +2387,7 @@ define_function dvxRequestAudioOutputStereo (dev dvxAudioOutputPort)
  */
 define_function dvxEnableAudioOutputStereo (dev dvxAudioOutputPort)
 {
-    amxSendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_STEREO,cENABLE")
+    sendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_STEREO,cENABLE")
 }
 
 /*
@@ -2399,7 +2399,7 @@ define_function dvxEnableAudioOutputStereo (dev dvxAudioOutputPort)
  */
 define_function dvxDisableAudioOutputStereo (dev dvxAudioOutputPort)
 {
-    amxSendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_STEREO,cDISABLE")
+    sendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_STEREO,cDISABLE")
 }
 
 /*
@@ -2412,7 +2412,7 @@ define_function dvxDisableAudioOutputStereo (dev dvxAudioOutputPort)
  */
 define_function dvxRequestAudioOutputTestTone (dev dvxAudioOutputPort)
 {
-    amxSendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_TEST_TONE_REQUEST")
+    sendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_TEST_TONE_REQUEST")
 }
 
 /*
@@ -2449,7 +2449,7 @@ define_function dvxSetAudioOutputTestTone (dev dvxAudioOutputPort, char testTone
 		case DVX_TEST_TONE_FREQUENCY_PINK_NOISE:
 		case DVX_TEST_TONE_FREQUENCY_WHITE_NOISE:
 		{
-			amxSendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_TEST_TONE,testToneFrequency")
+			sendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_TEST_TONE,testToneFrequency")
 		}
     }
 }
@@ -2463,7 +2463,7 @@ define_function dvxSetAudioOutputTestTone (dev dvxAudioOutputPort, char testTone
  */
 define_function dvxRequestAudioOutputVolume (dev dvxAudioOutputPort)
 {
-    amxSendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_VOLUME_REQUEST")
+    sendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_VOLUME_REQUEST")
 }
 
 /*
@@ -2476,7 +2476,7 @@ define_function dvxRequestAudioOutputVolume (dev dvxAudioOutputPort)
  */
 define_function dvxSetAudioOutputVolume (dev dvxAudioOutputPort, integer volume)
 {
-    amxSendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_VOLUME,itoa(volume)")
+    sendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_VOLUME,itoa(volume)")
 }
 
 /*
@@ -2489,7 +2489,7 @@ define_function dvxSetAudioOutputVolume (dev dvxAudioOutputPort, integer volume)
  */
 define_function dvxRequestAudioOutputHdmiAudio (dev dvxAudioOutputPort)
 {
-    amxSendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_HDMI_AUDIO_REQUEST")
+    sendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_HDMI_AUDIO_REQUEST")
 }
 
 /*
@@ -2518,7 +2518,7 @@ define_function dvxSetAudioOutputHdmiAudio (dev dvxAudioOutputPort, char hdmiAud
 		case DVX_HDMI_AUDIO_OUTPUT_ANALOG_OUT_4:
 		case DVX_HDMI_AUDIO_OUTPUT_INPUT_PASS_THRU:
 		{
-			amxSendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_HDMI_AUDIO,hdmiAudioOutputOption")
+			sendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_HDMI_AUDIO,hdmiAudioOutputOption")
 		}
     }
 }
@@ -2533,7 +2533,7 @@ define_function dvxSetAudioOutputHdmiAudio (dev dvxAudioOutputPort, char hdmiAud
  */
 define_function dvxRequestAudioOutputHdmiEq (dev dvxAudioOutputPort)
 {
-    amxSendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_HDMI_EQ_REQUEST")
+    sendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_HDMI_EQ_REQUEST")
 }
 
 /*
@@ -2545,7 +2545,7 @@ define_function dvxRequestAudioOutputHdmiEq (dev dvxAudioOutputPort)
  */
 define_function dvxEnableAudioOutputHdmiEq (dev dvxAudioOutputPort)
 {
-    amxSendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_HDMI_EQ,cON")
+    sendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_HDMI_EQ,cON")
 }
 
 /*
@@ -2557,7 +2557,7 @@ define_function dvxEnableAudioOutputHdmiEq (dev dvxAudioOutputPort)
  */
 define_function dvxDisableAudioOutputHdmiEq (dev dvxAudioOutputPort)
 {
-    amxSendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_HDMI_EQ,cOFF")
+    sendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_HDMI_EQ,cOFF")
 }
 
 /*
@@ -2570,7 +2570,7 @@ define_function dvxDisableAudioOutputHdmiEq (dev dvxAudioOutputPort)
  */
 define_function dvxRequestAudioOutputSpdifAudio (dev dvxAudioOutputPort)
 {
-    amxSendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_SPDIF_AUDIO_REQUEST")
+    sendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_SPDIF_AUDIO_REQUEST")
 }
 
 /*
@@ -2606,7 +2606,7 @@ define_function dvxSetAudioOutputSpdifAudio (dev dvxAudioOutputPort, char spdifA
 		case DVX_SPDIF_AUDIO_OUTPUT_ANALOG_OUT_3:
 		case DVX_SPDIF_AUDIO_OUTPUT_ANALOG_OUT_4:
 		{
-			amxSendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_SPDIF_AUDIO,spdifAudioOutputOption")
+			sendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_SPDIF_AUDIO,spdifAudioOutputOption")
 		}
     }
 }
@@ -2638,7 +2638,7 @@ define_function dvxRequestAudioOutputMixLevel (dev dvxAudioOutputPort, integer i
 		case DVX_MIX_INPUT_MIC1:
 		case DVX_MIX_INPUT_MIC2:
 		{
-			amxSendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_MIX_LEVEL_REQUEST,itoa(input),',',itoa(output)")
+			sendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_MIX_LEVEL_REQUEST,itoa(input),',',itoa(output)")
 		}
     }
 }
@@ -2671,7 +2671,7 @@ define_function dvxSetAudioOutputMixLevel (dev dvxAudioOutputPort, sinteger mixL
 		case DVX_MIX_INPUT_MIC1:
 		case DVX_MIX_INPUT_MIC2:
 		{
-			amxSendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_MIX_LEVEL,itoa(mixLevel),',',itoa(input),',',itoa(output)")
+			sendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_MIX_LEVEL,itoa(mixLevel),',',itoa(input),',',itoa(output)")
 		}
     }
 }
@@ -2693,7 +2693,7 @@ define_function dvxSetAudioOutputMixLevel (dev dvxAudioOutputPort, sinteger mixL
  */
 define_function dvxRequestAudioMicCompression (dev dvxAudioMicPort)
 {
-    amxSendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_COMPRESSION_REQUEST")
+    sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_COMPRESSION_REQUEST")
 }
 
 /*
@@ -2720,7 +2720,7 @@ define_function dvxSetAudioMicCompression (dev dvxAudioMicPort, char compression
 		case DVX_COMPRESSION_HIGH:
 		case DVX_COMPRESSION_CUSTOM:
 		{
-			amxSendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_COMPRESSION,compressionSetting")
+			sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_COMPRESSION,compressionSetting")
 		}
     }
 }
@@ -2735,7 +2735,7 @@ define_function dvxSetAudioMicCompression (dev dvxAudioMicPort, char compression
  */
 define_function dvxRequestAudioMicCompressionAttack (dev dvxAudioMicPort)
 {
-    amxSendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_COMPRESSION_ATTACK_REQUEST")
+    sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_COMPRESSION_ATTACK_REQUEST")
 }
 
 /*
@@ -2749,7 +2749,7 @@ define_function dvxRequestAudioMicCompressionAttack (dev dvxAudioMicPort)
  */
 define_function dvxSetAudioMicCompressionAttack (dev dvxAudioMicPort, integer attackDuration)
 {
-    amxSendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_COMPRESSION_ATTACK,itoa(attackDuration)")
+    sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_COMPRESSION_ATTACK,itoa(attackDuration)")
 }
 
 /*
@@ -2761,7 +2761,7 @@ define_function dvxSetAudioMicCompressionAttack (dev dvxAudioMicPort, integer at
  */
 define_function dvxRequestAudioMicCompressionRatio (dev dvxAudioMicPort)
 {
-    amxSendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_COMPRESSION_RATIO_REQUEST")
+    sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_COMPRESSION_RATIO_REQUEST")
 }
 
 /*
@@ -2774,7 +2774,7 @@ define_function dvxRequestAudioMicCompressionRatio (dev dvxAudioMicPort)
  */
 define_function dvxSetAudioMicRatio (dev dvxAudioMicPort, integer ratio)
 {
-    amxSendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_COMPRESSION_RATIO,itoa(ratio)")
+    sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_COMPRESSION_RATIO,itoa(ratio)")
 }
 
 /*
@@ -2787,7 +2787,7 @@ define_function dvxSetAudioMicRatio (dev dvxAudioMicPort, integer ratio)
  */
 define_function dvxRequestAudioMicCompressionRelease (dev dvxAudioMicPort)
 {
-    amxSendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_COMPRESSION_RELEASE_REQUEST")
+    sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_COMPRESSION_RELEASE_REQUEST")
 }
 
 /*
@@ -2801,7 +2801,7 @@ define_function dvxRequestAudioMicCompressionRelease (dev dvxAudioMicPort)
  */
 define_function dvxSetAudioMicRelease (dev dvxAudioMicPort, integer releaseDuration)
 {
-    amxSendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_COMPRESSION_RELEASE,itoa(releaseDuration)")
+    sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_COMPRESSION_RELEASE,itoa(releaseDuration)")
 }
 
 /*
@@ -2814,7 +2814,7 @@ define_function dvxSetAudioMicRelease (dev dvxAudioMicPort, integer releaseDurat
  */
 define_function dvxRequestAudioMicCompressionThreshold (dev dvxAudioMicPort)
 {
-    amxSendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_COMPRESSION_THRESHOLD_REQUEST")
+    sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_COMPRESSION_THRESHOLD_REQUEST")
 }
 
 /*
@@ -2827,7 +2827,7 @@ define_function dvxRequestAudioMicCompressionThreshold (dev dvxAudioMicPort)
  */
 define_function dvxSetAudioMicThreshold (dev dvxAudioMicPort, sinteger threshold)
 {
-    amxSendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_COMPRESSION_THRESHOLD,itoa(threshold)")
+    sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_COMPRESSION_THRESHOLD,itoa(threshold)")
 }
 
 /*
@@ -2841,7 +2841,7 @@ define_function dvxSetAudioMicThreshold (dev dvxAudioMicPort, sinteger threshold
  */
 define_function dvxSetAudioMicDuckingAttack (dev dvxAudioMicPort, integer attackDuration)
 {
-    amxSendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_DUCKING_ATTACK,itoa(attackDuration)")
+    sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_DUCKING_ATTACK,itoa(attackDuration)")
 }
 
 /*
@@ -2855,7 +2855,7 @@ define_function dvxSetAudioMicDuckingAttack (dev dvxAudioMicPort, integer attack
  */
 define_function dvxSetAudioMicDuckingHold (dev dvxAudioMicPort, integer holdDuration)
 {
-    amxSendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_DUCKING_HOLD,itoa(holdDuration)")
+    sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_DUCKING_HOLD,itoa(holdDuration)")
 }
 
 /*
@@ -2868,7 +2868,7 @@ define_function dvxSetAudioMicDuckingHold (dev dvxAudioMicPort, integer holdDura
  */
 define_function dvxSetAudioMicDuckingLevel (dev dvxAudioMicPort, integer duckingLevel)
 {
-    amxSendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_DUCKING_LEVEL,itoa(duckingLevel)")
+    sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_DUCKING_LEVEL,itoa(duckingLevel)")
 }
 
 /*
@@ -2882,18 +2882,18 @@ define_function dvxSetAudioMicDuckingLevel (dev dvxAudioMicPort, integer ducking
  */
 define_function dvxSetAudioMicDuckingRelease (dev dvxAudioMicPort, integer releaseDuration)
 {
-    amxSendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_DUCKING_RELEASE,itoa(releaseDuration)")
+    sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_DUCKING_RELEASE,itoa(releaseDuration)")
 }
 
 /*	// INVALID - DOCUMENTATION WAS INCORRECT 
 define_function dvxRequestAudioMicEq (dev dvxAudioMicPort, integer nBand)
 {
-    amxSendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_EQ_REQUEST,itoa(nBand)")
+    sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_EQ_REQUEST,itoa(nBand)")
 }
 
 define_function dvxSetAudioMicEq (dev dvxAudioMicPort, integer nBand, sinteger snValue)
 {
-    amxSendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_EQ,itoa(nBand),',',itoa(snValue)")
+    sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_EQ,itoa(nBand),',',itoa(snValue)")
 }
 */
 
@@ -2908,7 +2908,7 @@ define_function dvxSetAudioMicEq (dev dvxAudioMicPort, integer nBand, sinteger s
  */
 define_function dvxRequestAudioMicEqCenterFrequency (dev dvxAudioMicPort, integer eqBand)
 {
-    amxSendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_EQ_CENTER_FREQUENCY_REQUEST,itoa(eqBand)")
+    sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_EQ_CENTER_FREQUENCY_REQUEST,itoa(eqBand)")
 }
 
 /*
@@ -2923,7 +2923,7 @@ define_function dvxRequestAudioMicEqCenterFrequency (dev dvxAudioMicPort, intege
  */
 define_function dvxSetAudioMicEqCenterFrequency (dev dvxAudioMicPort, integer eqBand, sinteger frequency)
 {
-    amxSendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_EQ_CENTER_FREQUENCY,itoa(eqBand),',',itoa(frequency)")
+    sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_EQ_CENTER_FREQUENCY,itoa(eqBand),',',itoa(frequency)")
 }
 
 /*
@@ -2937,7 +2937,7 @@ define_function dvxSetAudioMicEqCenterFrequency (dev dvxAudioMicPort, integer eq
  */
 define_function dvxRequestAudioMicEqFilterType (dev dvxAudioMicPort, integer eqBand)
 {
-    amxSendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_EQ_FILTER_TYPE_REQUEST,itoa(eqBand)")
+    sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_EQ_FILTER_TYPE_REQUEST,itoa(eqBand)")
 }
 
 /*
@@ -2970,7 +2970,7 @@ define_function dvxSetAudioMicEqFilterType (dev dvxAudioMicPort, integer eqBand,
 		case DVX_EQ_FILTER_TYPE_TREBLE_SHELF:
 		case DVX_EQ_FILTER_TYPE_BASS_SHELF:
 		{
-			amxSendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_EQ_FILTER_TYPE,itoa(eqBand),',',filterType")
+			sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_EQ_FILTER_TYPE,itoa(eqBand),',',filterType")
 		}
     }
 }
@@ -2986,7 +2986,7 @@ define_function dvxSetAudioMicEqFilterType (dev dvxAudioMicPort, integer eqBand,
  */
 define_function dvxRequestAudioMicEqGain (dev dvxAudioMicPort, integer eqBand)
 {
-    amxSendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_EQ_GAIN_REQUEST,itoa(eqBand)")
+    sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_EQ_GAIN_REQUEST,itoa(eqBand)")
 }
 
 /*
@@ -3001,7 +3001,7 @@ define_function dvxRequestAudioMicEqGain (dev dvxAudioMicPort, integer eqBand)
  */
 define_function dvxSetAudioMicEqGain (dev dvxAudioMicPort, integer eqBand, sinteger gain)
 {
-    amxSendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_EQ_GAIN,itoa(eqBand),',',itoa(gain)")
+    sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_EQ_GAIN,itoa(eqBand),',',itoa(gain)")
 }
 
 /*
@@ -3015,7 +3015,7 @@ define_function dvxSetAudioMicEqGain (dev dvxAudioMicPort, integer eqBand, sinte
  */
 define_function dvxRequestAudioMicEqQualityFactor (dev dvxAudioMicPort, integer eqBand)
 {
-    amxSendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_EQ_QUALITY_FACTOR_REQUEST,itoa(eqBand)")
+    sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_EQ_QUALITY_FACTOR_REQUEST,itoa(eqBand)")
 }
 
 /*
@@ -3030,7 +3030,7 @@ define_function dvxRequestAudioMicEqQualityFactor (dev dvxAudioMicPort, integer 
  */
 define_function dvxSetAudioMicEqQualityFactor (dev dvxAudioMicPort, integer eqBand, float qualityFactor)
 {
-    amxSendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_EQ_QUALITY_FACTOR,itoa(eqBand),',',format('%01.1f',qualityFactor)")
+    sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_EQ_QUALITY_FACTOR,itoa(eqBand),',',format('%01.1f',qualityFactor)")
 }
 
 /*
@@ -3042,7 +3042,7 @@ define_function dvxSetAudioMicEqQualityFactor (dev dvxAudioMicPort, integer eqBa
  */
 define_function dvxRequestAudioMicGain (dev dvxAudioMicPort)
 {
-    amxSendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_GAIN_REQUEST")
+    sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_GAIN_REQUEST")
 }
 
 /*
@@ -3055,7 +3055,7 @@ define_function dvxRequestAudioMicGain (dev dvxAudioMicPort)
  */
 define_function dvxSetAudioMicGain (dev dvxAudioMicPort, sinteger gain)
 {
-    amxSendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_GAIN,itoa(gain)")
+    sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_GAIN,itoa(gain)")
 }
 
 /*
@@ -3067,7 +3067,7 @@ define_function dvxSetAudioMicGain (dev dvxAudioMicPort, sinteger gain)
  */
 define_function dvxRequestAudioMicGating (dev dvxAudioMicPort)
 {
-    amxSendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_GATING_REQUEST")
+    sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_GATING_REQUEST")
 }
 
 /*
@@ -3094,7 +3094,7 @@ define_function dvxSetAudioMicGating (dev dvxAudioMicPort, char gatingSetting[])
 		case DVX_GATING_HIGH:
 		case DVX_GATING_CUSTOM:
 		{
-			amxSendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_GATING,gatingSetting")
+			sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_GATING,gatingSetting")
 		}
     }
 }
@@ -3109,7 +3109,7 @@ define_function dvxSetAudioMicGating (dev dvxAudioMicPort, char gatingSetting[])
  */
 define_function dvxRequestAudioMicGatingAttack (dev dvxAudioMicPort)
 {
-    amxSendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_GATING_ATTACK_REQUEST")
+    sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_GATING_ATTACK_REQUEST")
 }
 
 /*
@@ -3123,7 +3123,7 @@ define_function dvxRequestAudioMicGatingAttack (dev dvxAudioMicPort)
  */
 define_function dvxSetAudioMicGatingAttack (dev dvxAudioMicPort, integer attackDuration)
 {
-    amxSendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_GATING_ATTACK,itoa(attackDuration)")
+    sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_GATING_ATTACK,itoa(attackDuration)")
 }
 
 /*
@@ -3135,7 +3135,7 @@ define_function dvxSetAudioMicGatingAttack (dev dvxAudioMicPort, integer attackD
  */
 define_function dvxRequestAudioMicGatingDepth (dev dvxAudioMicPort)
 {
-    amxSendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_GATING_DEPTH_REQUEST")
+    sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_GATING_DEPTH_REQUEST")
 }
 
 /*
@@ -3148,7 +3148,7 @@ define_function dvxRequestAudioMicGatingDepth (dev dvxAudioMicPort)
  */
 define_function dvxSetAudioMicGatingDepth (dev dvxAudioMicPort, integer depth)
 {
-    amxSendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_GATING_DEPTH,itoa(depth)")
+    sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_GATING_DEPTH,itoa(depth)")
 }
 
 /*
@@ -3161,7 +3161,7 @@ define_function dvxSetAudioMicGatingDepth (dev dvxAudioMicPort, integer depth)
  */
 define_function dvxRequestAudioMicGatingHold (dev dvxAudioMicPort)
 {
-    amxSendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_GATING_HOLD_REQUEST")
+    sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_GATING_HOLD_REQUEST")
 }
 
 /*
@@ -3175,7 +3175,7 @@ define_function dvxRequestAudioMicGatingHold (dev dvxAudioMicPort)
  */
 define_function dvxSetAudioMicGatingHold (dev dvxAudioMicPort, integer holdDuration)
 {
-    amxSendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_GATING_HOLD,itoa(holdDuration)")
+    sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_GATING_HOLD,itoa(holdDuration)")
 }
 
 /*
@@ -3188,7 +3188,7 @@ define_function dvxSetAudioMicGatingHold (dev dvxAudioMicPort, integer holdDurat
  */
 define_function dvxRequestAudioMicGatingRelease (dev dvxAudioMicPort)
 {
-    amxSendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_GATING_RELEASE_REQUEST")
+    sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_GATING_RELEASE_REQUEST")
 }
 
 /*
@@ -3202,7 +3202,7 @@ define_function dvxRequestAudioMicGatingRelease (dev dvxAudioMicPort)
  */
 define_function dvxSetAudioMicGatingRelease (dev dvxAudioMicPort, integer releaseDuration)
 {
-    amxSendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_GATING_RELEASE,itoa(releaseDuration)")
+    sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_GATING_RELEASE,itoa(releaseDuration)")
 }
 
 /*
@@ -3214,7 +3214,7 @@ define_function dvxSetAudioMicGatingRelease (dev dvxAudioMicPort, integer releas
  */
 define_function dvxRequestAudioMicGatingTheshold (dev dvxAudioMicPort)
 {
-    amxSendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_GATING_THRESHOLD_REQUEST")
+    sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_GATING_THRESHOLD_REQUEST")
 }
 
 /*
@@ -3227,7 +3227,7 @@ define_function dvxRequestAudioMicGatingTheshold (dev dvxAudioMicPort)
  */
 define_function dvxSetAudioMicGatingThreshold (dev dvxAudioMicPort, sinteger threshold)
 {
-    amxSendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_GATING_THRESHOLD,itoa(threshold)")
+    sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_GATING_THRESHOLD,itoa(threshold)")
 }
 
 /*
@@ -3239,7 +3239,7 @@ define_function dvxSetAudioMicGatingThreshold (dev dvxAudioMicPort, sinteger thr
  */
 define_function dvxRequestAudioMicLimiter (dev dvxAudioMicPort)
 {
-    amxSendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_LIMITER_REQUEST")
+    sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_LIMITER_REQUEST")
 }
 
 /*
@@ -3266,7 +3266,7 @@ define_function dvxSetAudioMicLimiter (dev dvxAudioMicPort, char limiterSetting[
 		case DVX_LIMITER_HIGH:
 		case DVX_LIMITER_CUSTOM:
 		{
-			amxSendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_LIMITER,limiterSetting")
+			sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_LIMITER,limiterSetting")
 		}
     }
 }
@@ -3281,7 +3281,7 @@ define_function dvxSetAudioMicLimiter (dev dvxAudioMicPort, char limiterSetting[
  */
 define_function dvxRequestAudioMicLimiterAttack (dev dvxAudioMicPort)
 {
-    amxSendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_LIMITER_ATTACK_REQUEST")
+    sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_LIMITER_ATTACK_REQUEST")
 }
 
 /*
@@ -3295,7 +3295,7 @@ define_function dvxRequestAudioMicLimiterAttack (dev dvxAudioMicPort)
  */
 define_function dvxSetAudioMicLimiterAttack (dev dvxAudioMicPort, integer attackDuration)
 {
-    amxSendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_LIMITER_ATTACK,itoa(attackDuration)")
+    sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_LIMITER_ATTACK,itoa(attackDuration)")
 }
 
 /*
@@ -3308,7 +3308,7 @@ define_function dvxSetAudioMicLimiterAttack (dev dvxAudioMicPort, integer attack
  */
 define_function dvxRequestAudioMicLimiterRelease (dev dvxAudioMicPort)
 {
-    amxSendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_LIMITER_RELEASE_REQUEST")
+    sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_LIMITER_RELEASE_REQUEST")
 }
 
 /*
@@ -3322,7 +3322,7 @@ define_function dvxRequestAudioMicLimiterRelease (dev dvxAudioMicPort)
  */
 define_function dvxSetAudioMicLimiterRelease (dev dvxAudioMicPort, integer releaseDuration)
 {
-    amxSendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_LIMITER_RELEASE,itoa(releaseDuration)")
+    sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_LIMITER_RELEASE,itoa(releaseDuration)")
 }
 
 /*
@@ -3335,7 +3335,7 @@ define_function dvxSetAudioMicLimiterRelease (dev dvxAudioMicPort, integer relea
  */
 define_function dvxRequestAudioMicLimiterThreshold (dev dvxAudioMicPort)
 {
-    amxSendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_LIMITER_THRESHOLD_REQUEST")
+    sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_LIMITER_THRESHOLD_REQUEST")
 }
 
 /*
@@ -3348,7 +3348,7 @@ define_function dvxRequestAudioMicLimiterThreshold (dev dvxAudioMicPort)
  */
 define_function dvxSetAudioMicLimiterThreshold (dev dvxAudioMicPort, sinteger threshold)
 {
-    amxSendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_LIMITER_THRESHOLD,itoa(threshold)")
+    sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_LIMITER_THRESHOLD,itoa(threshold)")
 }
 
 /*
@@ -3360,7 +3360,7 @@ define_function dvxSetAudioMicLimiterThreshold (dev dvxAudioMicPort, sinteger th
  */
 define_function dvxRequestAudioMicOn (dev dvxAudioMicPort)
 {
-    amxSendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_ON_REQUEST")
+    sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_ON_REQUEST")
 }
 
 /*
@@ -3372,7 +3372,7 @@ define_function dvxRequestAudioMicOn (dev dvxAudioMicPort)
  */
 define_function dvxEnableAudioMicOn (dev dvxAudioMicPort)
 {
-    amxSendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_ON,cON")
+    sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_ON,cON")
 }
 
 /*
@@ -3384,7 +3384,7 @@ define_function dvxEnableAudioMicOn (dev dvxAudioMicPort)
  */
 define_function dvxDisableAudioMicOn (dev dvxAudioMicPort)
 {
-    amxSendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_ON,cOFF")
+    sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_ON,cOFF")
 }
 
 /*
@@ -3396,7 +3396,7 @@ define_function dvxDisableAudioMicOn (dev dvxAudioMicPort)
  */
 define_function dvxRequestAudioMicPhantomPower (dev dvxAudioMicPort)
 {
-    amxSendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_PHANTOM_POWER_REQUEST")
+    sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_PHANTOM_POWER_REQUEST")
 }
 
 /*
@@ -3408,7 +3408,7 @@ define_function dvxRequestAudioMicPhantomPower (dev dvxAudioMicPort)
  */
 define_function dvxEnableAudioMicPhantomPower (dev dvxAudioMicPort)
 {
-    amxSendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_PHANTOM_POWER,cON")
+    sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_PHANTOM_POWER,cON")
 }
 
 /*
@@ -3420,7 +3420,7 @@ define_function dvxEnableAudioMicPhantomPower (dev dvxAudioMicPort)
  */
 define_function dvxDisableAudioMicPhantomPower (dev dvxAudioMicPort)
 {
-    amxSendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_PHANTOM_POWER,cOFF")
+    sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_PHANTOM_POWER,cOFF")
 }
 
 /*
@@ -3433,7 +3433,7 @@ define_function dvxDisableAudioMicPhantomPower (dev dvxAudioMicPort)
  */
 define_function dvxRequestAudioMicPreampGain (dev dvxAudioMicPort)
 {
-    amxSendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_PREAMP_GAIN_REQUEST")
+    sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_PREAMP_GAIN_REQUEST")
 }
 
 /*
@@ -3446,7 +3446,7 @@ define_function dvxRequestAudioMicPreampGain (dev dvxAudioMicPort)
  */
 define_function dvxSetAudioMicPreampGain (dev dvxAudioMicPort, integer gain)
 {
-    amxSendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_PREAMP_GAIN,itoa(gain)")
+    sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_PREAMP_GAIN,itoa(gain)")
 }
 
 /*
@@ -3458,7 +3458,7 @@ define_function dvxSetAudioMicPreampGain (dev dvxAudioMicPort, integer gain)
  */
 define_function dvxRequestAudioMicStereo (dev dvxAudioMicPort)
 {
-    amxSendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_STEREO_REQUEST")
+    sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_STEREO_REQUEST")
 }
 
 /*
@@ -3479,7 +3479,7 @@ define_function dvxSetAudioMicStereo (dev dvxAudioMicPort, char micType[])
 		case DVX_MIC_TYPE_DUAL_MONO:
 		case DVX_MIC_TYPE_SINGLE_STEREO:
 		{
-			amxSendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_STEREO,micType")
+			sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_STEREO,micType")
 		}
     }
 }
@@ -3501,7 +3501,7 @@ define_function dvxSetAudioMicStereo (dev dvxAudioMicPort, char micType[])
  */
 define_function dvxEnableStanbyMode (dev dvxPort1)
 {
-    amxChannelOn (dvxPort1, DVX_CHANNEL_STANDBY_MODE)
+    channelOn (dvxPort1, DVX_CHANNEL_STANDBY_MODE)
 }
 
 /*
@@ -3513,7 +3513,7 @@ define_function dvxEnableStanbyMode (dev dvxPort1)
  */
 define_function dvxDisableStanbyMode (dev dvxPort1)
 {
-    amxChannelOff (dvxPort1, DVX_CHANNEL_STANDBY_MODE)
+    channelOff (dvxPort1, DVX_CHANNEL_STANDBY_MODE)
 }
 
 
@@ -3537,7 +3537,7 @@ define_function dvxCycleOutputSource (dev dvxOutputPort)
     // NOTE: if the video and audio sources on the same output number are different prior to the cycle
     // then the audio source input number will be sent to the same input number as the video input source
     // after the cycle.
-    amxChannelPulse (dvxOutputPort, DVX_CHANNEL_OUTPUT_SOURCE_CYCLE)
+    channelPulse (dvxOutputPort, DVX_CHANNEL_OUTPUT_SOURCE_CYCLE)
 }
 
 
@@ -3557,7 +3557,7 @@ define_function dvxCycleOutputSource (dev dvxOutputPort)
  */
 define_function dvxEnableAudioInputGainRampUp (dev dvxAudioInputPort)
 {
-    amxChannelOn (dvxAudioInputPort, DVX_CHANNEL_AUDIO_INPUT_GAIN_UP)
+    channelOn (dvxAudioInputPort, DVX_CHANNEL_AUDIO_INPUT_GAIN_UP)
 }
 
 /*
@@ -3569,7 +3569,7 @@ define_function dvxEnableAudioInputGainRampUp (dev dvxAudioInputPort)
  */
 define_function dvxDisableAudioInputGainRampUp (dev dvxAudioInputPort)
 {
-    amxChannelOff (dvxAudioInputPort, DVX_CHANNEL_AUDIO_INPUT_GAIN_UP)
+    channelOff (dvxAudioInputPort, DVX_CHANNEL_AUDIO_INPUT_GAIN_UP)
 }
 
 /*
@@ -3581,7 +3581,7 @@ define_function dvxDisableAudioInputGainRampUp (dev dvxAudioInputPort)
  */
 define_function dvxEnableAudioInputGainRampDown (dev dvxAudioInputPort)
 {
-    amxChannelOn (dvxAudioInputPort, DVX_CHANNEL_AUDIO_INPUT_GAIN_DOWN)
+    channelOn (dvxAudioInputPort, DVX_CHANNEL_AUDIO_INPUT_GAIN_DOWN)
 }
 
 /*
@@ -3593,7 +3593,7 @@ define_function dvxEnableAudioInputGainRampDown (dev dvxAudioInputPort)
  */
 define_function dvxDisableAudioInputGainRampDown (dev dvxAudioInputPort)
 {
-    amxChannelOff (dvxAudioInputPort, DVX_CHANNEL_AUDIO_INPUT_GAIN_DOWN)
+    channelOff (dvxAudioInputPort, DVX_CHANNEL_AUDIO_INPUT_GAIN_DOWN)
 }
 
 /*
@@ -3605,7 +3605,7 @@ define_function dvxDisableAudioInputGainRampDown (dev dvxAudioInputPort)
  */
 define_function dvxEnableAudioInputGainMute (dev dvxAudioInputPort)
 {
-    amxChannelOn (dvxAudioInputPort, DVX_CHANNEL_AUDIO_INPUT_GAIN_MUTE)
+    channelOn (dvxAudioInputPort, DVX_CHANNEL_AUDIO_INPUT_GAIN_MUTE)
 }
 
 /*
@@ -3617,7 +3617,7 @@ define_function dvxEnableAudioInputGainMute (dev dvxAudioInputPort)
  */
 define_function dvxDisableAudioInputGainMute (dev dvxAudioInputPort)
 {
-    amxChannelOff (dvxAudioInputPort, DVX_CHANNEL_AUDIO_INPUT_GAIN_MUTE)
+    channelOff (dvxAudioInputPort, DVX_CHANNEL_AUDIO_INPUT_GAIN_MUTE)
 }
 
 /*
@@ -3629,7 +3629,7 @@ define_function dvxDisableAudioInputGainMute (dev dvxAudioInputPort)
  */
 define_function dvxCycleAudioInputGain (dev dvxAudioInputPort)
 {
-    amxChannelPulse (dvxAudioInputPort, DVX_CHANNEL_AUDIO_INPUT_GAIN_CYCLE)
+    channelPulse (dvxAudioInputPort, DVX_CHANNEL_AUDIO_INPUT_GAIN_CYCLE)
 }
 
 
@@ -3649,7 +3649,7 @@ define_function dvxCycleAudioInputGain (dev dvxAudioInputPort)
  */
 define_function dvxCycleAudioOutputVolumeMute (dev dvxAudioOutputPort)
 {
-    amxChannelPulse (dvxAudioOutputPort, DVX_CHANNEL_AUDIO_OUTPUT_VOLUME_MUTE_CYCLE)
+    channelPulse (dvxAudioOutputPort, DVX_CHANNEL_AUDIO_OUTPUT_VOLUME_MUTE_CYCLE)
 }
 
 /*
@@ -3661,7 +3661,7 @@ define_function dvxCycleAudioOutputVolumeMute (dev dvxAudioOutputPort)
  */
 define_function dvxEnableAudioOutputVolumeRampUp (dev dvxAudioOutputPort)
 {
-    amxChannelOn (dvxAudioOutputPort, DVX_CHANNEL_AUDIO_OUTPUT_VOLUME_UP)
+    channelOn (dvxAudioOutputPort, DVX_CHANNEL_AUDIO_OUTPUT_VOLUME_UP)
 }
 
 /*
@@ -3673,7 +3673,7 @@ define_function dvxEnableAudioOutputVolumeRampUp (dev dvxAudioOutputPort)
  */
 define_function dvxDisableAudioOutputVolumeRampUp (dev dvxAudioOutputPort)
 {
-    amxChannelOff (dvxAudioOutputPort, DVX_CHANNEL_AUDIO_OUTPUT_VOLUME_UP)
+    channelOff (dvxAudioOutputPort, DVX_CHANNEL_AUDIO_OUTPUT_VOLUME_UP)
 }
 
 /*
@@ -3685,7 +3685,7 @@ define_function dvxDisableAudioOutputVolumeRampUp (dev dvxAudioOutputPort)
  */
 define_function dvxEnableAudioOutputVolumeRampDown (dev dvxAudioOutputPort)
 {
-    amxChannelOn (dvxAudioOutputPort, DVX_CHANNEL_AUDIO_OUTPUT_VOLUME_DOWN)
+    channelOn (dvxAudioOutputPort, DVX_CHANNEL_AUDIO_OUTPUT_VOLUME_DOWN)
 }
 
 /*
@@ -3697,7 +3697,7 @@ define_function dvxEnableAudioOutputVolumeRampDown (dev dvxAudioOutputPort)
  */
 define_function dvxDisableAudioOutputVolumeRampDown (dev dvxAudioOutputPort)
 {
-    amxChannelOn (dvxAudioOutputPort, DVX_CHANNEL_AUDIO_OUTPUT_VOLUME_DOWN)
+    channelOn (dvxAudioOutputPort, DVX_CHANNEL_AUDIO_OUTPUT_VOLUME_DOWN)
 }
 
 /*
@@ -3722,7 +3722,7 @@ define_function dvxDisableAudioOutputVolumeRampDown (dev dvxAudioOutputPort)
  */
 define_function dvxEnableVideoInputPhaseRampUp (dev dvxVideoInputPort)
 {
-    amxChannelOn (dvxVideoInputPort, DVX_CHANNEL_VIDEO_INPUT_PHASE_RAMP_UP)
+    channelOn (dvxVideoInputPort, DVX_CHANNEL_VIDEO_INPUT_PHASE_RAMP_UP)
 }
 
 /*
@@ -3734,7 +3734,7 @@ define_function dvxEnableVideoInputPhaseRampUp (dev dvxVideoInputPort)
  */
 define_function dvxDisableVideoInputPhaseRampUp (dev dvxVideoInputPort)
 {
-    amxChannelOff (dvxVideoInputPort, DVX_CHANNEL_VIDEO_INPUT_PHASE_RAMP_UP)
+    channelOff (dvxVideoInputPort, DVX_CHANNEL_VIDEO_INPUT_PHASE_RAMP_UP)
 }
 
 /*
@@ -3746,7 +3746,7 @@ define_function dvxDisableVideoInputPhaseRampUp (dev dvxVideoInputPort)
  */
 define_function dvxEnableVideoInputPhaseRampDown (dev dvxVideoInputPort)
 {
-    amxChannelOn (dvxVideoInputPort, DVX_CHANNEL_VIDEO_INPUT_PHASE_RAMP_DOWN)
+    channelOn (dvxVideoInputPort, DVX_CHANNEL_VIDEO_INPUT_PHASE_RAMP_DOWN)
 }
 
 /*
@@ -3758,7 +3758,7 @@ define_function dvxEnableVideoInputPhaseRampDown (dev dvxVideoInputPort)
  */
 define_function dvxDisableVideoInputPhaseRampDown (dev dvxVideoInputPort)
 {
-    amxChannelOff (dvxVideoInputPort, DVX_CHANNEL_VIDEO_INPUT_PHASE_RAMP_DOWN)
+    channelOff (dvxVideoInputPort, DVX_CHANNEL_VIDEO_INPUT_PHASE_RAMP_DOWN)
 }
 
 /*
@@ -3771,7 +3771,7 @@ define_function dvxDisableVideoInputPhaseRampDown (dev dvxVideoInputPort)
  */
 define_function dvxEnableVideoInputVerticalShiftRampUp (dev dvxVideoInputPort)
 {
-    amxChannelOn (dvxVideoInputPort, DVX_CHANNEL_VIDEO_INPUT_VERTICAL_SHIFT_RAMP_UP)
+    channelOn (dvxVideoInputPort, DVX_CHANNEL_VIDEO_INPUT_VERTICAL_SHIFT_RAMP_UP)
 }
 
 /*
@@ -3784,7 +3784,7 @@ define_function dvxEnableVideoInputVerticalShiftRampUp (dev dvxVideoInputPort)
  */
 define_function dvxDisableVideoInputVerticalShiftRampUp (dev dvxVideoInputPort)
 {
-    amxChannelOff (dvxVideoInputPort, DVX_CHANNEL_VIDEO_INPUT_VERTICAL_SHIFT_RAMP_UP)
+    channelOff (dvxVideoInputPort, DVX_CHANNEL_VIDEO_INPUT_VERTICAL_SHIFT_RAMP_UP)
 }
 
 /*
@@ -3797,7 +3797,7 @@ define_function dvxDisableVideoInputVerticalShiftRampUp (dev dvxVideoInputPort)
  */
 define_function dvxEnableVideoInputVerticalShiftRampDown (dev dvxVideoInputPort)
 {
-    amxChannelOn (dvxVideoInputPort, DVX_CHANNEL_VIDEO_INPUT_VERTICAL_SHIFT_RAMP_DOWN)
+    channelOn (dvxVideoInputPort, DVX_CHANNEL_VIDEO_INPUT_VERTICAL_SHIFT_RAMP_DOWN)
 }
 
 /*
@@ -3810,7 +3810,7 @@ define_function dvxEnableVideoInputVerticalShiftRampDown (dev dvxVideoInputPort)
  */
 define_function dvxDisableVideoInputVerticalShiftRampDown (dev dvxVideoInputPort)
 {
-    amxChannelOff (dvxVideoInputPort, DVX_CHANNEL_VIDEO_INPUT_VERTICAL_SHIFT_RAMP_DOWN)
+    channelOff (dvxVideoInputPort, DVX_CHANNEL_VIDEO_INPUT_VERTICAL_SHIFT_RAMP_DOWN)
 }
 
 /*
@@ -3822,7 +3822,7 @@ define_function dvxDisableVideoInputVerticalShiftRampDown (dev dvxVideoInputPort
  */
 define_function dvxEnableVideoInputBrightnessRampUp (dev dvxVideoInputPort)
 {
-    amxChannelOn (dvxVideoInputPort, DVX_CHANNEL_VIDEO_INPUT_BRIGHTNESS_RAMP_UP)
+    channelOn (dvxVideoInputPort, DVX_CHANNEL_VIDEO_INPUT_BRIGHTNESS_RAMP_UP)
 }
 
 /*
@@ -3834,7 +3834,7 @@ define_function dvxEnableVideoInputBrightnessRampUp (dev dvxVideoInputPort)
  */
 define_function dvxDisableVideoInputBrightnessRampUp (dev dvxVideoInputPort)
 {
-    amxChannelOff (dvxVideoInputPort, DVX_CHANNEL_VIDEO_INPUT_BRIGHTNESS_RAMP_UP)
+    channelOff (dvxVideoInputPort, DVX_CHANNEL_VIDEO_INPUT_BRIGHTNESS_RAMP_UP)
 }
 
 /*
@@ -3846,7 +3846,7 @@ define_function dvxDisableVideoInputBrightnessRampUp (dev dvxVideoInputPort)
  */
 define_function dvxEnableVideoInputBrightnessRampDown (dev dvxVideoInputPort)
 {
-    amxChannelOn (dvxVideoInputPort, DVX_CHANNEL_VIDEO_INPUT_BRIGHTNESS_RAMP_DOWN)
+    channelOn (dvxVideoInputPort, DVX_CHANNEL_VIDEO_INPUT_BRIGHTNESS_RAMP_DOWN)
 }
 
 /*
@@ -3858,7 +3858,7 @@ define_function dvxEnableVideoInputBrightnessRampDown (dev dvxVideoInputPort)
  */
 define_function dvxDisableVideoInputBrightnessRampDown (dev dvxVideoInputPort)
 {
-    amxChannelOff (dvxVideoInputPort, DVX_CHANNEL_VIDEO_INPUT_BRIGHTNESS_RAMP_DOWN)
+    channelOff (dvxVideoInputPort, DVX_CHANNEL_VIDEO_INPUT_BRIGHTNESS_RAMP_DOWN)
 }
 
 /*
@@ -3870,7 +3870,7 @@ define_function dvxDisableVideoInputBrightnessRampDown (dev dvxVideoInputPort)
  */
 define_function dvxEnableVideoInputSaturationRampUp (dev dvxVideoInputPort)
 {
-    amxChannelOn (dvxVideoInputPort, DVX_CHANNEL_VIDEO_INPUT_SATURATION_RAMP_UP)
+    channelOn (dvxVideoInputPort, DVX_CHANNEL_VIDEO_INPUT_SATURATION_RAMP_UP)
 }
 
 /*
@@ -3882,7 +3882,7 @@ define_function dvxEnableVideoInputSaturationRampUp (dev dvxVideoInputPort)
  */
 define_function dvxDisableVideoInputSaturationRampUp (dev dvxVideoInputPort)
 {
-    amxChannelOff (dvxVideoInputPort, DVX_CHANNEL_VIDEO_INPUT_SATURATION_RAMP_UP)
+    channelOff (dvxVideoInputPort, DVX_CHANNEL_VIDEO_INPUT_SATURATION_RAMP_UP)
 }
 
 /*
@@ -3894,7 +3894,7 @@ define_function dvxDisableVideoInputSaturationRampUp (dev dvxVideoInputPort)
  */
 define_function dvxEnableVideoInputSaturationRampDown (dev dvxVideoInputPort)
 {
-    amxChannelOn (dvxVideoInputPort, DVX_CHANNEL_VIDEO_INPUT_SATURATION_RAMP_DOWN)
+    channelOn (dvxVideoInputPort, DVX_CHANNEL_VIDEO_INPUT_SATURATION_RAMP_DOWN)
 }
 
 /*
@@ -3906,7 +3906,7 @@ define_function dvxEnableVideoInputSaturationRampDown (dev dvxVideoInputPort)
  */
 define_function dvxDisableVideoInputSaturationRampDown (dev dvxVideoInputPort)
 {
-    amxChannelOff (dvxVideoInputPort, DVX_CHANNEL_VIDEO_INPUT_SATURATION_RAMP_DOWN)
+    channelOff (dvxVideoInputPort, DVX_CHANNEL_VIDEO_INPUT_SATURATION_RAMP_DOWN)
 }
 
 /*
@@ -3918,7 +3918,7 @@ define_function dvxDisableVideoInputSaturationRampDown (dev dvxVideoInputPort)
  */
 define_function dvxEnableVideoInputContrastRampUp (dev dvxVideoInputPort)
 {
-    amxChannelOn (dvxVideoInputPort, DVX_CHANNEL_VIDEO_INPUT_CONTRAST_RAMP_UP)
+    channelOn (dvxVideoInputPort, DVX_CHANNEL_VIDEO_INPUT_CONTRAST_RAMP_UP)
 }
 
 /*
@@ -3930,7 +3930,7 @@ define_function dvxEnableVideoInputContrastRampUp (dev dvxVideoInputPort)
  */
 define_function dvxDisableVideoInputContrastRampUp (dev dvxVideoInputPort)
 {
-    amxChannelOff (dvxVideoInputPort, DVX_CHANNEL_VIDEO_INPUT_CONTRAST_RAMP_UP)
+    channelOff (dvxVideoInputPort, DVX_CHANNEL_VIDEO_INPUT_CONTRAST_RAMP_UP)
 }
 
 /*
@@ -3942,7 +3942,7 @@ define_function dvxDisableVideoInputContrastRampUp (dev dvxVideoInputPort)
  */
 define_function dvxEnableVideoInputContrastRampDown (dev dvxVideoInputPort)
 {
-    amxChannelOn (dvxVideoInputPort, DVX_CHANNEL_VIDEO_INPUT_CONTRAST_RAMP_DOWN)
+    channelOn (dvxVideoInputPort, DVX_CHANNEL_VIDEO_INPUT_CONTRAST_RAMP_DOWN)
 }
 
 /*
@@ -3954,7 +3954,7 @@ define_function dvxEnableVideoInputContrastRampDown (dev dvxVideoInputPort)
  */
 define_function dvxDisableVideoInputContrastRampDown (dev dvxVideoInputPort)
 {
-    amxChannelOff (dvxVideoInputPort, DVX_CHANNEL_VIDEO_INPUT_CONTRAST_RAMP_DOWN)
+    channelOff (dvxVideoInputPort, DVX_CHANNEL_VIDEO_INPUT_CONTRAST_RAMP_DOWN)
 }
 
 /*
@@ -3966,7 +3966,7 @@ define_function dvxDisableVideoInputContrastRampDown (dev dvxVideoInputPort)
  */
 define_function dvxEnableVideoInputHueRampUp (dev dvxVideoInputPort)
 {
-    amxChannelOn (dvxVideoInputPort, DVX_CHANNEL_VIDEO_INPUT_HUE_RAMP_UP)
+    channelOn (dvxVideoInputPort, DVX_CHANNEL_VIDEO_INPUT_HUE_RAMP_UP)
 }
 
 /*
@@ -3978,7 +3978,7 @@ define_function dvxEnableVideoInputHueRampUp (dev dvxVideoInputPort)
  */
 define_function dvxDisableVideoInputHueRampUp (dev dvxVideoInputPort)
 {
-    amxChannelOff (dvxVideoInputPort, DVX_CHANNEL_VIDEO_INPUT_HUE_RAMP_UP)
+    channelOff (dvxVideoInputPort, DVX_CHANNEL_VIDEO_INPUT_HUE_RAMP_UP)
 }
 
 /*
@@ -3990,7 +3990,7 @@ define_function dvxDisableVideoInputHueRampUp (dev dvxVideoInputPort)
  */
 define_function dvxEnableVideoInputHueRampDown (dev dvxVideoInputPort)
 {
-    amxChannelOn (dvxVideoInputPort, DVX_CHANNEL_VIDEO_INPUT_HUE_RAMP_DOWN)
+    channelOn (dvxVideoInputPort, DVX_CHANNEL_VIDEO_INPUT_HUE_RAMP_DOWN)
 }
 
 /*
@@ -4002,7 +4002,7 @@ define_function dvxEnableVideoInputHueRampDown (dev dvxVideoInputPort)
  */
 define_function dvxDisableVideoInputHueRampDown (dev dvxVideoInputPort)
 {
-    amxChannelOff (dvxVideoInputPort, DVX_CHANNEL_VIDEO_INPUT_HUE_RAMP_DOWN)
+    channelOff (dvxVideoInputPort, DVX_CHANNEL_VIDEO_INPUT_HUE_RAMP_DOWN)
 }
 
 
@@ -4022,7 +4022,7 @@ define_function dvxDisableVideoInputHueRampDown (dev dvxVideoInputPort)
  */
 define_function dvxEnableVideoOutputZoomRampUp (dev dvxVideoOutputPort)
 {
-    amxChannelOn (dvxVideoOutputPort, DVX_CHANNEL_VIDEO_OUTPUT_ZOOM_RAMP_UP)
+    channelOn (dvxVideoOutputPort, DVX_CHANNEL_VIDEO_OUTPUT_ZOOM_RAMP_UP)
 }
 
 /*
@@ -4034,7 +4034,7 @@ define_function dvxEnableVideoOutputZoomRampUp (dev dvxVideoOutputPort)
  */
 define_function dvxDisableVideoOutputZoomRampUp (dev dvxVideoOutputPort)
 {
-    amxChannelOff (dvxVideoOutputPort, DVX_CHANNEL_VIDEO_OUTPUT_ZOOM_RAMP_UP)
+    channelOff (dvxVideoOutputPort, DVX_CHANNEL_VIDEO_OUTPUT_ZOOM_RAMP_UP)
 }
 
 /*
@@ -4046,7 +4046,7 @@ define_function dvxDisableVideoOutputZoomRampUp (dev dvxVideoOutputPort)
  */
 define_function dvxEnableVideoOutputZoomRampDown (dev dvxVideoOutputPort)
 {
-    amxChannelOn (dvxVideoOutputPort, DVX_CHANNEL_VIDEO_OUTPUT_ZOOM_RAMP_DOWN)
+    channelOn (dvxVideoOutputPort, DVX_CHANNEL_VIDEO_OUTPUT_ZOOM_RAMP_DOWN)
 }
 
 /*
@@ -4058,7 +4058,7 @@ define_function dvxEnableVideoOutputZoomRampDown (dev dvxVideoOutputPort)
  */
 define_function dvxDisableVideoOutputZoomRampDown (dev dvxVideoOutputPort)
 {
-    amxChannelOff (dvxVideoOutputPort, DVX_CHANNEL_VIDEO_OUTPUT_ZOOM_RAMP_DOWN)
+    channelOff (dvxVideoOutputPort, DVX_CHANNEL_VIDEO_OUTPUT_ZOOM_RAMP_DOWN)
 }
 
 #end_if

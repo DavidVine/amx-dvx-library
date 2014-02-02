@@ -99,7 +99,7 @@ amx-dvx-control
 ---------------
 #####Dependencies:
 + amx-dvx-api
-+ amx-master-control (*see readme for amx-master-library for info*)
++ amx-device-control (*see readme for amx-device-library for info*)
 
 #####Description: 
 Contains functions for controlling the various components of an AMX Enova DVX switcher and requesting information from the DVX.
