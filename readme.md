@@ -139,9 +139,9 @@ amx-dvx-listener
 #####Description:
 Contains dev arrays for listening to traffic returned from the AMX DVX switcher.
 
-The NetLinx programmer should copy the required dev arrays to their main program and instantiate them with dev values corresponding to the DVX switcher components they wish to listen to.
+You should copy the required dev arrays to their main program and instantiate them with dev values corresponding to the DVX switcher components they wish to listen to.
 
-Contains commented out callback functions and events required to capture information from the AMX Enova DVX switcher. The events(data_events, channel_events, & level_events) will parse the information returned from the DVX and call the associated callback functions passing the information through as arguments to the call back functions' parameter list.
+Contains commented out callback functions and events required to capture information from the AMX Enova DVX switcher. The events (data_events, channel_events, & level_events) will parse the information returned from the DVX and call the associated callback functions passing the information through as arguments to the call back functions' parameter list.
 
 Callback functions may be triggered from both unprompted data and responses to requests for information.
 
@@ -171,7 +171,7 @@ to the main program file and populate the contents of the DEV arrays with only t
 	// DEV array for DVX video output ports copied from amx-dvx-listener
 	dev dvDvxVidOutPorts[] = { dvDvxVideoOutputMonitorLeft, dvDvxVideoOutputMonitorRight, dvDvxVideoOutputProjector }
 
-NOTE: The order of the devices within the DEV arrays does not matter. You can also have device ports from multiple DVX's within the same DEV arrays. You can have as few (1) or as many devices defined within the DEV array as you want to listen to.
+NOTE: The order of the devices within the DEV arrays does not matter. You can also have device ports from multiple DVX's within the same DEV array. You can have as few (1) or as many devices defined within the DEV array as you want to listen to.
 
 Copy whichever callback functions you would like to use to monitor changes on the DVX or capture responses to requests for information in your main program file. The callback function should then be uncommented and the contents of the statement block filled in appropriately. The callback functions should not be uncommented within **amx-dvx-listener**. E.g:
 
@@ -201,7 +201,7 @@ paste the callback function and `#define` statement into the main program file, 
 	    }
 	}
 
-The callback function will be autmatically triggered whenever a change occurs on the DVX (that initiates an unsolicted feedback response) or a response to a request for information is received.
+The callback function will be automatically triggered whenever a change occurs on the DVX (that initiates an unsolicted feedback response) or a response to a request for information is received.
 
 ###IMPORTANT!
 1. The `#define` compiler directive found directly above the callback function within **amx-dvx-listener** must also be copied to the main program and uncommented along with the callback function itself.
