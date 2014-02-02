@@ -1,7 +1,6 @@
 amx-dvx-library
 ===============
 
----------------------------------------------------------------
 
 Files
 -----
@@ -9,7 +8,6 @@ Files
 + amx-dvx-control.axi
 + amx-dvx-listener.axi
 
----------------------------------------------------------------
 
 Overview
 --------
@@ -74,7 +72,6 @@ Extremely flexible!
 
 All control and callback functions have a DEV parameter. This makes **amx-dvx-library** extremely flexible as you can use the same control/callback functions for different AV ports on a DVX or even multiple DVX's. For the control functions you simply pass through the dev for the DVX component you want to control and the dev parameter of the callback functions allows you to check to see which device triggered the notification.
 
----------------------------------------------------------------
 
 amx-dvx-api
 -----------
@@ -93,7 +90,6 @@ Include **amx-dvx-api** into the main program using the `#include` compiler dire
 
 NOTE: If the main program file includes **amx-dvx-control** and/or **amx-dvx-listener** it is not neccessary to include **amx-dvx-api** in the main program file as well as each of them already includes **amx-dvx-api** but doing so will not cause any issues.
 
----------------------------------------------------------------
 
 amx-dvx-control
 ---------------
@@ -129,7 +125,6 @@ and call the function(s) defined within **amx-dvx-control** from the main progra
 		}
 	}
 
----------------------------------------------------------------
 
 amx-dvx-listener
 ----------------
