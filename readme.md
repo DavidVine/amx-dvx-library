@@ -201,7 +201,7 @@ The callback function will be automatically triggered whenever a change occurs o
 ###IMPORTANT!
 1. The `#define` compiler directive found directly above the callback function within **amx-dvx-listener** must also be copied to the main program and uncommented along with the callback function itself.
 
-2. Due to the way the NetLinx compiler scans the program for `#define` staments **amx-dvx-listener** must be included in the main program file underneath any callback functions and associated `#define` statements or the callback functions will will not trigger.
+2. Due to the way the NetLinx compiler scans the program for `#define` staments **amx-dvx-listener** must be included in the main program file underneath any callback functions and associated `#define` statements or the callback functions will not trigger.
 
 E.g:
 
