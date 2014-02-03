@@ -819,15 +819,15 @@ char DVX_VIDEO_OUTPUT_RESOLUTION_1920x1200_60HZ[]   = '1920x1200,60'
 
 
 #if_not_defined cSIGNAL_TYPE_AUDIO
-cSIGNAL_TYPE_AUDIO[]    = 'AUDIO'
+char cSIGNAL_TYPE_AUDIO[]   = 'AUDIO'
 #end_if
 
 #if_not_defined cSIGNAL_TYPE_VIDEO
-cSIGNAL_TYPE_VIDEO[]    = 'VIDEO'
+char cSIGNAL_TYPE_VIDEO[]   = 'VIDEO'
 #end_if
 
 #if_not_defined cSIGNAL_TYPE_ALL
-cSIGNAL_TYPE_ALL[]      = 'ALL'
+char cSIGNAL_TYPE_ALL[]     = 'ALL'
 #end_if
 
 
@@ -839,31 +839,31 @@ cSIGNAL_TYPE_ALL[]      = 'ALL'
 
 
 #if_not_defined cVIDEO_SIGNAL_FORMAT_HDMI
-cVIDEO_SIGNAL_FORMAT_HDMI[] = 'HDMI'
+char cVIDEO_SIGNAL_FORMAT_HDMI[]        = 'HDMI'
 #end_if
 
 #if_not_defined cVIDEO_SIGNAL_FORMAT_VGA
-cVIDEO_SIGNAL_FORMAT_VGA[]  = 'VGA'
+char cVIDEO_SIGNAL_FORMAT_VGA[]         = 'VGA'
 #end_if
 
 #if_not_defined cVIDEO_SIGNAL_FORMAT_DVI
-cVIDEO_SIGNAL_FORMAT_DVI[]  = 'DVI'
+char cVIDEO_SIGNAL_FORMAT_DVI[]         = 'DVI'
 #end_if
 
 #if_not_defined cVIDEO_SIGNAL_FORMAT_COMPOSITE
-cVIDEO_SIGNAL_FORMAT_COMPOSITE[]    = 'COMPOSITE'
+char cVIDEO_SIGNAL_FORMAT_COMPOSITE[]   = 'COMPOSITE'
 #end_if
 
 #if_not_defined cVIDEO_SIGNAL_FORMAT_COMPONENT
-cVIDEO_SIGNAL_FORMAT_COMPONENT[]    = 'COMPONENT'
+char cVIDEO_SIGNAL_FORMAT_COMPONENT[]   = 'COMPONENT'
 #end_if
 
 #if_not_defined cVIDEO_SIGNAL_FORMAT_SVIDEO
-cVIDEO_SIGNAL_FORMAT_SVIDEO[]   = 'S-VIDEO'
+char cVIDEO_SIGNAL_FORMAT_SVIDEO[]      = 'S-VIDEO'
 #end_if
 
 #if_not_defined cVIDEO_SIGNAL_FORMAT_RGB
-cVIDEO_SIGNAL_FORMAT_RGB[]  = 'RGB'
+char cVIDEO_SIGNAL_FORMAT_RGB[]         = 'RGB'
 #end_if
 
 
@@ -875,11 +875,11 @@ cVIDEO_SIGNAL_FORMAT_RGB[]  = 'RGB'
 
 
 #if_not_defined cAUDIO_SIGNAL_FORMAT_ANALOG
-cAUDIO_SIGNAL_FORMAT_ANALOG[]   = 'ANALOG'
+char cAUDIO_SIGNAL_FORMAT_ANALOG[]   = 'ANALOG'
 #end_if
 
 #if_not_defined cVIDEO_SIGNAL_FORMAT_DIGITAL
-cVIDEO_SIGNAL_FORMAT_DIGITAL[]  = 'DIGITAL'
+char cVIDEO_SIGNAL_FORMAT_DIGITAL[]  = 'DIGITAL'
 #end_if
 
 
@@ -892,29 +892,29 @@ cVIDEO_SIGNAL_FORMAT_DIGITAL[]  = 'DIGITAL'
 
 // Enable/Disable
 #if_not_defined cENABLE
-cENABLE[]   = 'ENABLE'
+char cENABLE[]   = 'ENABLE'
 #end_if
 
 #if_not_defined cDISABLE
-cDISABLE[]  = 'DISABLE'
+char cDISABLE[]  = 'DISABLE'
 #end_if
 
 // Enabled/Disabled
 #if_not_defined cENABLED
-cENABLED[]  = 'ENABLED'
+char cENABLED[]  = 'ENABLED'
 #end_if
 
 #if_not_defined cDISABLED
-cDISABLED[] = 'DISABLED'
+char cDISABLED[] = 'DISABLED'
 #end_if
 
 // Off/On
 #if_not_defined cOFF
-cOFF[]  = 'OFF'
+char cOFF[]  = 'OFF'
 #end_if
 
 #if_not_defined cON
-cON[]   = 'ON'
+char cON[]   = 'ON'
 #end_if
 
 
