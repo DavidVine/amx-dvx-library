@@ -78,10 +78,10 @@ dev dvDvxMicInPorts[] = { 5002:1:0, 5002:2:0 }
 #define INCLUDE_DVX_NOTIFY_SWITCH_CALLBACK
 define_function dvxNotifySwitch (dev dvxPort1, char cSignalType[], integer input, integer output)
 {
-    // dvxPort1 is port 1 on the DVX.
-    // cSignalType contains the type of signal that was switched ('AUDIO' or 'VIDEO')
-    // input contains the source input number that was switched to the destination
-    // output contains the destination output number that the source was switched to
+	// dvxPort1 is port 1 on the DVX.
+	// cSignalType contains the type of signal that was switched ('AUDIO' or 'VIDEO')
+	// input contains the source input number that was switched to the destination
+	// output contains the destination output number that the source was switched to
 }
 */
 
@@ -97,8 +97,8 @@ define_function dvxNotifySwitch (dev dvxPort1, char cSignalType[], integer input
 #define INCLUDE_DVX_NOTIFY_FRONT_PANEL_LOCKOUT_CALLBACK
 define_function dvxNotifyFrontPanelLockoutStatus (dev dvxPort1, char lockoutStatus[])
 {
-    // dvxPort1 is port 1 on the DVX.
-    // lockoutStatus contains the lockout status (cENABLE | cDISABLE)
+	// dvxPort1 is port 1 on the DVX.
+	// lockoutStatus contains the lockout status (cENABLE | cDISABLE)
 }
 */
 
@@ -106,8 +106,8 @@ define_function dvxNotifyFrontPanelLockoutStatus (dev dvxPort1, char lockoutStat
 #define INCLUDE_DVX_NOTIFY_FRONT_PANEL_LOCKTYPE_CALLBACK
 define_function dvxNotifyFrontPanelLockoutType (dev dvxPort1, integer lockoutType)
 {
-    // dvxPort1 is port 1 on the DVX.
-    // lockoutType contains the lockout type (DVX_LOCKTYPE_ALL_MENUS | DVX_LOCKTYPE_RESERVED | DVX_LOCKTYPE_CONFIGURE_MENUS_ONLY)
+	// dvxPort1 is port 1 on the DVX.
+	// lockoutType contains the lockout type (DVX_LOCKTYPE_ALL_MENUS | DVX_LOCKTYPE_RESERVED | DVX_LOCKTYPE_CONFIGURE_MENUS_ONLY)
 }
 */
 
@@ -115,8 +115,8 @@ define_function dvxNotifyFrontPanelLockoutType (dev dvxPort1, integer lockoutTyp
 #define INCLUDE_DVX_NOTIFY_FRONT_PANEL_INTENSITY_LCD_CALLBACK
 define_function dvxNotifyFrontPanelIntensityLcd (dev dvxPort1, integer intensityValue)
 {
-    // dvxPort1 is port 1 on the DVX.
-    // intensityValue contains the intensity value (range 0 to 100)
+	// dvxPort1 is port 1 on the DVX.
+	// intensityValue contains the intensity value (range 0 to 100)
 }
 */
 
@@ -124,8 +124,8 @@ define_function dvxNotifyFrontPanelIntensityLcd (dev dvxPort1, integer intensity
 #define INCLUDE_DVX_NOTIFY_FRONT_PANEL_INTENSITY_LEDS_CALLBACK
 define_function dvxNotifyFrontPanelIntensityLeds (dev dvxPort1, integer intensityValue)
 {
-    // dvxPort1 is port 1 on the DVX.
-    // intensityValue contains the intensity value (range 0 to 100)
+	// dvxPort1 is port 1 on the DVX.
+	// intensityValue contains the intensity value (range 0 to 100)
 }
 */
 
@@ -141,9 +141,9 @@ define_function dvxNotifyFrontPanelIntensityLeds (dev dvxPort1, integer intensit
 #define INCLUDE_DVX_NOTIFY_FAN_SPEED_CALLBACK
 define_function dvxNotifyFaspeed (dev dvxPort1, integer nFanId, integer speed)
 {
-    // dvxPort1 is port 1 on the DVX.
-    // nFanId contains the Fan ID (1 | 2).
-    // speed contains the fan speed.
+	// dvxPort1 is port 1 on the DVX.
+	// nFanId contains the Fan ID (1 | 2).
+	// speed contains the fan speed.
 }
 */
 
@@ -151,8 +151,8 @@ define_function dvxNotifyFaspeed (dev dvxPort1, integer nFanId, integer speed)
 #define INCLUDE_DVX_NOTIFY_INTERNAL_TEMPERATURE_CALLBACK
 define_function dvxNotifyInternalTemperature (dev dvxPort1, integer tempCelcius)
 {
-    // dvxPort1 is port 1 on the DVX.
-    // tempCelcius contains the internal temperature of the DVX in degrees celcius
+	// dvxPort1 is port 1 on the DVX.
+	// tempCelcius contains the internal temperature of the DVX in degrees celcius
 }
 */
 
@@ -160,8 +160,8 @@ define_function dvxNotifyInternalTemperature (dev dvxPort1, integer tempCelcius)
 #define INCLUDE_DVX_NOTIFY_DXLINK_OUTPUT_ETHERNET_CALLBACK
 define_function dvxNotifyDxlinkOutputEthernet (dev dvxDxlinkOutput, char ethernetStatus[])
 {
-    // dvxDxlinkOutput is the D:P:S of the DXLink output port on the DVX switcher. The output number can be taken from dvxDxlinkOutput.PORT
-    // ethernetStatus is the status of the Ethernet on the DXLink port (cENABLE | cDISABLE)
+	// dvxDxlinkOutput is the D:P:S of the DXLink output port on the DVX switcher. The output number can be taken from dvxDxlinkOutput.PORT
+	// ethernetStatus is the status of the Ethernet on the DXLink port (cENABLE | cDISABLE)
 }
 */
 
@@ -169,8 +169,8 @@ define_function dvxNotifyDxlinkOutputEthernet (dev dvxDxlinkOutput, char etherne
 #define INCLUDE_DVX_NOTIFY_DXLINK_INPUT_ETHERNET_CALLBACK
 define_function dvxNotifyDxlinkInputEthernet (dev dvxDxlinkInput, char ethernetStatus[])
 {
-    // dvxDxlinkInput is the D:P:S of the DXLink input port on the DVX switcher. The input number can be taken from dvxDxlinkInput.PORT
-    // ethernetStatus is the status of the Ethernet on the DXLink port (cENABLE | cDISABLE)
+	// dvxDxlinkInput is the D:P:S of the DXLink input port on the DVX switcher. The input number can be taken from dvxDxlinkInput.PORT
+	// ethernetStatus is the status of the Ethernet on the DXLink port (cENABLE | cDISABLE)
 }
 */
 
@@ -178,8 +178,8 @@ define_function dvxNotifyDxlinkInputEthernet (dev dvxDxlinkInput, char ethernetS
 #define INCLUDE_DVX_NOTIFY_STANDBY_MODE_CALLBACK
 define_function dvxNotifyStandbyMode (dev dvxPort1, integer status)
 {
-    // dvxPort1 is port 1 on the DVX.
-    // status is the status of the DVX being in standby mode (TRUE | FALSE)
+	// dvxPort1 is port 1 on the DVX.
+	// status is the status of the DVX being in standby mode (TRUE | FALSE)
 }
 */
 
@@ -187,8 +187,8 @@ define_function dvxNotifyStandbyMode (dev dvxPort1, integer status)
 #define INCLUDE_DVX_NOTIFY_FAN_ALARM
 define_function dvxNotifyFanAlarm (dev dvxPort1, integer status)
 {
-    // dvxPort1 is port 1 on the DVX.
-    // status is the status of the DVX fan alarm (TRUE | FALSE)
+	// dvxPort1 is port 1 on the DVX.
+	// status is the status of the DVX fan alarm (TRUE | FALSE)
 }
 */
 
@@ -196,8 +196,8 @@ define_function dvxNotifyFanAlarm (dev dvxPort1, integer status)
 #define INCLUDE_DVX_NOTIFY_TEMPERATURE_ALARM
 define_function dvxNotifyTemperatureAlarm (dev dvxPort1, integer status)
 {
-    // dvxPort1 is port 1 on the DVX.
-    // status is the status of the DVX temperature alarm (TRUE | FALSE)
+	// dvxPort1 is port 1 on the DVX.
+	// status is the status of the DVX temperature alarm (TRUE | FALSE)
 }
 */
 
@@ -213,8 +213,8 @@ define_function dvxNotifyTemperatureAlarm (dev dvxPort1, integer status)
 #define INCLUDE_DVX_NOTIFY_VIDEO_OUTPUT_ASPECT_RATIO_CALLBACK
 define_function dvxNotifyVideoOutputAspectRatio (dev dvxVideoOutput, char aspectRatio[])
 {
-    // dvxVideoOutput is the D:P:S of the output port on the DVX switcher. The output number can be taken from dvxOutput.PORT
-    // aspectRatio is the aspect ratio (DVX_ASPECT_RATIO_MAINTAIN | DVX_ASPECT_RATIO_STRETCH | DVX_ASPECT_RATIO_ZOOM | DVX_ASPECT_RATIO_ANAMORPHIC)
+	// dvxVideoOutput is the D:P:S of the output port on the DVX switcher. The output number can be taken from dvxOutput.PORT
+	// aspectRatio is the aspect ratio (DVX_ASPECT_RATIO_MAINTAIN | DVX_ASPECT_RATIO_STRETCH | DVX_ASPECT_RATIO_ZOOM | DVX_ASPECT_RATIO_ANAMORPHIC)
 }
 */
 
@@ -222,8 +222,8 @@ define_function dvxNotifyVideoOutputAspectRatio (dev dvxVideoOutput, char aspect
 #define INCLUDE_DVX_NOTIFY_VIDEO_OUTPUT_BLANK_IMAGE_CALLBACK
 define_function dvxNotifyVideoOutputBlankImage (dev dvxVideoOutput, char blankImage[])
 {
-    // dvxVideoOutput is the D:P:S of the output port on the DVX switcher. The output number can be taken from dvxOutput.PORT
-    // blankImage is the image chosen to be displayed on the output when an input source with no signal is switched to the output (DVX_BLANK_IMAGE_BLACK | DVX_BLANK_IMAGE_BLUE | DVX_BLANK_IMAGE_LOGO_1 | DVX_BLANK_IMAGE_LOGO_2 | DVX_BLANK_IMAGE_LOGO_3)
+	// dvxVideoOutput is the D:P:S of the output port on the DVX switcher. The output number can be taken from dvxOutput.PORT
+	// blankImage is the image chosen to be displayed on the output when an input source with no signal is switched to the output (DVX_BLANK_IMAGE_BLACK | DVX_BLANK_IMAGE_BLUE | DVX_BLANK_IMAGE_LOGO_1 | DVX_BLANK_IMAGE_LOGO_2 | DVX_BLANK_IMAGE_LOGO_3)
 }
 */
 
@@ -231,8 +231,8 @@ define_function dvxNotifyVideoOutputBlankImage (dev dvxVideoOutput, char blankIm
 #define INCLUDE_DVX_NOTIFY_VIDEO_OUTPUT_BRIGHTNESS_CALLBACK
 define_function dvxNotifyVideoOutputBrightness (dev dvxVideoOutput, integer brightness)
 {
-    // dvxVideoOutput is the D:P:S of the output port on the DVX switcher. The output number can be taken from dvxVideoOutput.PORT
-    // brightness is the brightness level
+	// dvxVideoOutput is the D:P:S of the output port on the DVX switcher. The output number can be taken from dvxVideoOutput.PORT
+	// brightness is the brightness level
 }
 */
 
@@ -240,8 +240,8 @@ define_function dvxNotifyVideoOutputBrightness (dev dvxVideoOutput, integer brig
 #define INCLUDE_DVX_NOTIFY_VIDEO_OUTPUT_CONTRAST_CALLBACK
 define_function dvxNotifyVideoOutputContrast (dev dvxVideoOutput, integer contrast)
 {
-    // dvxVideoOutput is the D:P:S of the output port on the DVX switcher. The output number can be taken from dvxVideoOutput.PORT
-    // contrast is the constrast level
+	// dvxVideoOutput is the D:P:S of the output port on the DVX switcher. The output number can be taken from dvxVideoOutput.PORT
+	// contrast is the constrast level
 }
 */
 
@@ -249,8 +249,8 @@ define_function dvxNotifyVideoOutputContrast (dev dvxVideoOutput, integer contra
 #define INCLUDE_DVX_NOTIFY_VIDEO_OUTPUT_FREEZE_CALLBACK
 define_function dvxNotifyVideoOutputFreeze (dev dvxVideoOutput, char freezeStatus[])
 {
-    // dvxVideoOutput is the D:P:S of the output port on the DVX switcher. The output number can be taken from dvxVideoOutput.PORT
-    // freezeStatus is the status of the video freeze (cENABLE | cDISABLE)
+	// dvxVideoOutput is the D:P:S of the output port on the DVX switcher. The output number can be taken from dvxVideoOutput.PORT
+	// freezeStatus is the status of the video freeze (cENABLE | cDISABLE)
 }
 */
 
@@ -258,8 +258,8 @@ define_function dvxNotifyVideoOutputFreeze (dev dvxVideoOutput, char freezeStatu
 #define INCLUDE_DVX_NOTIFY_VIDEO_OUTPUT_HORIZONTAL_SHIFT_CALLBACK
 define_function dvxNotifyVideoOutputHorizontalShift (dev dvxVideoOutput, integer horizontalShift)
 {
-    // dvxVideoOutput is the D:P:S of the output port on the DVX switcher. The output number can be taken from dvxVideoOutput.PORT
-    // horizontalShift is the horizontal shift value
+	// dvxVideoOutput is the D:P:S of the output port on the DVX switcher. The output number can be taken from dvxVideoOutput.PORT
+	// horizontalShift is the horizontal shift value
 }
 */
 
@@ -267,8 +267,8 @@ define_function dvxNotifyVideoOutputHorizontalShift (dev dvxVideoOutput, integer
 #define INCLUDE_DVX_NOTIFY_VIDEO_OUTPUT_HORIZONTAL_SIZE_CALLBACK
 define_function dvxNotifyVideoOutputHorizontalSize (dev dvxVideoOutput, integer horizontalSize)
 {
-    // dvxVideoOutput is the D:P:S of the output port on the DVX switcher. The output number can be taken from dvxVideoOutput.PORT
-    // horizontalSize is the horizontal size value
+	// dvxVideoOutput is the D:P:S of the output port on the DVX switcher. The output number can be taken from dvxVideoOutput.PORT
+	// horizontalSize is the horizontal size value
 }
 */
 
@@ -276,8 +276,8 @@ define_function dvxNotifyVideoOutputHorizontalSize (dev dvxVideoOutput, integer 
 #define INCLUDE_DVX_NOTIFY_VIDEO_OUTPUT_MUTE_CALLBACK
 define_function dvxNotifyVideoOutputMute (dev dvxVideoOutput, char muteStatus[])
 {
-    // dvxVideoOutput is the D:P:S of the output port on the DVX switcher. The output number can be taken from dvxVideoOutput.PORT
-    // muteStatus contains the video output mute status (cENABLE | cDISABLE)
+	// dvxVideoOutput is the D:P:S of the output port on the DVX switcher. The output number can be taken from dvxVideoOutput.PORT
+	// muteStatus contains the video output mute status (cENABLE | cDISABLE)
 }
 */
 
@@ -285,8 +285,8 @@ define_function dvxNotifyVideoOutputMute (dev dvxVideoOutput, char muteStatus[])
 #define INCLUDE_DVX_NOTIFY_VIDEO_OUTPUT_ON_CALLBACK
 define_function dvxNotifyVideoOutputOn (dev dvxVideoOutput, char onOffStatus[])
 {
-    // dvxVideoOutput is the D:P:S of the output port on the DVX switcher. The output number can be taken from dvxVideoOutput.PORT
-    // onOffStatus is the video output on status (cON | cOFF)
+	// dvxVideoOutput is the D:P:S of the output port on the DVX switcher. The output number can be taken from dvxVideoOutput.PORT
+	// onOffStatus is the video output on status (cON | cOFF)
 }
 */
 
@@ -294,8 +294,8 @@ define_function dvxNotifyVideoOutputOn (dev dvxVideoOutput, char onOffStatus[])
 #define INCLUDE_DVX_NOTIFY_VIDEO_OUTPUT_OSD_CALLBACK
 define_function dvxNotifyVideoOutputOsd (dev dvxVideoOutput, char osdStatus[])
 {
-    // dvxVideoOutput is the D:P:S of the output port on the DVX switcher. The output number can be taken from dvxVideoOutput.PORT
-    // osdStatus is the OSD status (cENABLE | cDISABLE)
+	// dvxVideoOutput is the D:P:S of the output port on the DVX switcher. The output number can be taken from dvxVideoOutput.PORT
+	// osdStatus is the OSD status (cENABLE | cDISABLE)
 }
 */
 
@@ -303,8 +303,8 @@ define_function dvxNotifyVideoOutputOsd (dev dvxVideoOutput, char osdStatus[])
 #define INCLUDE_DVX_NOTIFY_VIDEO_OUTPUT_OSD_COLOR_CALLBACK
 define_function dvxNotifyVideoOutputOsdColor (dev dvxVideoOutput, char osdColor[])
 {
-    // dvxVideoOutput is the D:P:S of the output port on the DVX switcher. The output number can be taken from dvxVideoOutput.PORT
-    // osdColor is the OSD color (DVX_OSD_COLOR_BLACK | DVX_OSD_COLOR_BLUE | DVX_OSD_COLOR_WHITE | DVX_OSD_COLOR_YELLOW)
+	// dvxVideoOutput is the D:P:S of the output port on the DVX switcher. The output number can be taken from dvxVideoOutput.PORT
+	// osdColor is the OSD color (DVX_OSD_COLOR_BLACK | DVX_OSD_COLOR_BLUE | DVX_OSD_COLOR_WHITE | DVX_OSD_COLOR_YELLOW)
 }
 */
 
@@ -312,8 +312,8 @@ define_function dvxNotifyVideoOutputOsdColor (dev dvxVideoOutput, char osdColor[
 #define INCLUDE_DVX_NOTIFY_VIDEO_OUTPUT_OSD_POSISTION_CALLBACK
 define_function dvxNotifyVideoOutputOsdPosition (dev dvxVideoOutput, char osdPosition[])
 {
-    // dvxVideoOutput is the D:P:S of the output port on the DVX switcher. The output number can be taken from dvxVideoOutput.PORT
-    // osdPosition is the OSD position (DVX_OSD_POSITION_TOP_LEFT | DVX_OSD_POSITION_TOP_RIGHT | DVX_OSD_POSITION_BOTTOM_LEFT | DVX_OSD_POSITION_BOTTOM_RIGHT)
+	// dvxVideoOutput is the D:P:S of the output port on the DVX switcher. The output number can be taken from dvxVideoOutput.PORT
+	// osdPosition is the OSD position (DVX_OSD_POSITION_TOP_LEFT | DVX_OSD_POSITION_TOP_RIGHT | DVX_OSD_POSITION_BOTTOM_LEFT | DVX_OSD_POSITION_BOTTOM_RIGHT)
 }
 */
 
@@ -321,8 +321,8 @@ define_function dvxNotifyVideoOutputOsdPosition (dev dvxVideoOutput, char osdPos
 #define INCLUDE_DVX_NOTIFY_VIDEO_OUTPUT_RESOLUTION_CALLBACK
 define_function dvxNotifyVideoOutputResolution (dev dvxVideoOutput, char resolution[])
 {
-    // dvxVideoOutput is the D:P:S of the output port on the DVX switcher. The output number can be taken from dvxVideoOutput.PORT
-    // resolution is the video output resolution and refresh (HORxVER,REF)
+	// dvxVideoOutput is the D:P:S of the output port on the DVX switcher. The output number can be taken from dvxVideoOutput.PORT
+	// resolution is the video output resolution and refresh (HORxVER,REF)
 }
 */
 
@@ -330,8 +330,8 @@ define_function dvxNotifyVideoOutputResolution (dev dvxVideoOutput, char resolut
 #define INCLUDE_DVX_NOTIFY_VIDEO_OUTPUT_SCALE_MODE_CALLBACK
 define_function dvxNotifyVideoOutputScaleMode (dev dvxVideoOutput, char scaleMode[])
 {
-    // dvxVideoOutput is the D:P:S of the output port on the DVX switcher. The output number can be taken from dvxVideoOutput.PORT
-    // scaleMode contains the scaler mode (DVX_SCALE_MODE_AUTO | DVX_SCALE_MODE_BYPASS | DVX_SCALE_MODE_MANUAL)
+	// dvxVideoOutput is the D:P:S of the output port on the DVX switcher. The output number can be taken from dvxVideoOutput.PORT
+	// scaleMode contains the scaler mode (DVX_SCALE_MODE_AUTO | DVX_SCALE_MODE_BYPASS | DVX_SCALE_MODE_MANUAL)
 }
 */
 
@@ -339,8 +339,8 @@ define_function dvxNotifyVideoOutputScaleMode (dev dvxVideoOutput, char scaleMod
 #define INCLUDE_DVX_NOTIFY_VIDEO_OUTPUT_TEST_PATTERN_CALLBACK
 define_function dvxNotifyVideoOutputTestPattern (dev dvxVideoOutput, char testPattern[])
 {
-    // dvxVideoOutput is the D:P:S of the output port on the DVX switcher. The output number can be taken from dvxVideoOutput.PORT
-    // testPattern is the test pattern (DVX_TEST_PATTERN_OFF | DVX_TEST_PATTERN_COLOR_BAR | DVX_TEST_PATTERN_GRAY_RAMP | DVX_TEST_PATTERN_SMPTE_BAR | DVX_TEST_PATTERN_HILO_TRACK | DVX_TEST_PATTERN_PLUGE | DVX_TEST_PATTERN_X_HATCH | DVX_TEST_PATTERN_LOGO_1 | DVX_TEST_PATTERN_LOGO_2 | DVX_TEST_PATTERN_LOGO_3)
+	// dvxVideoOutput is the D:P:S of the output port on the DVX switcher. The output number can be taken from dvxVideoOutput.PORT
+	// testPattern is the test pattern (DVX_TEST_PATTERN_OFF | DVX_TEST_PATTERN_COLOR_BAR | DVX_TEST_PATTERN_GRAY_RAMP | DVX_TEST_PATTERN_SMPTE_BAR | DVX_TEST_PATTERN_HILO_TRACK | DVX_TEST_PATTERN_PLUGE | DVX_TEST_PATTERN_X_HATCH | DVX_TEST_PATTERN_LOGO_1 | DVX_TEST_PATTERN_LOGO_2 | DVX_TEST_PATTERN_LOGO_3)
 }
 */
 
@@ -348,8 +348,8 @@ define_function dvxNotifyVideoOutputTestPattern (dev dvxVideoOutput, char testPa
 #define INCLUDE_DVX_NOTIFY_VIDEO_OUTPUT_VERTICAL_SHIFT_CALLBACK
 define_function dvxNotifyVideoOutputVerticalShift (dev dvxVideoOutput, integer verticalShift)
 {
-    // dvxVideoOutput is the D:P:S of the output port on the DVX switcher. The output number can be taken from dvxVideoOutput.PORT
-    // verticalShift is the vertical shift value
+	// dvxVideoOutput is the D:P:S of the output port on the DVX switcher. The output number can be taken from dvxVideoOutput.PORT
+	// verticalShift is the vertical shift value
 }
 */
 
@@ -357,8 +357,8 @@ define_function dvxNotifyVideoOutputVerticalShift (dev dvxVideoOutput, integer v
 #define INCLUDE_DVX_NOTIFY_VIDEO_OUTPUT_VERTICAL_SIZE_CALLBACK
 define_function dvxNotifyVideoOutputVerticalSize (dev dvxVideoOutput, integer verticalSize)
 {
-    // dvxVideoOutput is the D:P:S of the output port on the DVX switcher. The output number can be taken from dvxVideoOutput.PORT
-    // verticalSize is the vertical size value
+	// dvxVideoOutput is the D:P:S of the output port on the DVX switcher. The output number can be taken from dvxVideoOutput.PORT
+	// verticalSize is the vertical size value
 }
 */
 
@@ -366,8 +366,8 @@ define_function dvxNotifyVideoOutputVerticalSize (dev dvxVideoOutput, integer ve
 #define INCLUDE_DVX_NOTIFY_VIDEO_OUTPUT_ZOOM_CALLBACK
 define_function dvxNotifyVideoOutputZoom (dev dvxVideoOutput, integer zoom)
 {
-    // dvxVideoOutput is the D:P:S of the output port on the DVX switcher. The output number can be taken from dvxVideoOutput.PORT
-    // zoom is the zoom value
+	// dvxVideoOutput is the D:P:S of the output port on the DVX switcher. The output number can be taken from dvxVideoOutput.PORT
+	// zoom is the zoom value
 }
 */
 
@@ -383,8 +383,8 @@ define_function dvxNotifyVideoOutputZoom (dev dvxVideoOutput, integer zoom)
 #define INCLUDE_DVX_NOTIFY_VIDEO_INPUT_BRIGHTNESS_CALLBACK
 define_function dvxNotifyVideoInputBrightness (dev dvxVideoInput, integer brightness)
 {
-    // dvxVideoInput is the D:P:S of the video input port on the DVX switcher. The input number can be taken from dvxVideoInput.PORT
-    // brightness is the brightness level
+	// dvxVideoInput is the D:P:S of the video input port on the DVX switcher. The input number can be taken from dvxVideoInput.PORT
+	// brightness is the brightness level
 }
 */
 
@@ -392,8 +392,8 @@ define_function dvxNotifyVideoInputBrightness (dev dvxVideoInput, integer bright
 #define INCLUDE_DVX_NOTIFY_VIDEO_INPUT_BLACK_AND_WHITE_STATE_CALLBACK
 define_function dvxNotifyVideoInputBlackAndWhiteState (dev dvxVideoInput, char status[])
 {
-    // dvxVideoInput is the D:P:S of the video input port on the DVX switcher. The input number can be taken from dvxVideoInput.PORT
-    // status is the status of black and white mode on the video input (cENABLE | cDISABLE)
+	// dvxVideoInput is the D:P:S of the video input port on the DVX switcher. The input number can be taken from dvxVideoInput.PORT
+	// status is the status of black and white mode on the video input (cENABLE | cDISABLE)
 }
 */
 
@@ -401,8 +401,8 @@ define_function dvxNotifyVideoInputBlackAndWhiteState (dev dvxVideoInput, char s
 #define INCLUDE_DVX_NOTIFY_VIDEO_INPUT_COLOUR_CALLBACK
 define_function dvxNotifyVideoInputColor (dev dvxVideoInput, char status[])
 {
-    // dvxVideoInput is the D:P:S of the video input port on the DVX switcher. The input number can be taken from dvxVideoInput.PORT
-    // status is the status of color mode on the video input (cENABLE | cDISABLE)
+	// dvxVideoInput is the D:P:S of the video input port on the DVX switcher. The input number can be taken from dvxVideoInput.PORT
+	// status is the status of color mode on the video input (cENABLE | cDISABLE)
 }
 */
 
@@ -410,8 +410,8 @@ define_function dvxNotifyVideoInputColor (dev dvxVideoInput, char status[])
 #define INCLUDE_DVX_NOTIFY_VIDEO_INPUT_CONTRAST_CALLBACK
 define_function dvxNotifyVideoInputContrast (dev dvxVideoInput, integer contrast)
 {
-    // dvxVideoInput is the D:P:S of the video input port on the DVX switcher. The input number can be taken from dvxVideoInput.PORT
-    // contrast is the contrast level
+	// dvxVideoInput is the D:P:S of the video input port on the DVX switcher. The input number can be taken from dvxVideoInput.PORT
+	// contrast is the contrast level
 }
 */
 
@@ -419,8 +419,8 @@ define_function dvxNotifyVideoInputContrast (dev dvxVideoInput, integer contrast
 #define INCLUDE_DVX_NOTIFY_VIDEO_INPUT_EDID_SOURCE_CALLBACK
 define_function dvxNotifyVideoInputEdidSource (dev dvxVideoInput, char edidSource[])
 {
-    // dvxVideoInput is the D:P:S of the video input port on the DVX switcher. The input number can be taken from dvxVideoInput.PORT
-    // edidSource is the source of the EDID on the DVX input (DVX_EDID_SOURCE_ALL_RESOLUTIONS | DVX_EDID_SOURCE_WIDE_SCREEN | DVX_EDID_SOURCE_FULL_SCREEN | DVX_EDID_SOURCE_MIRROR_OUTPUT_1 | DVX_EDID_SOURCE_MIRROR_OUTPUT_2 | DVX_EDID_SOURCE_MIRROR_OUTPUT_3 | DVX_EDID_SOURCE_MIRROR_OUTPUT_4)
+	// dvxVideoInput is the D:P:S of the video input port on the DVX switcher. The input number can be taken from dvxVideoInput.PORT
+	// edidSource is the source of the EDID on the DVX input (DVX_EDID_SOURCE_ALL_RESOLUTIONS | DVX_EDID_SOURCE_WIDE_SCREEN | DVX_EDID_SOURCE_FULL_SCREEN | DVX_EDID_SOURCE_MIRROR_OUTPUT_1 | DVX_EDID_SOURCE_MIRROR_OUTPUT_2 | DVX_EDID_SOURCE_MIRROR_OUTPUT_3 | DVX_EDID_SOURCE_MIRROR_OUTPUT_4)
 }
 */
 
@@ -428,8 +428,8 @@ define_function dvxNotifyVideoInputEdidSource (dev dvxVideoInput, char edidSourc
 #define INCLUDE_DVX_NOTIFY_VIDEO_INPUT_EDID_UPDATE_AUTO_CALLBACK
 define_function dvxNotifyVideoInputEdidUpdateAuto (dev dvxVideoInput, char autoStatus[])
 {
-    // dvxVideoInput is the D:P:S of the video input port on the DVX switcher. The input number can be taken from dvxVideoInput.PORT
-    // autoStatus is the status of whether the EDID updates at regular intervals (cENABLE | cDISABLE)
+	// dvxVideoInput is the D:P:S of the video input port on the DVX switcher. The input number can be taken from dvxVideoInput.PORT
+	// autoStatus is the status of whether the EDID updates at regular intervals (cENABLE | cDISABLE)
 }
 */
 
@@ -437,8 +437,8 @@ define_function dvxNotifyVideoInputEdidUpdateAuto (dev dvxVideoInput, char autoS
 #define INCLUDE_DVX_NOTIFY_VIDEO_INPUT_EDID_PREFERRED_RESOLUTION_CALLBACK
 define_function dvxNotifyVideoInputEdidPreferredResolution (dev dvxVideoInput, char resolution[])
 {
-    // dvxVideoInput is the D:P:S of the video input port on the DVX switcher. The input number can be taken from dvxVideoInput.PORT
-    // resolution is the resolution listed in the EDID as the preferred (or native) resolution on the DVX video input
+	// dvxVideoInput is the D:P:S of the video input port on the DVX switcher. The input number can be taken from dvxVideoInput.PORT
+	// resolution is the resolution listed in the EDID as the preferred (or native) resolution on the DVX video input
 }
 */
 
@@ -446,8 +446,8 @@ define_function dvxNotifyVideoInputEdidPreferredResolution (dev dvxVideoInput, c
 #define INCLUDE_DVX_NOTIFY_VIDEO_INPUT_FORMAT_CALLBACK
 define_function dvxNotifyVideoInputFormat (dev dvxVideoInput, char videoFormat[])
 {
-    // dvxVideoInput is the D:P:S of the video input port on the DVX switcher. The input number can be taken from dvxVideoInput.PORT
-    // videoFormat is the video format (cVIDEO_SIGNAL_FORMAT_HDMI | cVIDEO_SIGNAL_FORMAT_DVI | cVIDEO_SIGNAL_FORMAT_VGA | cVIDEO_SIGNAL_FORMAT_COMPOSITE | cVIDEO_SIGNAL_FORMAT_COMPONENT | cVIDEO_SIGNAL_FORMAT_SVIDEO | cVIDEO_SIGNAL_FORMAT_RGB)
+	// dvxVideoInput is the D:P:S of the video input port on the DVX switcher. The input number can be taken from dvxVideoInput.PORT
+	// videoFormat is the video format (cVIDEO_SIGNAL_FORMAT_HDMI | cVIDEO_SIGNAL_FORMAT_DVI | cVIDEO_SIGNAL_FORMAT_VGA | cVIDEO_SIGNAL_FORMAT_COMPOSITE | cVIDEO_SIGNAL_FORMAT_COMPONENT | cVIDEO_SIGNAL_FORMAT_SVIDEO | cVIDEO_SIGNAL_FORMAT_RGB)
 }
 */
 
@@ -455,8 +455,8 @@ define_function dvxNotifyVideoInputFormat (dev dvxVideoInput, char videoFormat[]
 #define INCLUDE_DVX_NOTIFY_VIDEO_INPUT_HDCP_COMPLIANCE
 define_function dvxNotifyVideoInputHdcpCompliance (dev dvxVideoInput, char status[])
 {
-    // dvxVideoInput is the D:P:S of the video input port on the DVX switcher. The input number can be taken from dvxVideoInput.PORT
-    // status is the status of the HDCP compliance on the video input port (cENABLE | cDISABLE)
+	// dvxVideoInput is the D:P:S of the video input port on the DVX switcher. The input number can be taken from dvxVideoInput.PORT
+	// status is the status of the HDCP compliance on the video input port (cENABLE | cDISABLE)
 }
 */
 
@@ -464,8 +464,8 @@ define_function dvxNotifyVideoInputHdcpCompliance (dev dvxVideoInput, char statu
 #define INCLUDE_DVX_NOTIFY_VIDEO_INPUT_HORIZONTAL_SHIFT_CALLBACK
 define_function dvxNotifyVideoInputHorizontalShift (dev dvxVideoInput, sinteger horizontalShift)
 {
-    // dvxVideoInput is the D:P:S of the video input port on the DVX switcher. The input number can be taken from dvxVideoInput.PORT
-    // horizontalShift is the horizontal shift value
+	// dvxVideoInput is the D:P:S of the video input port on the DVX switcher. The input number can be taken from dvxVideoInput.PORT
+	// horizontalShift is the horizontal shift value
 }
 */
 
@@ -473,8 +473,8 @@ define_function dvxNotifyVideoInputHorizontalShift (dev dvxVideoInput, sinteger 
 #define INCLUDE_DVX_NOTIFY_VIDEO_INPUT_HUE_CALLBACK
 define_function dvxNotifyVideoInputHue (dev dvxVideoInput, integer hue)
 {
-    // dvxVideoInput is the D:P:S of the video input port on the DVX switcher. The input number can be taken from dvxVideoInput.PORT
-    // hue is the hue value
+	// dvxVideoInput is the D:P:S of the video input port on the DVX switcher. The input number can be taken from dvxVideoInput.PORT
+	// hue is the hue value
 }
 */
 
@@ -482,8 +482,8 @@ define_function dvxNotifyVideoInputHue (dev dvxVideoInput, integer hue)
 #define INCLUDE_DVX_NOTIFY_VIDEO_INPUT_NAME_CALLBACK
 define_function dvxNotifyVideoInputName (dev dvxVideoInput, char name[])
 {
-    // dvxVideoInput is the D:P:S of the video input port on the DVX switcher. The input number can be taken from dvxVideoInput.PORT
-    // name is the name of the video input
+	// dvxVideoInput is the D:P:S of the video input port on the DVX switcher. The input number can be taken from dvxVideoInput.PORT
+	// name is the name of the video input
 }
 */
 
@@ -491,8 +491,8 @@ define_function dvxNotifyVideoInputName (dev dvxVideoInput, char name[])
 #define INCLUDE_DVX_NOTIFY_VIDEO_INPUT_PHASE_CALLBACK
 define_function dvxNotifyVideoInputPhase (dev dvxVideoInput, integer phase)
 {
-    // dvxVideoInput is the D:P:S of the video input port on the DVX switcher. The input number can be taken from dvxVideoInput.PORT
-    // phase is the phase value
+	// dvxVideoInput is the D:P:S of the video input port on the DVX switcher. The input number can be taken from dvxVideoInput.PORT
+	// phase is the phase value
 }
 */
 
@@ -500,8 +500,8 @@ define_function dvxNotifyVideoInputPhase (dev dvxVideoInput, integer phase)
 #define INCLUDE_DVX_NOTIFY_VIDEO_INPUT_RESOLUTION_AUTO_CALLBACK
 define_function dvxNotifyVideoInputResolutionAuto (dev dvxVideoInput, char status[])
 {
-    // dvxVideoInput is the D:P:S of the video input port on the DVX switcher. The input number can be taken from dvxVideoInput.PORT
-    // status is the auto resolution detect status (cENABLE | cDISABLE)
+	// dvxVideoInput is the D:P:S of the video input port on the DVX switcher. The input number can be taken from dvxVideoInput.PORT
+	// status is the auto resolution detect status (cENABLE | cDISABLE)
 }
 */
 
@@ -509,8 +509,8 @@ define_function dvxNotifyVideoInputResolutionAuto (dev dvxVideoInput, char statu
 #define INCLUDE_DVX_NOTIFY_VIDEO_INPUT_RESOLUTION_CALLBACK
 define_function dvxNotifyVideoInputResolution (dev dvxVideoInput, char resolution[])
 {
-    // dvxVideoInput is the D:P:S of the video input port on the DVX switcher. The input number can be taken from dvxVideoInput.PORT
-    // resolution is the input resolution.
+	// dvxVideoInput is the D:P:S of the video input port on the DVX switcher. The input number can be taken from dvxVideoInput.PORT
+	// resolution is the input resolution.
 }
 */
 
@@ -518,8 +518,8 @@ define_function dvxNotifyVideoInputResolution (dev dvxVideoInput, char resolutio
 #define INCLUDE_DVX_NOTIFY_VIDEO_INPUT_SATURATION_CALLBACK
 define_function dvxNotifyVideoInputSaturation (dev dvxVideoInput, integer saturation)
 {
-    // dvxVideoInput is the D:P:S of the video input port on the DVX switcher. The input number can be taken from dvxVideoInput.PORT
-    // saturation is the saturation value
+	// dvxVideoInput is the D:P:S of the video input port on the DVX switcher. The input number can be taken from dvxVideoInput.PORT
+	// saturation is the saturation value
 }
 */
 
@@ -527,8 +527,8 @@ define_function dvxNotifyVideoInputSaturation (dev dvxVideoInput, integer satura
 #define INCLUDE_DVX_NOTIFY_VIDEO_INPUT_STATUS_CALLBACK
 define_function dvxNotifyVideoInputStatus (dev dvxVideoInput, char signalStatus[])
 {
-    // dvxVideoInput is the D:P:S of the video input port on the DVX switcher. The input number can be taken from dvxVideoInput.PORT
-    // signalStatus is the input signal status (DVX_SIGNAL_STATUS_NO_SIGNAL | DVX_SIGNAL_STATUS_UNKNOWN | DVX_SIGNAL_STATUS_VALID_SIGNAL)
+	// dvxVideoInput is the D:P:S of the video input port on the DVX switcher. The input number can be taken from dvxVideoInput.PORT
+	// signalStatus is the input signal status (DVX_SIGNAL_STATUS_NO_SIGNAL | DVX_SIGNAL_STATUS_UNKNOWN | DVX_SIGNAL_STATUS_VALID_SIGNAL)
 }
 */
 
@@ -536,8 +536,8 @@ define_function dvxNotifyVideoInputStatus (dev dvxVideoInput, char signalStatus[
 #define INCLUDE_DVX_NOTIFY_VIDEO_INPUT_VERTICAL_SHIFT_CALLBACK
 define_function dvxNotifyVideoInputVerticalShift (dev dvxVideoInput, sinteger verticalShift)
 {
-    // dvxVideoInput is the D:P:S of the video input port on the DVX switcher. The input number can be taken from dvxVideoInput.PORT
-    // verticalShift is the vertical shift value
+	// dvxVideoInput is the D:P:S of the video input port on the DVX switcher. The input number can be taken from dvxVideoInput.PORT
+	// verticalShift is the vertical shift value
 }
 */
 
@@ -553,8 +553,8 @@ define_function dvxNotifyVideoInputVerticalShift (dev dvxVideoInput, sinteger ve
 #define INCLUDE_DVX_NOTIFY_AUDIO_OUT_BALANCE_CALLBACK
 define_function dvxNotifyAudioOutBalance (dev dvxAudioOutput, sinteger balance)
 {
-    // dvxAudioOutput is the D:P:S of the video output port on the DVX switcher. The output number can be taken from dvxAudioOutput.PORT
-    // balance is the balance value (range: -20 to 20dB)
+	// dvxAudioOutput is the D:P:S of the video output port on the DVX switcher. The output number can be taken from dvxAudioOutput.PORT
+	// balance is the balance value (range: -20 to 20dB)
 }
 */
 
@@ -562,8 +562,8 @@ define_function dvxNotifyAudioOutBalance (dev dvxAudioOutput, sinteger balance)
 #define INCLUDE_DVX_NOTIFY_AUDIO_OUT_DELAY_CALLBACK
 define_function dvxNotifyAudioOutDelay (dev dvxAudioOutput, integer delay)
 {
-    // dvxAudioOutput is the D:P:S of the video output port on the DVX switcher. The output number can be taken from dvxAudioOutput.PORT
-    // delay is the delay value (range: 0 to 200ms)
+	// dvxAudioOutput is the D:P:S of the video output port on the DVX switcher. The output number can be taken from dvxAudioOutput.PORT
+	// delay is the delay value (range: 0 to 200ms)
 }
 */
 
@@ -571,8 +571,8 @@ define_function dvxNotifyAudioOutDelay (dev dvxAudioOutput, integer delay)
 #define INCLUDE_DVX_NOTIFY_AUDIO_OUT_DUCKING_THRESHOLD_CALLBACK
 define_function dvxNotifyAudioOutDuckingThreshold (dev dvxAudioOutput, sinteger threshold)
 {
-    // dvxAudioOutput is the D:P:S of the video output port on the DVX switcher. The output number can be taken from dvxAudioOutput.PORT
-    // threshold is the ducking threshold value (range: -60 to 0)
+	// dvxAudioOutput is the D:P:S of the video output port on the DVX switcher. The output number can be taken from dvxAudioOutput.PORT
+	// threshold is the ducking threshold value (range: -60 to 0)
 }
 */
 
@@ -580,8 +580,8 @@ define_function dvxNotifyAudioOutDuckingThreshold (dev dvxAudioOutput, sinteger 
 #define INCLUDE_DVX_NOTIFY_AUDIO_OUT_DUCKING_CALLBACK
 define_function dvxNotifyAudioOutDucking (dev dvxAudioOutput, char ducking[])
 {
-    // dvxAudioOutput is the D:P:S of the video output port on the DVX switcher. The output number can be taken from dvxAudioOutput.PORT
-    // ducking is the ducking (DVX_DUCKING_OFF | DVX_DUCKING_LOW | DVX_DUCKING_MEDIUM | DVX_DUCKING_HIGH | DVX_DUCKING_CUSTOM)
+	// dvxAudioOutput is the D:P:S of the video output port on the DVX switcher. The output number can be taken from dvxAudioOutput.PORT
+	// ducking is the ducking (DVX_DUCKING_OFF | DVX_DUCKING_LOW | DVX_DUCKING_MEDIUM | DVX_DUCKING_HIGH | DVX_DUCKING_CUSTOM)
 }
 */
 
@@ -589,9 +589,9 @@ define_function dvxNotifyAudioOutDucking (dev dvxAudioOutput, char ducking[])
 #define INCLUDE_DVX_NOTIFY_AUDIO_OUT_EQ_CENTER_FREQUENCY_CALLBACK
 define_function dvxNotifyAudioOutEqCenterFrequency (dev dvxAudioOutput, integer band, integer frequency)
 {
-    // dvxAudioOutput is the D:P:S of the video output port on the DVX switcher. The output number can be taken from dvxAudioOutput.PORT
-    // band is the EQ band (range: 1 to 10)
-    // frequency is the center frequency (range: 20 to 20000Hz)
+	// dvxAudioOutput is the D:P:S of the video output port on the DVX switcher. The output number can be taken from dvxAudioOutput.PORT
+	// band is the EQ band (range: 1 to 10)
+	// frequency is the center frequency (range: 20 to 20000Hz)
 }
 */
 
@@ -599,9 +599,9 @@ define_function dvxNotifyAudioOutEqCenterFrequency (dev dvxAudioOutput, integer 
 #define INCLUDE_DVX_NOTIFY_AUDIO_OUT_EQ_FILTER_TYPE_CALLBACK
 define_function dvxNotifyAudioOutEqFilterType (dev dvxAudioOutput, integer band, char filterType[])
 {
-    // dvxAudioOutput is the D:P:S of the video output port on the DVX switcher. The output number can be taken from dvxAudioOutput.PORT
-    // band is the EQ band (range: 1 to 10)
-    // filterType is the filter type (DVX_EQ_FILTER_TYPE_BELL | DVX_EQ_FILTER_TYPE_BAND_PASS | DVX_EQ_FILTER_TYPE_BAND_STOP | DVX_EQ_FILTER_TYPE_HIGH_PASS | DVX_EQ_FILTER_TYPE_LOW_PASS | DVX_EQ_FILTER_TYPE_TREBLE_SHELF | DVX_EQ_FILTER_TYPE_BASS_SHELF)
+	// dvxAudioOutput is the D:P:S of the video output port on the DVX switcher. The output number can be taken from dvxAudioOutput.PORT
+	// band is the EQ band (range: 1 to 10)
+	// filterType is the filter type (DVX_EQ_FILTER_TYPE_BELL | DVX_EQ_FILTER_TYPE_BAND_PASS | DVX_EQ_FILTER_TYPE_BAND_STOP | DVX_EQ_FILTER_TYPE_HIGH_PASS | DVX_EQ_FILTER_TYPE_LOW_PASS | DVX_EQ_FILTER_TYPE_TREBLE_SHELF | DVX_EQ_FILTER_TYPE_BASS_SHELF)
 }
 */
 
@@ -609,9 +609,9 @@ define_function dvxNotifyAudioOutEqFilterType (dev dvxAudioOutput, integer band,
 #define INCLUDE_DVX_NOTIFY_AUDIO_OUT_EQ_GAIN_CALLBACK
 define_function dvxNotifyAudioOutEqGain (dev dvxAudioOutput, integer band, sinteger gain)
 {
-    // dvxAudioOutput is the D:P:S of the video output port on the DVX switcher. The output number can be taken from dvxAudioOutput.PORT
-    // band is the EQ band (range: 1 to 10)
-    // gain is the gain (range: -12 to 12dB)
+	// dvxAudioOutput is the D:P:S of the video output port on the DVX switcher. The output number can be taken from dvxAudioOutput.PORT
+	// band is the EQ band (range: 1 to 10)
+	// gain is the gain (range: -12 to 12dB)
 }
 */
 
@@ -619,8 +619,8 @@ define_function dvxNotifyAudioOutEqGain (dev dvxAudioOutput, integer band, sinte
 #define INCLUDE_DVX_NOTIFY_AUDIO_OUT_EQ_MODE_CALLBACK
 define_function dvxNotifyAudioOutEqMode (dev dvxAudioOutput, char mode[])
 {
-    // dvxAudioOutput is the D:P:S of the video output port on the DVX switcher. The output number can be taken from dvxAudioOutput.PORT
-    // mode is the EQ mode (DVX_EQ_MODE_OFF | DVX_EQ_MODE_VOICE | DVX_EQ_MODE_MUSIC | DVX_EQ_MODE_MOVIE)
+	// dvxAudioOutput is the D:P:S of the video output port on the DVX switcher. The output number can be taken from dvxAudioOutput.PORT
+	// mode is the EQ mode (DVX_EQ_MODE_OFF | DVX_EQ_MODE_VOICE | DVX_EQ_MODE_MUSIC | DVX_EQ_MODE_MOVIE)
 }
 */
 
@@ -628,18 +628,18 @@ define_function dvxNotifyAudioOutEqMode (dev dvxAudioOutput, char mode[])
 #define INCLUDE_DVX_NOTIFY_AUDIO_OUT_EQ_QUALITY_FACTOR_CALLBACK
 define_function dvxNotifyAudioOutEqQualityFactor (dev dvxAudioOutput, integer band, float qualityFactor)
 {
-    // dvxAudioOutput is the D:P:S of the video output port on the DVX switcher. The output number can be taken from dvxAudioOutput.PORT
-    // band is the EQ band (range: 1....10)
-    // qualityFactor is the quality factor (range is dependent on eq filter type)
-    // 		Filter Type		Range
-    // 		-----------		-----
-    // 		Bell			0.1 to 20.0
-    // 		Band Pass		0.1 to 20.0
-    // 		Band Stop		0.1 to 20.0
-    // 		High Pass		0.5 to 1.4
-    // 		Low Pass		0.5 to 1.4
-    // 		Treble Shelf	0.5 to 1.0
-    // 		Bass Shelf		0.5 to 1.0
+	// dvxAudioOutput is the D:P:S of the video output port on the DVX switcher. The output number can be taken from dvxAudioOutput.PORT
+	// band is the EQ band (range: 1....10)
+	// qualityFactor is the quality factor (range is dependent on eq filter type)
+	//      Filter type     Range
+	//      -----------     -----
+	//      Bell            0.1 to 20.0
+	//      Band Pass       0.1 to 20.0
+	//      Band Stop       0.1 to 20.0
+	//      High Pass       0.5 to 1.4
+	//      Low Pass        0.5 to 1.4
+	//      Treble Shelf    0.5 to 1.0
+	//      Bass Shelf      0.5 to 1.0
 }
 */
 
@@ -647,8 +647,8 @@ define_function dvxNotifyAudioOutEqQualityFactor (dev dvxAudioOutput, integer ba
 #define INCLUDE_DVX_NOTIFY_AUDIO_OUT_MAXIMUM_VOLUME_CALLBACK
 define_function dvxNotifyAudioOutMaximumVolume (dev dvxAudioOutput, integer maxVol)
 {
-    // dvxAudioOutput is the D:P:S of the video output port on the DVX switcher. The output number can be taken from dvxAudioOutput.PORT
-    // maxVol is the maximum volume setting for the audio output port (range: 0 to 100)
+	// dvxAudioOutput is the D:P:S of the video output port on the DVX switcher. The output number can be taken from dvxAudioOutput.PORT
+	// maxVol is the maximum volume setting for the audio output port (range: 0 to 100)
 }
 */
 
@@ -656,8 +656,8 @@ define_function dvxNotifyAudioOutMaximumVolume (dev dvxAudioOutput, integer maxV
 #define INCLUDE_DVX_NOTIFY_AUDIO_OUT_MINIMUM_VOLUME_CALLBACK
 define_function dvxNotifyAudioOutMinimumVolume (dev dvxAudioOutput, integer minVol)
 {
-    // dvxAudioOutput is the D:P:S of the video output port on the DVX switcher. The output number can be taken from dvxAudioOutput.PORT
-    // minVol is the minimum volume setting for the audio output port (range: 0 to 100)
+	// dvxAudioOutput is the D:P:S of the video output port on the DVX switcher. The output number can be taken from dvxAudioOutput.PORT
+	// minVol is the minimum volume setting for the audio output port (range: 0 to 100)
 }
 */
 
@@ -665,8 +665,8 @@ define_function dvxNotifyAudioOutMinimumVolume (dev dvxAudioOutput, integer minV
 #define INCLUDE_DVX_NOTIFY_AUDIO_OUT_MUTE_CALLBACK
 define_function dvxNotifyAudioOutMute (dev dvxAudioOutput, char muteStatus[])
 {
-    // dvxAudioOutput is the D:P:S of the video output port on the DVX switcher. The output number can be taken from dvxAudioOutput.PORT
-    // muteStatus is the mute status (cENABLE | cDISABLE)
+	// dvxAudioOutput is the D:P:S of the video output port on the DVX switcher. The output number can be taken from dvxAudioOutput.PORT
+	// muteStatus is the mute status (cENABLE | cDISABLE)
 }
 */
 
@@ -674,8 +674,8 @@ define_function dvxNotifyAudioOutMute (dev dvxAudioOutput, char muteStatus[])
 #define INCLUDE_DVX_NOTIFY_AUDIO_OUT_STEREO_CALLBACK
 define_function dvxNotifyAudioOutStereo (dev dvxAudioOutput, char stereoStatus[])
 {
-    // dvxAudioOutput is the D:P:S of the video output port on the DVX switcher. The output number can be taken from dvxAudioOutput.PORT
-    // stereoStatus is the stereo audio status (cENABLE | cDISABLE)
+	// dvxAudioOutput is the D:P:S of the video output port on the DVX switcher. The output number can be taken from dvxAudioOutput.PORT
+	// stereoStatus is the stereo audio status (cENABLE | cDISABLE)
 }
 */
 
@@ -683,8 +683,8 @@ define_function dvxNotifyAudioOutStereo (dev dvxAudioOutput, char stereoStatus[]
 #define INCLUDE_DVX_NOTIFY_AUDIO_OUT_TEST_TONE_CALLBACK
 define_function dvxNotifyAudioOutTestTone (dev dvxAudioOutput, char testTone[])
 {
-    // dvxAudioOutput is the D:P:S of the video output port on the DVX switcher. The output number can be taken from dvxAudioOutput.PORT
-    // testTone is the test tone frequency (DVX_TEST_TONE_FREQUENCY_OFF | DVX_TEST_TONE_FREQUENCY_60_HZ | DVX_TEST_TONE_FREQUENCY_250_HZ | DVX_TEST_TONE_FREQUENCY_400_HZ | DVX_TEST_TONE_FREQUENCY_1_KHZ | DVX_TEST_TONE_FREQUENCY_3_KHZ | DVX_TEST_TONE_FREQUENCY_5_KHZ | DVX_TEST_TONE_FREQUENCY_10_KHZ | DVX_TEST_TONE_FREQUENCY_PINK_NOISE | DVX_TEST_TONE_FREQUENCY_WHITE_NOISE)
+	// dvxAudioOutput is the D:P:S of the video output port on the DVX switcher. The output number can be taken from dvxAudioOutput.PORT
+	// testTone is the test tone frequency (DVX_TEST_TONE_FREQUENCY_OFF | DVX_TEST_TONE_FREQUENCY_60_HZ | DVX_TEST_TONE_FREQUENCY_250_HZ | DVX_TEST_TONE_FREQUENCY_400_HZ | DVX_TEST_TONE_FREQUENCY_1_KHZ | DVX_TEST_TONE_FREQUENCY_3_KHZ | DVX_TEST_TONE_FREQUENCY_5_KHZ | DVX_TEST_TONE_FREQUENCY_10_KHZ | DVX_TEST_TONE_FREQUENCY_PINK_NOISE | DVX_TEST_TONE_FREQUENCY_WHITE_NOISE)
 }
 */
 
@@ -692,8 +692,8 @@ define_function dvxNotifyAudioOutTestTone (dev dvxAudioOutput, char testTone[])
 #define INCLUDE_DVX_NOTIFY_AUDIO_OUT_VOLUME_CALLBACK
 define_function dvxNotifyAudioOutVolume (dev dvxAudioOutput, integer volume)
 {
-    // dvxAudioOutput is the D:P:S of the video output port on the DVX switcher. The output number can be taken from dvxAudioOutput.PORT
-    // volume is the volume value (range: 0 to 100)
+	// dvxAudioOutput is the D:P:S of the video output port on the DVX switcher. The output number can be taken from dvxAudioOutput.PORT
+	// volume is the volume value (range: 0 to 100)
 }
 */
 
@@ -701,8 +701,8 @@ define_function dvxNotifyAudioOutVolume (dev dvxAudioOutput, integer volume)
 #define INCLUDE_DVX_NOTIFY_AUDIO_OUT_HDMI_AUDIO_OUTPUT_CALLBACK
 define_function dvxNotifyAudioOutHdmiAudioOutput (dev dvxAudioOutput, char hdmiAudioOutput[])
 {
-    // dvxAudioOutput is the D:P:S of the video output port on the DVX switcher. The output number can be taken from dvxAudioOutput.PORT
-    // hdmiAudioOutput contains the audio output setting for the HDMI output (DVX_HDMI_AUDIO_OUTPUT_OFF | DVX_HDMI_AUDIO_OUTPUT_INPUT_PASS_THRU | DVX_HDMI_AUDIO_OUTPUT_ANALOG_OUT_1 | DVX_HDMI_AUDIO_OUTPUT_ANALOG_OUT_2 | DVX_HDMI_AUDIO_OUTPUT_ANALOG_OUT_3 | DVX_HDMI_AUDIO_OUTPUT_ANALOG_OUT_4)
+	// dvxAudioOutput is the D:P:S of the video output port on the DVX switcher. The output number can be taken from dvxAudioOutput.PORT
+	// hdmiAudioOutput contains the audio output setting for the HDMI output (DVX_HDMI_AUDIO_OUTPUT_OFF | DVX_HDMI_AUDIO_OUTPUT_INPUT_PASS_THRU | DVX_HDMI_AUDIO_OUTPUT_ANALOG_OUT_1 | DVX_HDMI_AUDIO_OUTPUT_ANALOG_OUT_2 | DVX_HDMI_AUDIO_OUTPUT_ANALOG_OUT_3 | DVX_HDMI_AUDIO_OUTPUT_ANALOG_OUT_4)
 }
 */
 
@@ -710,8 +710,8 @@ define_function dvxNotifyAudioOutHdmiAudioOutput (dev dvxAudioOutput, char hdmiA
 #define INCLUDE_DVX_NOTIFY_AUDIO_OUT_HDMI_EQ_STATUS_CALLBACK
 define_function dvxNotifyAudioOutHdmiEqStatus (dev dvxAudioOutput, char eqStatus[])
 {
-    // dvxAudioOutput is the D:P:S of the video output port on the DVX switcher. The output number can be taken from dvxAudioOutput.PORT
-    // eqStatus contains the HDMI equalizer status (cON | cOFF)
+	// dvxAudioOutput is the D:P:S of the video output port on the DVX switcher. The output number can be taken from dvxAudioOutput.PORT
+	// eqStatus contains the HDMI equalizer status (cON | cOFF)
 }
 */
 
@@ -719,8 +719,8 @@ define_function dvxNotifyAudioOutHdmiEqStatus (dev dvxAudioOutput, char eqStatus
 #define INCLUDE_DVX_NOTIFY_AUDIO_OUT_SPDIF_AUDIO_OUTPUT_CALLBACK
 define_function dvxNotifyAudioOutSpdifAudioOutput (dev dvxAudioOutput, char spdifAudioOutput[])
 {
-    // dvxAudioOutput is the D:P:S of the video output port on the DVX switcher. The output number can be taken from dvxAudioOutput.PORT
-    // spdifAudioOutput contains the output to which the SP/DIF port connects (DVX_SDDIF_AUDIO_OUTPUT_OFF | DVX_SDDIF_AUDIO_OUTPUT_HDMI_OUT_1 | DVX_SDDIF_AUDIO_OUTPUT_HDMI_OUT_2 | DVX_SDDIF_AUDIO_OUTPUT_HDMI_OUT_3 | DVX_SDDIF_AUDIO_OUTPUT_HDMI_OUT_4 | DVX_SDDIF_AUDIO_OUTPUT_ANALOG_OUT_1 | DVX_SDDIF_AUDIO_OUTPUT_ANALOG_OUT_2 | DVX_SDDIF_AUDIO_OUTPUT_ANALOG_OUT_3 | DVX_SDDIF_AUDIO_OUTPUT_ANALOG_OUT_4)
+	// dvxAudioOutput is the D:P:S of the video output port on the DVX switcher. The output number can be taken from dvxAudioOutput.PORT
+	// spdifAudioOutput contains the output to which the SP/DIF port connects (DVX_SDDIF_AUDIO_OUTPUT_OFF | DVX_SDDIF_AUDIO_OUTPUT_HDMI_OUT_1 | DVX_SDDIF_AUDIO_OUTPUT_HDMI_OUT_2 | DVX_SDDIF_AUDIO_OUTPUT_HDMI_OUT_3 | DVX_SDDIF_AUDIO_OUTPUT_HDMI_OUT_4 | DVX_SDDIF_AUDIO_OUTPUT_ANALOG_OUT_1 | DVX_SDDIF_AUDIO_OUTPUT_ANALOG_OUT_2 | DVX_SDDIF_AUDIO_OUTPUT_ANALOG_OUT_3 | DVX_SDDIF_AUDIO_OUTPUT_ANALOG_OUT_4)
 }
 */
 
@@ -728,10 +728,10 @@ define_function dvxNotifyAudioOutSpdifAudioOutput (dev dvxAudioOutput, char spdi
 #define INCLUDE_DVX_NOTIFY_AUDIO_OUT_MIX_LEVEL_CALLBACK
 define_function dvxNotifyAudioOutMixLevel (dev dvxAudioOutput, sinteger mixLevel, integer input, integer output)
 {
-    // dvxAudioOutput is the D:P:S of the video output port on the DVX switcher. The output number can be taken from dvxAudioOutput.PORT
-    // mixLevel is the mix level (range: -100 to 0)
-    // input is input being mixed (DVX_MIX_INPUT_LINE | DVX_MIX_INPUT_MIC1 | DVX_MIX_INPUT_MIC2)
-    // output is the audio output (1 is AMP, 2...4 are Line outputs)
+	// dvxAudioOutput is the D:P:S of the video output port on the DVX switcher. The output number can be taken from dvxAudioOutput.PORT
+	// mixLevel is the mix level (range: -100 to 0)
+	// input is input being mixed (DVX_MIX_INPUT_LINE | DVX_MIX_INPUT_MIC1 | DVX_MIX_INPUT_MIC2)
+	// output is the audio output (1 is AMP, 2...4 are Line outputs)
 }
 */
 
@@ -747,8 +747,8 @@ define_function dvxNotifyAudioOutMixLevel (dev dvxAudioOutput, sinteger mixLevel
 #define INCLUDE_DVX_NOTIFY_AUDIO_IN_COMPRESSION_CALLBACK
 define_function dvxNotifyAudioInCompression (dev dvxAudioInput, char compressionSetting[])
 {
-    // dvxAudioInput is the D:P:S of the audio input port on the DVX switcher. The input number can be taken from dvxAudioInput.PORT
-    // compressionSetting is the compression setting for the audio input (DVX_COMPRESSION_OFF | DVX_COMPRESSION_LOW | DVX_COMPRESSION_MEDIUM | DVX_COMPRESSION_HIGH | DVX_COMPRESSION_CUSTOM)
+	// dvxAudioInput is the D:P:S of the audio input port on the DVX switcher. The input number can be taken from dvxAudioInput.PORT
+	// compressionSetting is the compression setting for the audio input (DVX_COMPRESSION_OFF | DVX_COMPRESSION_LOW | DVX_COMPRESSION_MEDIUM | DVX_COMPRESSION_HIGH | DVX_COMPRESSION_CUSTOM)
 }
 */
 
@@ -756,8 +756,8 @@ define_function dvxNotifyAudioInCompression (dev dvxAudioInput, char compression
 #define INCLUDE_DVX_NOTIFY_AUDIO_IN_COMPRESSION_ATTACK_CALLBACK
 define_function dvxNotifyAudioInCompressionAttack (dev dvxAudioInput, integer attackDuration)
 {
-    // dvxAudioInput is the D:P:S of the audio input port on the DVX switcher. The input number can be taken from dvxAudioInput.PORT
-    // attackDuration is the duration of the compression attack phase (range: 1....2000)
+	// dvxAudioInput is the D:P:S of the audio input port on the DVX switcher. The input number can be taken from dvxAudioInput.PORT
+	// attackDuration is the duration of the compression attack phase (range: 1....2000)
 }
 */
 
@@ -765,8 +765,8 @@ define_function dvxNotifyAudioInCompressionAttack (dev dvxAudioInput, integer at
 #define INCLUDE_DVX_NOTIFY_AUDIO_IN_COMPRESSION_RATIO_CALLBACK
 define_function dvxNotifyAudioInCompressionRatio (dev dvxAudioInput, integer ratio)
 {
-    // dvxAudioInput is the D:P:S of the audio input port on the DVX switcher. The input number can be taken from dvxAudioInput.PORT
-    // ratio is the compression ratio (rang:e 1....20)
+	// dvxAudioInput is the D:P:S of the audio input port on the DVX switcher. The input number can be taken from dvxAudioInput.PORT
+	// ratio is the compression ratio (rang:e 1....20)
 }
 */
 
@@ -774,8 +774,8 @@ define_function dvxNotifyAudioInCompressionRatio (dev dvxAudioInput, integer rat
 #define INCLUDE_DVX_NOTIFY_AUDIO_IN_COMPRESSION_RELEASE_CALLBACK
 define_function dvxNotifyAudioInCompressionRelease (dev dvxAudioInput, integer release)
 {
-    // dvxAudioInput is the D:P:S of the audio input port on the DVX switcher. The input number can be taken from dvxAudioInput.PORT
-    // release is the compression release (range: 1...5000)
+	// dvxAudioInput is the D:P:S of the audio input port on the DVX switcher. The input number can be taken from dvxAudioInput.PORT
+	// release is the compression release (range: 1...5000)
 }
 */
 
@@ -783,8 +783,8 @@ define_function dvxNotifyAudioInCompressionRelease (dev dvxAudioInput, integer r
 #define INCLUDE_DVX_NOTIFY_AUDIO_IN_COMPRESSION_THRESHOLD_CALLBACK
 define_function dvxNotifyAudioInCompressionThreshold (dev dvxAudioInput, sinteger threshold)
 {
-    // dvxAudioInput is the D:P:S of the audio input port on the DVX switcher. The input number can be taken from dvxAudioInput.PORT
-    // threshold is the compression threshold (range: 0....-60dB)
+	// dvxAudioInput is the D:P:S of the audio input port on the DVX switcher. The input number can be taken from dvxAudioInput.PORT
+	// threshold is the compression threshold (range: 0....-60dB)
 }
 */
 
@@ -792,8 +792,8 @@ define_function dvxNotifyAudioInCompressionThreshold (dev dvxAudioInput, sintege
 #define INCLUDE_DVX_NOTIFY_AUDIO_IN_GAIN_CALLBACK
 define_function dvxNotifyAudioInGain (dev dvxAudioInput, sinteger gain)
 {
-    // dvxAudioInput is the D:P:S of the audio input port on the DVX switcher. The input number can be taken from dvxAudioInput.PORT
-    // gain is the gain value (range: -24....24 in dB)
+	// dvxAudioInput is the D:P:S of the audio input port on the DVX switcher. The input number can be taken from dvxAudioInput.PORT
+	// gain is the gain value (range: -24....24 in dB)
 }
 */
 
@@ -801,8 +801,8 @@ define_function dvxNotifyAudioInGain (dev dvxAudioInput, sinteger gain)
 #define INCLUDE_DVX_NOTIFY_AUDIO_IN_GAIN_MUTE_CALLBACK
 define_function dvxNotifyAudioInGainMute (dev dvxAudioInput, char status[])
 {
-    // dvxAudioInput is the D:P:S of the audio input port on the DVX switcher. The input number can be taken from dvxAudioInput.PORT
-    // status is the gain mute status value (cENABLED | cDISABLED)
+	// dvxAudioInput is the D:P:S of the audio input port on the DVX switcher. The input number can be taken from dvxAudioInput.PORT
+	// status is the gain mute status value (cENABLED | cDISABLED)
 }
 */
 
@@ -810,8 +810,8 @@ define_function dvxNotifyAudioInGainMute (dev dvxAudioInput, char status[])
 #define INCLUDE_DVX_NOTIFY_AUDIO_IN_STEREO_CALLBACK
 define_function dvxNotifyAudioInStereo (dev dvxAudioInput, char stereoMode[])
 {
-    // dvxAudioInput is the D:P:S of the audio input port on the DVX switcher. The input number can be taken from dvxAudioInput.PORT
-    // stereoMode is the stereo audio mode (DVX_AUDIO_STEREO | DVX_AUDIO_MONO)
+	// dvxAudioInput is the D:P:S of the audio input port on the DVX switcher. The input number can be taken from dvxAudioInput.PORT
+	// stereoMode is the stereo audio mode (DVX_AUDIO_STEREO | DVX_AUDIO_MONO)
 }
 */
 
@@ -827,8 +827,8 @@ define_function dvxNotifyAudioInStereo (dev dvxAudioInput, char stereoMode[])
 #define INCLUDE_DVX_NOTIFY_AUDIO_MIC_COMPRESSION_CALLBACK
 define_function dvxNotifyAudioMicCompression (dev dvxMicInput, char compressionSetting[])
 {
-    // dvxMicInput is the D:P:S of the audio mic input port on the DVX switcher. The mic input number can be taken from dvxMicInput.PORT
-    // compressionSetting is the compression setting (DVX_COMPRESSION_OFF | DVX_COMPRESSION_LOW | DVX_COMPRESSION_MEDIUM | DVX_COMPRESSION_HIGH | DVX_COMPRESSION_CUSTOM)
+	// dvxMicInput is the D:P:S of the audio mic input port on the DVX switcher. The mic input number can be taken from dvxMicInput.PORT
+	// compressionSetting is the compression setting (DVX_COMPRESSION_OFF | DVX_COMPRESSION_LOW | DVX_COMPRESSION_MEDIUM | DVX_COMPRESSION_HIGH | DVX_COMPRESSION_CUSTOM)
 }
 */
 
@@ -836,8 +836,8 @@ define_function dvxNotifyAudioMicCompression (dev dvxMicInput, char compressionS
 #define INCLUDE_DVX_NOTIFY_AUDIO_MIC_COMPRESSION_ATTACK_CALLBACK
 define_function dvxNotifyAudioMicCompressionAttack (dev dvxMicInput, integer attack)
 {
-    // dvxMicInput is the D:P:S of the audio mic input port on the DVX switcher. The mic input number can be taken from dvxMicInput.PORT
-    // attack is the duration of the attack phase while compressing the microphone (range: 1 to 2000)
+	// dvxMicInput is the D:P:S of the audio mic input port on the DVX switcher. The mic input number can be taken from dvxMicInput.PORT
+	// attack is the duration of the attack phase while compressing the microphone (range: 1 to 2000)
 }
 */
 
@@ -845,8 +845,8 @@ define_function dvxNotifyAudioMicCompressionAttack (dev dvxMicInput, integer att
 #define INCLUDE_DVX_NOTIFY_AUDIO_MIC_COMPRESSION_RATIO_CALLBACK
 define_function dvxNotifyAudioMicCompressionRatio (dev dvxMicInput, integer ratio)
 {
-    // dvxMicInput is the D:P:S of the audio mic input port on the DVX switcher. The mic input number can be taken from dvxMicInput.PORT
-    // ratio is the ratio for compressing the microphone (range: 1 to 20).
+	// dvxMicInput is the D:P:S of the audio mic input port on the DVX switcher. The mic input number can be taken from dvxMicInput.PORT
+	// ratio is the ratio for compressing the microphone (range: 1 to 20).
 }
 */
 
@@ -854,8 +854,8 @@ define_function dvxNotifyAudioMicCompressionRatio (dev dvxMicInput, integer rati
 #define INCLUDE_DVX_NOTIFY_AUDIO_MIC_COMPRESSION_RELEASE_CALLBACK
 define_function dvxNotifyAudioMicCompressionRelease (dev dvxMicInput, integer release)
 {
-    // dvxMicInput is the D:P:S of the audio mic input port on the DVX switcher. The mic input number can be taken from dvxMicInput.PORT
-    // release is the duration of the compression release while compressing the microphone (range: 1 to 5000).
+	// dvxMicInput is the D:P:S of the audio mic input port on the DVX switcher. The mic input number can be taken from dvxMicInput.PORT
+	// release is the duration of the compression release while compressing the microphone (range: 1 to 5000).
 }
 */
 
@@ -863,18 +863,18 @@ define_function dvxNotifyAudioMicCompressionRelease (dev dvxMicInput, integer re
 #define INCLUDE_DVX_NOTIFY_AUDIO_MIC_COMPRESSION_THRESHOLD_CALLBACK
 define_function dvxNotifyAudioMicCompressionThreshold (dev dvxMicInput, sinteger threshold)
 {
-    // dvxMicInput is the D:P:S of the audio mic input port on the DVX switcher. The mic input number can be taken from dvxMicInput.PORT
-    // threshold is the threshold while compressing the microphone (range: 0 to -60).
+	// dvxMicInput is the D:P:S of the audio mic input port on the DVX switcher. The mic input number can be taken from dvxMicInput.PORT
+	// threshold is the threshold while compressing the microphone (range: 0 to -60).
 }
 */
 
-/*	// INVALID COMMAND - DOCUMENTATION WAS INCORRECT
+/*// INVALID COMMAND - DOCUMENTATION WAS INCORRECT
 #define INCLUDE_DVX_NOTIFY_AUDIO_MIC_EQ_CALLBACK
 define_function dvxNotifyAudioMicEq (dev dvxMicInput, integer band, sinteger value)
 {
-    // dvxMicInput is the D:P:S of the audio mic input port on the DVX switcher. The mic input number can be taken from dvxMicInput.PORT
-    // band is the microphone eq band (range: 1 to 3).
-    // value is the EQ  setting (range: -12 to 12).
+	// dvxMicInput is the D:P:S of the audio mic input port on the DVX switcher. The mic input number can be taken from dvxMicInput.PORT
+	// band is the microphone eq band (range: 1 to 3).
+	// value is the EQ  setting (range: -12 to 12).
 }
 */
 
@@ -882,9 +882,9 @@ define_function dvxNotifyAudioMicEq (dev dvxMicInput, integer band, sinteger val
 #define INCLUDE_DVX_NOTIFY_AUDIO_MIC_EQ_CENTER_FREQUENCY_CALLBACK
 define_function dvxNotifyAudioMicEqCenterFrequency (dev dvxMicInput, integer band, sinteger centerFrequency)
 {
-    // dvxMicInput is the D:P:S of the audio mic input port on the DVX switcher. The mic input number can be taken from dvxMicInput.PORT
-    // band is the microphone eq band (range: 1 to 3).
-    // centerFrequency is the EQ center frequency (range: -12 to 12).
+	// dvxMicInput is the D:P:S of the audio mic input port on the DVX switcher. The mic input number can be taken from dvxMicInput.PORT
+	// band is the microphone eq band (range: 1 to 3).
+	// centerFrequency is the EQ center frequency (range: -12 to 12).
 }
 */
 
@@ -892,9 +892,9 @@ define_function dvxNotifyAudioMicEqCenterFrequency (dev dvxMicInput, integer ban
 #define INCLUDE_DVX_NOTIFY_AUDIO_MIC_EQ_FILTER_TYPE_CALLBACK
 define_function dvxNotifyAudioMicEqFilterType (dev dvxMicInput, integer band, char filterType[])
 {
-    // dvxMicInput is the D:P:S of the audio mic input port on the DVX switcher. The mic input number can be taken from dvxMicInput.PORT
-    // band is the microphone eq band (range: 1 to 3).
-    // filterType is the EQ filter type (DVX_EQ_FILTER_TYPE_BELL | DVX_EQ_FILTER_TYPE_BAND_PASS | DVX_EQ_FILTER_TYPE_BAND_STOP | DVX_EQ_FILTER_TYPE_HIGH_PASS | DVX_EQ_FILTER_TYPE_LOW_PASS | DVX_EQ_FILTER_TYPE_TREBLE_SHELF | DVX_EQ_FILTER_TYPE_BASS_SHELF).
+	// dvxMicInput is the D:P:S of the audio mic input port on the DVX switcher. The mic input number can be taken from dvxMicInput.PORT
+	// band is the microphone eq band (range: 1 to 3).
+	// filterType is the EQ filter type (DVX_EQ_FILTER_TYPE_BELL | DVX_EQ_FILTER_TYPE_BAND_PASS | DVX_EQ_FILTER_TYPE_BAND_STOP | DVX_EQ_FILTER_TYPE_HIGH_PASS | DVX_EQ_FILTER_TYPE_LOW_PASS | DVX_EQ_FILTER_TYPE_TREBLE_SHELF | DVX_EQ_FILTER_TYPE_BASS_SHELF).
 }
 */
 
@@ -902,9 +902,9 @@ define_function dvxNotifyAudioMicEqFilterType (dev dvxMicInput, integer band, ch
 #define INCLUDE_DVX_NOTIFY_AUDIO_MIC_EQ_GAIN_CALLBACK
 define_function dvxNotifyAudioMicEqGain (dev dvxMicInput, integer band, sinteger gain)
 {
-    // dvxMicInput is the D:P:S of the audio mic input port on the DVX switcher. The mic input number can be taken from dvxMicInput.PORT
-    // band is the microphone eq band (range: 1 to 3).
-    // gain is the EQ gain value (range: -12 to 12).
+	// dvxMicInput is the D:P:S of the audio mic input port on the DVX switcher. The mic input number can be taken from dvxMicInput.PORT
+	// band is the microphone eq band (range: 1 to 3).
+	// gain is the EQ gain value (range: -12 to 12).
 }
 */
 
@@ -912,9 +912,9 @@ define_function dvxNotifyAudioMicEqGain (dev dvxMicInput, integer band, sinteger
 #define INCLUDE_DVX_NOTIFY_AUDIO_MIC_EQ_QUALITY_FACTOR_CALLBACK
 define_function dvxNotifyAudioMicEqQualityFactor (dev dvxMicInput, integer band, float factor)
 {
-    // dvxMicInput is the D:P:S of the audio mic input port on the DVX switcher. The mic input number can be taken from dvxMicInput.PORT
-    // band is the microphone eq band (range: 1 to 3).
-    // factor is the EQ quality factor value (range: 0.1 to 20).
+	// dvxMicInput is the D:P:S of the audio mic input port on the DVX switcher. The mic input number can be taken from dvxMicInput.PORT
+	// band is the microphone eq band (range: 1 to 3).
+	// factor is the EQ quality factor value (range: 0.1 to 20).
 }
 */
 
@@ -922,8 +922,8 @@ define_function dvxNotifyAudioMicEqQualityFactor (dev dvxMicInput, integer band,
 #define INCLUDE_DVX_NOTIFY_AUDIO_MIC_GAIN_CALLBACK
 define_function dvxNotifyAudioMicGain (dev dvxMicInput, sinteger gain)
 {
-    // dvxMicInput is the D:P:S of the audio mic input port on the DVX switcher. The mic input number can be taken from dvxMicInput.PORT
-    // gain is the mic gain value (range: -24 to 24).
+	// dvxMicInput is the D:P:S of the audio mic input port on the DVX switcher. The mic input number can be taken from dvxMicInput.PORT
+	// gain is the mic gain value (range: -24 to 24).
 }
 */
 
@@ -931,8 +931,8 @@ define_function dvxNotifyAudioMicGain (dev dvxMicInput, sinteger gain)
 #define INCLUDE_DVX_NOTIFY_AUDIO_MIC_GATING_CALLBACK
 define_function dvxNotifyAudioMicGating (dev dvxMicInput, char gatingSetting[])
 {
-    // dvxMicInput is the D:P:S of the audio mic input port on the DVX switcher. The mic input number can be taken from dvxMicInput.PORT
-    // gatingSetting is the mic gating setting (DVX_GATING_OFF | DVX_GATING_LOW | DVX_GATING_MEDIUM | DVX_GATING_HIGH | DVX_GATING_CUSTOM).
+	// dvxMicInput is the D:P:S of the audio mic input port on the DVX switcher. The mic input number can be taken from dvxMicInput.PORT
+	// gatingSetting is the mic gating setting (DVX_GATING_OFF | DVX_GATING_LOW | DVX_GATING_MEDIUM | DVX_GATING_HIGH | DVX_GATING_CUSTOM).
 }
 */
 
@@ -940,8 +940,8 @@ define_function dvxNotifyAudioMicGating (dev dvxMicInput, char gatingSetting[])
 #define INCLUDE_DVX_NOTIFY_AUDIO_MIC_GATING_ATTACK_CALLBACK
 define_function dvxNotifyAudioMicGatingAttack (dev dvxMicInput, integer attack)
 {
-    // dvxMicInput is the D:P:S of the audio mic input port on the DVX switcher. The mic input number can be taken from dvxMicInput.PORT
-    // attack is the mic gating attack value (range: 1 to 2000).
+	// dvxMicInput is the D:P:S of the audio mic input port on the DVX switcher. The mic input number can be taken from dvxMicInput.PORT
+	// attack is the mic gating attack value (range: 1 to 2000).
 }
 */
 
@@ -949,8 +949,8 @@ define_function dvxNotifyAudioMicGatingAttack (dev dvxMicInput, integer attack)
 #define INCLUDE_DVX_NOTIFY_AUDIO_MIC_GATING_DEPTH_CALLBACK
 define_function dvxNotifyAudioMicGatingDepth (dev dvxMicInput, integer depth)
 {
-    // dvxMicInput is the D:P:S of the audio mic input port on the DVX switcher. The mic input number can be taken from dvxMicInput.PORT
-    // depth is the mic gating attack value (range: 0 to 20).
+	// dvxMicInput is the D:P:S of the audio mic input port on the DVX switcher. The mic input number can be taken from dvxMicInput.PORT
+	// depth is the mic gating attack value (range: 0 to 20).
 }
 */
 
@@ -958,8 +958,8 @@ define_function dvxNotifyAudioMicGatingDepth (dev dvxMicInput, integer depth)
 #define INCLUDE_DVX_NOTIFY_AUDIO_MIC_GATING_HOLD_CALLBACK
 define_function dvxNotifyAudioMicGatingHold (dev dvxMicInput, integer hold)
 {
-    // dvxMicInput is the D:P:S of the audio mic input port on the DVX switcher. The mic input number can be taken from dvxMicInput.PORT
-    // hold is the mic gating hold value (range: 0 to 2000).
+	// dvxMicInput is the D:P:S of the audio mic input port on the DVX switcher. The mic input number can be taken from dvxMicInput.PORT
+	// hold is the mic gating hold value (range: 0 to 2000).
 }
 */
 
@@ -967,8 +967,8 @@ define_function dvxNotifyAudioMicGatingHold (dev dvxMicInput, integer hold)
 #define INCLUDE_DVX_NOTIFY_AUDIO_MIC_GATING_RELEASE_CALLBACK
 define_function dvxNotifyAudioMicGatingRelease (dev dvxMicInput, integer release)
 {
-    // dvxMicInput is the D:P:S of the audio mic input port on the DVX switcher. The mic input number can be taken from dvxMicInput.PORT
-    // release is the mic gating release value (range: 10 to 5000).
+	// dvxMicInput is the D:P:S of the audio mic input port on the DVX switcher. The mic input number can be taken from dvxMicInput.PORT
+	// release is the mic gating release value (range: 10 to 5000).
 }
 */
 
@@ -976,8 +976,8 @@ define_function dvxNotifyAudioMicGatingRelease (dev dvxMicInput, integer release
 #define INCLUDE_DVX_NOTIFY_AUDIO_MIC_GATING_THRESHOLD_CALLBACK
 define_function dvxNotifyAudioMicGatingThreshold (dev dvxMicInput, sinteger threshold)
 {
-    // dvxMicInput is the D:P:S of the audio mic input port on the DVX switcher. The mic input number can be taken from dvxMicInput.PORT
-    // threshold is the mic gating theshhold value (range: 0 to -60).
+	// dvxMicInput is the D:P:S of the audio mic input port on the DVX switcher. The mic input number can be taken from dvxMicInput.PORT
+	// threshold is the mic gating theshhold value (range: 0 to -60).
 }
 */
 
@@ -985,8 +985,8 @@ define_function dvxNotifyAudioMicGatingThreshold (dev dvxMicInput, sinteger thre
 #define INCLUDE_DVX_NOTIFY_AUDIO_MIC_LIMITER_CALLBACK
 define_function dvxNotifyAudioMicLimiter (dev dvxMicInput, char limiterSetting[])
 {
-    // dvxMicInput is the D:P:S of the audio mic input port on the DVX switcher. The mic input number can be taken from dvxMicInput.PORT
-    // limiterSetting is the mic limiter setting (DVX_LIMITER_OFF | DVX_LIMITER_LOW | DVX_LIMITER_MEDIUM | DVX_LIMITER_HIGH | DVX_LIMITER_CUSTOM).
+	// dvxMicInput is the D:P:S of the audio mic input port on the DVX switcher. The mic input number can be taken from dvxMicInput.PORT
+	// limiterSetting is the mic limiter setting (DVX_LIMITER_OFF | DVX_LIMITER_LOW | DVX_LIMITER_MEDIUM | DVX_LIMITER_HIGH | DVX_LIMITER_CUSTOM).
 }
 */
 
@@ -994,8 +994,8 @@ define_function dvxNotifyAudioMicLimiter (dev dvxMicInput, char limiterSetting[]
 #define INCLUDE_DVX_NOTIFY_AUDIO_MIC_LIMITER_ATTACK_CALLBACK
 define_function dvxNotifyAudioMicLimiterAttack (dev dvxMicInput, integer attack)
 {
-    // dvxMicInput is the D:P:S of the audio mic input port on the DVX switcher. The mic input number can be taken from dvxMicInput.PORT
-    // attack is the mic limiter attack value (range: 1 to 2000).
+	// dvxMicInput is the D:P:S of the audio mic input port on the DVX switcher. The mic input number can be taken from dvxMicInput.PORT
+	// attack is the mic limiter attack value (range: 1 to 2000).
 }
 */
 
@@ -1003,8 +1003,8 @@ define_function dvxNotifyAudioMicLimiterAttack (dev dvxMicInput, integer attack)
 #define INCLUDE_DVX_NOTIFY_AUDIO_MIC_LIMITER_RELEASE_CALLBACK
 define_function dvxNotifyAudioMicLimiterRelease (dev dvxMicInput, integer release)
 {
-    // dvxMicInput is the D:P:S of the audio mic input port on the DVX switcher. The mic input number can be taken from dvxMicInput.PORT
-    // release is the mic limiter release value (range: 10 to 5000).
+	// dvxMicInput is the D:P:S of the audio mic input port on the DVX switcher. The mic input number can be taken from dvxMicInput.PORT
+	// release is the mic limiter release value (range: 10 to 5000).
 }
 */
 
@@ -1012,8 +1012,8 @@ define_function dvxNotifyAudioMicLimiterRelease (dev dvxMicInput, integer releas
 #define INCLUDE_DVX_NOTIFY_AUDIO_MIC_LIMITER_THRESHOLD_CALLBACK
 define_function dvxNotifyAudioMicLimiterThreshold (dev dvxMicInput, sinteger threshold)
 {
-    // dvxMicInput is the D:P:S of the audio mic input port on the DVX switcher. The mic input number can be taken from dvxMicInput.PORT
-    // threshold is the mic limiter theshhold value (range: 0 to -60).
+	// dvxMicInput is the D:P:S of the audio mic input port on the DVX switcher. The mic input number can be taken from dvxMicInput.PORT
+	// threshold is the mic limiter theshhold value (range: 0 to -60).
 }
 */
 
@@ -1021,8 +1021,8 @@ define_function dvxNotifyAudioMicLimiterThreshold (dev dvxMicInput, sinteger thr
 #define INCLUDE_DVX_NOTIFY_AUDIO_MIC_ON_CALLBACK
 define_function dvxNotifyAudioMicOn (dev dvxMicInput, char status[])
 {
-    // dvxMicInput is the D:P:S of the audio mic input port on the DVX switcher. The mic input number can be taken from dvxMicInput.PORT
-    // status is the status of the microphone (cON | cOFF)
+	// dvxMicInput is the D:P:S of the audio mic input port on the DVX switcher. The mic input number can be taken from dvxMicInput.PORT
+	// status is the status of the microphone (cON | cOFF)
 }
 */
 
@@ -1030,8 +1030,8 @@ define_function dvxNotifyAudioMicOn (dev dvxMicInput, char status[])
 #define INCLUDE_DVX_NOTIFY_AUDIO_MIC_PHANTOM_POWER_CALLBACK
 define_function dvxNotifyAudioMicPhantomPower (dev dvxMicInput, char status[])
 {
-    // dvxMicInput is the D:P:S of the audio mic input port on the DVX switcher. The mic input number can be taken from dvxMicInput.PORT
-    // status is the phantom power setting of the microphone (cON | cOFF)
+	// dvxMicInput is the D:P:S of the audio mic input port on the DVX switcher. The mic input number can be taken from dvxMicInput.PORT
+	// status is the phantom power setting of the microphone (cON | cOFF)
 }
 */
 
@@ -1039,8 +1039,8 @@ define_function dvxNotifyAudioMicPhantomPower (dev dvxMicInput, char status[])
 #define INCLUDE_DVX_NOTIFY_AUDIO_MIC_PREAMP_GAIN_CALLBACK
 define_function dvxNotifyAudioMicPreampGain (dev dvxMicInput, integer percentage)
 {
-    // dvxMicInput is the D:P:S of the audio mic input port on the DVX switcher. The mic input number can be taken from dvxMicInput.PORT
-    // percentage is the pre-amplifier gain on the microphone (range: 0 to 100, units are in %).
+	// dvxMicInput is the D:P:S of the audio mic input port on the DVX switcher. The mic input number can be taken from dvxMicInput.PORT
+	// percentage is the pre-amplifier gain on the microphone (range: 0 to 100, units are in %).
 }
 */
 
@@ -1048,23 +1048,10 @@ define_function dvxNotifyAudioMicPreampGain (dev dvxMicInput, integer percentage
 #define INCLUDE_DVX_NOTIFY_AUDIO_MIC_STEREO_CALLBACK
 define_function dvxNotifyAudioMicStereo (dev dvxMicInput, char micType[])
 {
-    // dvxMicInput is the D:P:S of the audio mic input port on the DVX switcher. The mic input number can be taken from dvxMicInput.PORT
-    // micType is the type of microphone in use on the microphone port (DVX_MIC_TYPE_DUAL_MONO | DVX_MIC_TYPE_SINGLE_STEREO)
+	// dvxMicInput is the D:P:S of the audio mic input port on the DVX switcher. The mic input number can be taken from dvxMicInput.PORT
+	// micType is the type of microphone in use on the microphone port (DVX_MIC_TYPE_DUAL_MONO | DVX_MIC_TYPE_SINGLE_STEREO)
 }
 */
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1084,10 +1071,10 @@ define_event
  */
 
 
-data_event[dvDvxMainPorts]	// dvDvxMainPorts should be the device (D:P:S) for port 1 on the DVX or an array containing multiple devices for port 1 on multiple DVX's
+data_event[dvDvxMainPorts]  // dvDvxMainPorts should be the device (D:P:S) for port 1 on the DVX or an array containing multiple devices for port 1 on multiple DVX's
 {
-    command:
-    {
+	command:
+	{
 		stack_var char cmdHeader[30]
 		
 		// remove the header
@@ -1187,13 +1174,13 @@ data_event[dvDvxMainPorts]	// dvDvxMainPorts should be the device (D:P:S) for po
 				// Unhandled command - Do nothing!
 			}
 		}
-    }
+	}
 }
 
-data_event[dvDvxVidOutPorts]	// dvDvxVidOutPorts should be a DEV array containing devices for each video output port on the DVX
+data_event[dvDvxVidOutPorts]    // dvDvxVidOutPorts should be a DEV array containing devices for each video output port on the DVX
 {
-    command:
-    {
+	command:
+	{
 		stack_var char cmdHeader[30]
 		
 		// remove the header
@@ -1344,13 +1331,13 @@ data_event[dvDvxVidOutPorts]	// dvDvxVidOutPorts should be a DEV array containin
 			}
 			
 		}
-    }
+	}
 }
 
-data_event[dvDvxVidInPorts]	// dvDvxVidInPorts should be a DEV array containing devices for each video input port on the DVX
+data_event[dvDvxVidInPorts] // dvDvxVidInPorts should be a DEV array containing devices for each video input port on the DVX
 {
-    command:
-    {
+	command:
+	{
 		stack_var char cmdHeader[30]
 		
 		// remove the header
@@ -1498,13 +1485,13 @@ data_event[dvDvxVidInPorts]	// dvDvxVidInPorts should be a DEV array containing 
 				// Unhandled command - Do nothing!
 			}
 		}
-    }
+	}
 }
 
-data_event[dvDvxAudInPorts]	// dvDvxAudInPorts should be a DEV array containing devices for each audio input port on the DVX
+data_event[dvDvxAudInPorts] // dvDvxAudInPorts should be a DEV array containing devices for each audio input port on the DVX
 {
-    command:
-    {
+	command:
+	{
 		stack_var char cmdHeader[30]
 		
 		// remove the header
@@ -1569,13 +1556,13 @@ data_event[dvDvxAudInPorts]	// dvDvxAudInPorts should be a DEV array containing 
 				// Unhandled command - Do nothing!
 			}
 		}
-    }
+	}
 }
 
-data_event[dvDvxAudOutPorts]	// dvDvxAudOutPorts should be a DEV array containing devices for each audio output port on the DVX
+data_event[dvDvxAudOutPorts]    // dvDvxAudOutPorts should be a DEV array containing devices for each audio output port on the DVX
 {
-    command:
-    {
+	command:
+	{
 		stack_var char cmdHeader[30]
 		
 		// remove the header
@@ -1778,13 +1765,13 @@ data_event[dvDvxAudOutPorts]	// dvDvxAudOutPorts should be a DEV array containin
 				// Unhandled command - Do nothing!
 			}
 		}
-    }
+	}
 }
 
-data_event[dvDvxMicInPorts]	// dvDvxMicInPorts should be a DEV array containing devices for each mic input port on the DVX
+data_event[dvDvxMicInPorts] // dvDvxMicInPorts should be a DEV array containing devices for each mic input port on the DVX
 {
-    command:
-    {
+	command:
+	{
 		stack_var char cmdHeader[30]
 		
 		// remove the header
@@ -2031,7 +2018,7 @@ data_event[dvDvxMicInPorts]	// dvDvxMicInPorts should be a DEV array containing 
 				// Unhandled command - Do nothing!
 			}
 		}
-    }
+	}
 }
 
 
@@ -2044,8 +2031,8 @@ data_event[dvDvxMicInPorts]	// dvDvxMicInPorts should be a DEV array containing 
 
 channel_event[dvDvxMainPorts,0]
 {
-    on:
-    {
+	on:
+	{
 		switch (channel.channel)
 		{
 			#if_defined INCLUDE_DVX_NOTIFY_STANDBY_MODE_CALLBACK
@@ -2075,9 +2062,9 @@ channel_event[dvDvxMainPorts,0]
 				// this is a placeholder in case no events subscriptions were declared
 			}
 		}
-    }
-    off:
-    {
+	}
+	off:
+	{
 		switch (channel.channel)
 		{
 			#if_defined INCLUDE_DVX_NOTIFY_STANDBY_MODE_CALLBACK
@@ -2107,13 +2094,13 @@ channel_event[dvDvxMainPorts,0]
 				// this is a placeholder in case no events subscriptions were declared
 			}
 		}
-    }
+	}
 }
 
 channel_event[dvDvxAudInPorts,0]
 {
-    on:
-    {
+	on:
+	{
 		switch (channel.channel)
 		{
 			#if_defined INCLUDE_DVX_NOTIFY_AUDIO_IN_GAIN_MUTE_CALLBACK
@@ -2129,9 +2116,9 @@ channel_event[dvDvxAudInPorts,0]
 				// this is a placeholder in case no events subscriptions were declared
 			}
 		}
-    }
-    off:
-    {
+	}
+	off:
+	{
 		switch (channel.channel)
 		{
 			#if_defined INCLUDE_DVX_NOTIFY_AUDIO_IN_GAIN_MUTE_CALLBACK
@@ -2147,13 +2134,13 @@ channel_event[dvDvxAudInPorts,0]
 				// this is a placeholder in case no events subscriptions were declared
 			}
 		}
-    }
+	}
 }
 
 channel_event[dvDvxAudOutPorts,0]
 {
-    on:
-    {
+	on:
+	{
 		switch (channel.channel)
 		{
 			#if_defined INCLUDE_DVX_NOTIFY_AUDIO_OUT_MUTE_CALLBACK
@@ -2169,9 +2156,9 @@ channel_event[dvDvxAudOutPorts,0]
 				// this is a placeholder in case no events subscriptions were declared
 			}
 		}
-    }
-    off:
-    {
+	}
+	off:
+	{
 		switch (channel.channel)
 		{
 			#if_defined INCLUDE_DVX_NOTIFY_AUDIO_OUT_MUTE_CALLBACK
@@ -2187,13 +2174,13 @@ channel_event[dvDvxAudOutPorts,0]
 				// this is a placeholder in case no events subscriptions were declared
 			}
 		}
-    }
+	}
 }
 
 channel_event[dvDvxMicInPorts,0]
 {
-    on:
-    {
+	on:
+	{
 		switch (channel.channel)
 		{
 			#if_defined INCLUDE_DVX_NOTIFY_AUDIO_MIC_ON_CALLBACK
@@ -2209,9 +2196,9 @@ channel_event[dvDvxMicInPorts,0]
 				// this is a placeholder in case no events subscriptions were declared
 			}
 		}
-    }
-    off:
-    {
+	}
+	off:
+	{
 		switch (channel.channel)
 		{
 			#if_defined INCLUDE_DVX_NOTIFY_AUDIO_MIC_ON_CALLBACK
@@ -2227,13 +2214,13 @@ channel_event[dvDvxMicInPorts,0]
 				// this is a placeholder in case no events subscriptions were declared
 			}
 		}
-    }
+	}
 }
 
 channel_event[dvDvxVidInPorts,0]
 {
-    on:
-    {
+	on:
+	{
 		switch (channel.channel)
 		{
 			#if_defined INCLUDE_DVX_NOTIFY_VIDEO_INPUT_BLACK_AND_WHITE_STATE_CALLBACK
@@ -2249,9 +2236,9 @@ channel_event[dvDvxVidInPorts,0]
 				// this is a placeholder in case no events subscriptions were declared
 			}
 		}
-    }
-    off:
-    {
+	}
+	off:
+	{
 		switch (channel.channel)
 		{
 			#if_defined INCLUDE_DVX_NOTIFY_VIDEO_INPUT_BLACK_AND_WHITE_STATE_CALLBACK
@@ -2267,13 +2254,13 @@ channel_event[dvDvxVidInPorts,0]
 				// this is a placeholder in case no events subscriptions were declared
 			}
 		}
-    }
+	}
 }
 
 channel_event[dvDvxVidOutPorts,0]
 {
-    on:
-    {
+	on:
+	{
 		switch (channel.channel)
 		{
 			#if_defined INCLUDE_DVX_NOTIFY_VIDEO_OUTPUT_ON_CALLBACK
@@ -2310,9 +2297,9 @@ channel_event[dvDvxVidOutPorts,0]
 				// this is a placeholder in case no events subscriptions were declared
 			}
 		}
-    }
-    off:
-    {
+	}
+	off:
+	{
 		switch (channel.channel)
 		{
 			#if_defined INCLUDE_DVX_NOTIFY_VIDEO_OUTPUT_ON_CALLBACK
@@ -2349,7 +2336,7 @@ channel_event[dvDvxVidOutPorts,0]
 				// this is a placeholder in case no events subscriptions were declared
 			}
 		}
-    }
+	}
 }
 
 
@@ -2362,8 +2349,8 @@ channel_event[dvDvxVidOutPorts,0]
 
 level_event[dvDvxMainPorts,0]
 {
-    switch (level.input.level)
-    {
+	switch (level.input.level)
+	{
 		#if_defined INCLUDE_DVX_NOTIFY_INTERNAL_TEMPERATURE_CALLBACK
 		case DVX_LEVEL_TEMPERATURE:
 		{
@@ -2376,13 +2363,13 @@ level_event[dvDvxMainPorts,0]
 			// do nothing
 			// this is a placeholder in case no events subscriptions were declared
 		}
-    }
+	}
 }
 
 level_event[dvDvxAudInPorts,0]
 {
-    switch (level.input.level)
-    {
+	switch (level.input.level)
+	{
 		#if_defined INCLUDE_DVX_NOTIFY_AUDIO_IN_GAIN_CALLBACK
 		case DVX_LEVEL_AUDIO_INPUT_GAIN:
 		{
@@ -2395,13 +2382,13 @@ level_event[dvDvxAudInPorts,0]
 			// do nothing
 			// this is a placeholder in case no events subscriptions were declared
 		}
-    }
+	}
 }
 
 level_event[dvDvxAudOutPorts,0]
 {
-    switch (level.input.level)
-    {
+	switch (level.input.level)
+	{
 		#if_defined INCLUDE_DVX_NOTIFY_AUDIO_OUT_VOLUME_CALLBACK
 		case DVX_LEVEL_AUDIO_OUTPUT_VOLUME:
 		{
@@ -2497,13 +2484,13 @@ level_event[dvDvxAudOutPorts,0]
 			// do nothing
 			// this is a placeholder in case no events subscriptions were declared
 		}
-    }
+	}
 }
 
 level_event[dvDvxMicInPorts,0]
 {
-    switch (level.input.level)
-    {
+	switch (level.input.level)
+	{
 		#if_defined INCLUDE_DVX_NOTIFY_AUDIO_MIC_PREAMP_GAIN_CALLBACK
 		case DVX_LEVEL_AUDIO_MIC_PREAMP_GAIN:
 		{
@@ -2540,13 +2527,13 @@ level_event[dvDvxMicInPorts,0]
 			// do nothing
 			// this is a placeholder in case no events subscriptions were declared
 		}
-    }
+	}
 }
 
 level_event[dvDvxVidInPorts,0]
 {
-    switch (level.input.level)
-    {
+	switch (level.input.level)
+	{
 		#if_defined INCLUDE_DVX_NOTIFY_VIDEO_INPUT_BRIGHTNESS_CALLBACK
 		case DVX_LEVEL_VIDEO_INPUT_BRIGHTNESS:
 		{
@@ -2594,13 +2581,13 @@ level_event[dvDvxVidInPorts,0]
 			// do nothing
 			// this is a placeholder in case no events subscriptions were declared
 		}
-    }
+	}
 }
 
 level_event[dvDvxVidOutPorts,0]
 {
-    switch (level.input.level)
-    {
+	switch (level.input.level)
+	{
 		#if_defined INCLUDE_DVX_NOTIFY_VIDEO_OUTPUT_ZOOM_CALLBACK
 		case DVX_LEVEL_VIDEO_OUTPUT_ZOOM:
 		{
@@ -2662,7 +2649,7 @@ level_event[dvDvxVidOutPorts,0]
 			// do nothing
 			// this is a placeholder in case no events subscriptions were declared
 		}
-    }
+	}
 }
 
 #end_if

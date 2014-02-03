@@ -197,7 +197,7 @@ integer DVX_LEVEL_AUDIO_INPUT_GAIN          = 5 // range: -24 to 24
 
 // Audio output level codes
 integer DVX_LEVEL_AUDIO_OUTPUT_VOLUME                   = 1     // range: 0 to 100
-integer DVX_LEVEL_AUDIO_OUTPUT_BALANCE                  = 2	    // range: -20 to 20
+integer DVX_LEVEL_AUDIO_OUTPUT_BALANCE                  = 2     // range: -20 to 20
 integer DVX_LEVEL_AUDIO_OUTPUT_EQ_BAND_1                = 31    // range: -12 to 12
 integer DVX_LEVEL_AUDIO_OUTPUT_EQ_BAND_2                = 32    // range: -12 to 12
 integer DVX_LEVEL_AUDIO_OUTPUT_EQ_BAND_3                = 33    // range: -12 to 12
@@ -230,7 +230,7 @@ integer DVX_LEVEL_VIDEO_INPUT_VERTICAL_SHIFT    = 19    // range: -10 to 10
 
 // Video output level codes
 integer DVX_LEVEL_VIDEO_OUTPUT_ZOOM                 = 15    // range: 25 to 800
-integer DVX_LEVEL_VIDEO_OUTPUT_BRIGHTNESS           = 20    // range: 0 to 100	
+integer DVX_LEVEL_VIDEO_OUTPUT_BRIGHTNESS           = 20    // range: 0 to 100
 integer DVX_LEVEL_VIDEO_OUTPUT_CONTRAST             = 22    // range: 0 to 100
 integer DVX_LEVEL_VIDEO_OUTPUT_HORIZONTAL_SIZE      = 26    // range: 25 to 800
 integer DVX_LEVEL_VIDEO_OUTPUT_HORIZONTAL_SHIFT     = 27    // range: -127 to 127
@@ -520,7 +520,7 @@ char DVX_COMMAND_VIDEO_OUT_CONTRAST_REQUEST[]                   = '?VIDOUT_CONTR
 char DVX_COMMAND_VIDEO_OUT_CONTRAST[]                           = 'VIDOUT_CONTRAST-'
 char DVX_COMMAND_VIDEO_OUT_FREEZE_REQUEST[]                     = '?VIDOUT_FREEZE'
 char DVX_COMMAND_VIDEO_OUT_FREEZE[]                             = 'VIDOUT_FREEZE-'
-char DVX_COMMAND_VIDEO_OUT_HORIZONTAL_SHIFT_REQUEST	[]          = '?VIDOUT_HSHIFT'
+char DVX_COMMAND_VIDEO_OUT_HORIZONTAL_SHIFT_REQUEST[]           = '?VIDOUT_HSHIFT'
 char DVX_COMMAND_VIDEO_OUT_HORIZONTAL_SHIFT[]                   = 'VIDOUT_HSHIFT-'
 char DVX_COMMAND_VIDEO_OUT_HORIZONTAL_SIZE_REQUEST[]            = '?VIDOUT_HSIZE'
 char DVX_COMMAND_VIDEO_OUT_HORIZONTAL_SIZE[]                    = 'VIDOUT_HSIZE-'
