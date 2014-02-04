@@ -2885,7 +2885,8 @@ define_function dvxSetAudioMicDuckingRelease (dev dvxAudioMicPort, integer relea
 	sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_DUCKING_RELEASE,itoa(releaseDuration)")
 }
 
- *       // INVALID - DOCUMENTATION WAS INCORRECT 
+/*
+// INVALID - DOCUMENTATION WAS INCORRECT 
 define_function dvxRequestAudioMicEq (dev dvxAudioMicPort, integer nBand)
 {
 	sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_EQ_REQUEST,itoa(nBand)")
