@@ -42,15 +42,15 @@ Consistent, descriptive control function names within **amx-dvx-control** make i
 	 */
 	define_function dvxSetVideoOutputScaleMode (dev dvxVideoOutputPort, char scaleMode[])
 	{
-	    switch (scaleMode)
-	    {
+		switch (scaleMode)
+		{
 			case DVX_SCALE_MODE_AUTO:
 			case DVX_SCALE_MODE_BYPASS:
 			case DVX_SCALE_MODE_MANUAL:
 			{
 				amxSendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_SCALE_MODE,scaleMode")
 			}
-	    }
+		}
 	}
 
 No longer are you required to refer to the DVX manual to work out what command headers are required or how to build a control string containing all the required values. This process was time consuming and often involved converting numeric data to string form and building string expressions which were long and complex.
@@ -62,8 +62,8 @@ Similarly, you no longer have to build events (data/channel/level, etc...) to ca
 	#define INCLUDE_DVX_NOTIFY_AUDIO_OUT_VOLUME_CALLBACK
 	define_function dvxNotifyAudioOutVolume (dev dvxAudioOutput, integer volume)
 	{
-	    // dvxAudioOutput is the D:P:S of the video output port on the DVX switcher. The output number can be taken from dvxAudioOutput.PORT
-	    // volume is the volume value (range: 0 to 100)
+		// dvxAudioOutput is the D:P:S of the video output port on the DVX switcher. The output number can be taken from dvxAudioOutput.PORT
+		// volume is the volume value (range: 0 to 100)
 	}
 
 Functions also assist to neaten up the programming and provide added readability to the code and the auto-prompter within the NetLinx Studio editor makes it easy to find the function you're looking for.
@@ -176,8 +176,8 @@ Copy an empty, commented out callback function from **amx-dvx-listener** and the
 	#define INCLUDE_DVX_NOTIFY_AUDIO_OUT_VOLUME_CALLBACK
 	define_function dvxNotifyAudioOutVolume (dev dvxAudioOutput, integer volume)
 	{
-	    // dvxAudioOutput is the D:P:S of the video output port on the DVX switcher. The output number can be taken from dvxAudioOutput.PORT
-	    // volume is the volume value (range: 0 to 100)
+		// dvxAudioOutput is the D:P:S of the video output port on the DVX switcher. The output number can be taken from dvxAudioOutput.PORT
+		// volume is the volume value (range: 0 to 100)
 	}
 	*/
 
@@ -186,14 +186,14 @@ paste the callback function and `#define` statement into the main program file, 
 	#define INCLUDE_DVX_NOTIFY_AUDIO_OUT_VOLUME_CALLBACK
 	define_function dvxNotifyAudioOutVolume (dev dvxAudioOutput, integer volume)
 	{
-	    // dvxAudioOutput is the D:P:S of the video output port on the DVX switcher. The output number can be taken from dvxAudioOutput.PORT
-	    // volume is the volume value (range: 0 to 100)
+		// dvxAudioOutput is the D:P:S of the video output port on the DVX switcher. The output number can be taken from dvxAudioOutput.PORT
+		// volume is the volume value (range: 0 to 100)
 
-	    // update the variable keeping track of volume for the speakers if the audio output port is the one connected to the main speakers
-	    if (dvxAudioOutput == dvDvxSpeakers)
-	    {
-	    	speakerVolume = volume
-	    }
+		// update the variable keeping track of volume for the speakers if the audio output port is the one connected to the main speakers
+		if (dvxAudioOutput == dvDvxSpeakers)
+		{
+			speakerVolume = volume
+		}
 	}
 
 The callback function will be automatically triggered whenever a change occurs on the DVX (that initiates an unsolicted feedback response) or a response to a request for information is received.
@@ -206,20 +206,20 @@ The callback function will be automatically triggered whenever a change occurs o
 E.g:
 
 		#program_name='main program'
-			
+		
 		define_device
-			
+		
 		dvDvxMain = 5002:1:0
 		dvDvxVideoOutputProjector = 5002:1:0
 		dvDvxAudioOutputSpeakers = 5002:1:0
-			
+		
 		define_variable
-			
+		
 		// DEV arrays for amx-dvx-listener to use
 		dev dvDvxMainPorts[] = { dvDvxMain }
 		dev dvDvxVidOutPorts[] = { dvDvxVideoOutputProjector }
 		dvDvxAudOutPorts[] = { dvDvxAudioOutputSpeakers }
-			
+		
 		#define INCLUDE_DVX_NOTIFY_AUDIO_OUT_VOLUME_CALLBACK
 		define_function dvxNotifyAudioOutVolume (dev dvxAudioOutput, integer volume)
 		{
