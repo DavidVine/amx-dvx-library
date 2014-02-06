@@ -96,6 +96,7 @@ amx-dvx-control
 #####Dependencies:
 + amx-dvx-api
 + amx-device-control (*see readme for amx-device-library for info*)
++ common (*see readme for amx-common-library for info*)
 
 #####Description: 
 Contains functions for controlling the various components of an AMX Enova DVX switcher and requesting information from the DVX.
@@ -121,7 +122,7 @@ and call the function(s) defined within **amx-dvx-control** from the main progra
 	{
 		push:
 		{
-			dvxSwitch (dvDvxMainPort, cSIGNAL_TYPE_VIDEO, dvDvxVideoInputPc.port, dvDvxVideoOutputProjector.port)
+			dvxSwitch (dvDvxMainPort, SIGNAL_TYPE_VIDEO, dvDvxVideoInputPc.port, dvDvxVideoOutputProjector.port)
 		}
 	}
 
@@ -130,6 +131,7 @@ amx-dvx-listener
 ----------------
 #####Dependencies:
 + amx-dvx-api
++ common (*see readme for amx-common-library for info*)
 
 #####Description:
 Contains dev arrays for listening to traffic returned from the AMX DVX switcher.

@@ -16,6 +16,7 @@ define_constant
 char VERSION_AMX_DVX_LISTENER[] = 'v1.0.0'
 
 include 'amx-dvx-api'
+#include 'common'
 
 
 
@@ -76,10 +77,10 @@ dev dvDvxMicInPorts[] = { 5002:1:0, 5002:2:0 }
 
 /*
 #define INCLUDE_DVX_NOTIFY_SWITCH_CALLBACK
-define_function dvxNotifySwitch (dev dvxPort1, char cSignalType[], integer input, integer output)
+define_function dvxNotifySwitch (dev dvxPort1, char signalType[], integer input, integer output)
 {
 	// dvxPort1 is port 1 on the DVX.
-	// cSignalType contains the type of signal that was switched ('AUDIO' or 'VIDEO')
+	// signalType contains the type of signal that was switched ('AUDIO' or 'VIDEO')
 	// input contains the source input number that was switched to the destination
 	// output contains the destination output number that the source was switched to
 }
@@ -98,7 +99,7 @@ define_function dvxNotifySwitch (dev dvxPort1, char cSignalType[], integer input
 define_function dvxNotifyFrontPanelLockoutStatus (dev dvxPort1, char lockoutStatus[])
 {
 	// dvxPort1 is port 1 on the DVX.
-	// lockoutStatus contains the lockout status (cENABLE | cDISABLE)
+	// lockoutStatus contains the lockout status (STATUS_ENABLE | STATUS_DISABLE)
 }
 */
 
@@ -161,7 +162,7 @@ define_function dvxNotifyInternalTemperature (dev dvxPort1, integer tempCelcius)
 define_function dvxNotifyDxlinkOutputEthernet (dev dvxDxlinkOutput, char ethernetStatus[])
 {
 	// dvxDxlinkOutput is the D:P:S of the DXLink output port on the DVX switcher. The output number can be taken from dvxDxlinkOutput.PORT
-	// ethernetStatus is the status of the Ethernet on the DXLink port (cENABLE | cDISABLE)
+	// ethernetStatus is the status of the Ethernet on the DXLink port (STATUS_ENABLE | STATUS_DISABLE)
 }
 */
 
@@ -170,7 +171,7 @@ define_function dvxNotifyDxlinkOutputEthernet (dev dvxDxlinkOutput, char etherne
 define_function dvxNotifyDxlinkInputEthernet (dev dvxDxlinkInput, char ethernetStatus[])
 {
 	// dvxDxlinkInput is the D:P:S of the DXLink input port on the DVX switcher. The input number can be taken from dvxDxlinkInput.PORT
-	// ethernetStatus is the status of the Ethernet on the DXLink port (cENABLE | cDISABLE)
+	// ethernetStatus is the status of the Ethernet on the DXLink port (STATUS_ENABLE | STATUS_DISABLE)
 }
 */
 
@@ -250,7 +251,7 @@ define_function dvxNotifyVideoOutputContrast (dev dvxVideoOutput, integer contra
 define_function dvxNotifyVideoOutputFreeze (dev dvxVideoOutput, char freezeStatus[])
 {
 	// dvxVideoOutput is the D:P:S of the output port on the DVX switcher. The output number can be taken from dvxVideoOutput.PORT
-	// freezeStatus is the status of the video freeze (cENABLE | cDISABLE)
+	// freezeStatus is the status of the video freeze (STATUS_ENABLE | STATUS_DISABLE)
 }
 */
 
@@ -277,7 +278,7 @@ define_function dvxNotifyVideoOutputHorizontalSize (dev dvxVideoOutput, integer 
 define_function dvxNotifyVideoOutputMute (dev dvxVideoOutput, char muteStatus[])
 {
 	// dvxVideoOutput is the D:P:S of the output port on the DVX switcher. The output number can be taken from dvxVideoOutput.PORT
-	// muteStatus contains the video output mute status (cENABLE | cDISABLE)
+	// muteStatus contains the video output mute status (STATUS_ENABLE | STATUS_DISABLE)
 }
 */
 
@@ -286,7 +287,7 @@ define_function dvxNotifyVideoOutputMute (dev dvxVideoOutput, char muteStatus[])
 define_function dvxNotifyVideoOutputOn (dev dvxVideoOutput, char onOffStatus[])
 {
 	// dvxVideoOutput is the D:P:S of the output port on the DVX switcher. The output number can be taken from dvxVideoOutput.PORT
-	// onOffStatus is the video output on status (cON | cOFF)
+	// onOffStatus is the video output on status (STATUS_ON | STATUS_OFF)
 }
 */
 
@@ -295,7 +296,7 @@ define_function dvxNotifyVideoOutputOn (dev dvxVideoOutput, char onOffStatus[])
 define_function dvxNotifyVideoOutputOsd (dev dvxVideoOutput, char osdStatus[])
 {
 	// dvxVideoOutput is the D:P:S of the output port on the DVX switcher. The output number can be taken from dvxVideoOutput.PORT
-	// osdStatus is the OSD status (cENABLE | cDISABLE)
+	// osdStatus is the OSD status (STATUS_ENABLE | STATUS_DISABLE)
 }
 */
 
@@ -393,7 +394,7 @@ define_function dvxNotifyVideoInputBrightness (dev dvxVideoInput, integer bright
 define_function dvxNotifyVideoInputBlackAndWhiteState (dev dvxVideoInput, char status[])
 {
 	// dvxVideoInput is the D:P:S of the video input port on the DVX switcher. The input number can be taken from dvxVideoInput.PORT
-	// status is the status of black and white mode on the video input (cENABLE | cDISABLE)
+	// status is the status of black and white mode on the video input (STATUS_ENABLE | STATUS_DISABLE)
 }
 */
 
@@ -402,7 +403,7 @@ define_function dvxNotifyVideoInputBlackAndWhiteState (dev dvxVideoInput, char s
 define_function dvxNotifyVideoInputColor (dev dvxVideoInput, char status[])
 {
 	// dvxVideoInput is the D:P:S of the video input port on the DVX switcher. The input number can be taken from dvxVideoInput.PORT
-	// status is the status of color mode on the video input (cENABLE | cDISABLE)
+	// status is the status of color mode on the video input (STATUS_ENABLE | STATUS_DISABLE)
 }
 */
 
@@ -429,7 +430,7 @@ define_function dvxNotifyVideoInputEdidSource (dev dvxVideoInput, char edidSourc
 define_function dvxNotifyVideoInputEdidUpdateAuto (dev dvxVideoInput, char autoStatus[])
 {
 	// dvxVideoInput is the D:P:S of the video input port on the DVX switcher. The input number can be taken from dvxVideoInput.PORT
-	// autoStatus is the status of whether the EDID updates at regular intervals (cENABLE | cDISABLE)
+	// autoStatus is the status of whether the EDID updates at regular intervals (STATUS_ENABLE | STATUS_DISABLE)
 }
 */
 
@@ -447,7 +448,7 @@ define_function dvxNotifyVideoInputEdidPreferredResolution (dev dvxVideoInput, c
 define_function dvxNotifyVideoInputFormat (dev dvxVideoInput, char videoFormat[])
 {
 	// dvxVideoInput is the D:P:S of the video input port on the DVX switcher. The input number can be taken from dvxVideoInput.PORT
-	// videoFormat is the video format (cVIDEO_SIGNAL_FORMAT_HDMI | cVIDEO_SIGNAL_FORMAT_DVI | cVIDEO_SIGNAL_FORMAT_VGA | cVIDEO_SIGNAL_FORMAT_COMPOSITE | cVIDEO_SIGNAL_FORMAT_COMPONENT | cVIDEO_SIGNAL_FORMAT_SVIDEO | cVIDEO_SIGNAL_FORMAT_RGB)
+	// videoFormat is the video format (VIDEO_SIGNAL_FORMAT_HDMI | VIDEO_SIGNAL_FORMAT_DVI | VIDEO_SIGNAL_FORMAT_VGA | VIDEO_SIGNAL_FORMAT_COMPOSITE | VIDEO_SIGNAL_FORMAT_COMPONENT | VIDEO_SIGNAL_FORMAT_SVIDEO | VIDEO_SIGNAL_FORMAT_RGB)
 }
 */
 
@@ -456,7 +457,7 @@ define_function dvxNotifyVideoInputFormat (dev dvxVideoInput, char videoFormat[]
 define_function dvxNotifyVideoInputHdcpCompliance (dev dvxVideoInput, char status[])
 {
 	// dvxVideoInput is the D:P:S of the video input port on the DVX switcher. The input number can be taken from dvxVideoInput.PORT
-	// status is the status of the HDCP compliance on the video input port (cENABLE | cDISABLE)
+	// status is the status of the HDCP compliance on the video input port (STATUS_ENABLE | STATUS_DISABLE)
 }
 */
 
@@ -501,7 +502,7 @@ define_function dvxNotifyVideoInputPhase (dev dvxVideoInput, integer phase)
 define_function dvxNotifyVideoInputResolutionAuto (dev dvxVideoInput, char status[])
 {
 	// dvxVideoInput is the D:P:S of the video input port on the DVX switcher. The input number can be taken from dvxVideoInput.PORT
-	// status is the auto resolution detect status (cENABLE | cDISABLE)
+	// status is the auto resolution detect status (STATUS_ENABLE | STATUS_DISABLE)
 }
 */
 
@@ -666,7 +667,7 @@ define_function dvxNotifyAudioOutMinimumVolume (dev dvxAudioOutput, integer minV
 define_function dvxNotifyAudioOutMute (dev dvxAudioOutput, char muteStatus[])
 {
 	// dvxAudioOutput is the D:P:S of the video output port on the DVX switcher. The output number can be taken from dvxAudioOutput.PORT
-	// muteStatus is the mute status (cENABLE | cDISABLE)
+	// muteStatus is the mute status (STATUS_ENABLE | STATUS_DISABLE)
 }
 */
 
@@ -675,7 +676,7 @@ define_function dvxNotifyAudioOutMute (dev dvxAudioOutput, char muteStatus[])
 define_function dvxNotifyAudioOutStereo (dev dvxAudioOutput, char stereoStatus[])
 {
 	// dvxAudioOutput is the D:P:S of the video output port on the DVX switcher. The output number can be taken from dvxAudioOutput.PORT
-	// stereoStatus is the stereo audio status (cENABLE | cDISABLE)
+	// stereoStatus is the stereo audio status (STATUS_ENABLE | STATUS_DISABLE)
 }
 */
 
@@ -711,7 +712,7 @@ define_function dvxNotifyAudioOutHdmiAudioOutput (dev dvxAudioOutput, char hdmiA
 define_function dvxNotifyAudioOutHdmiEqStatus (dev dvxAudioOutput, char eqStatus[])
 {
 	// dvxAudioOutput is the D:P:S of the video output port on the DVX switcher. The output number can be taken from dvxAudioOutput.PORT
-	// eqStatus contains the HDMI equalizer status (cON | cOFF)
+	// eqStatus contains the HDMI equalizer status (STATUS_ON | STATUS_OFF)
 }
 */
 
@@ -802,7 +803,7 @@ define_function dvxNotifyAudioInGain (dev dvxAudioInput, sinteger gain)
 define_function dvxNotifyAudioInGainMute (dev dvxAudioInput, char status[])
 {
 	// dvxAudioInput is the D:P:S of the audio input port on the DVX switcher. The input number can be taken from dvxAudioInput.PORT
-	// status is the gain mute status value (cENABLED | cDISABLED)
+	// status is the gain mute status value (STATUS_ENABLE | STATUS_DISABLE)
 }
 */
 
@@ -1022,7 +1023,7 @@ define_function dvxNotifyAudioMicLimiterThreshold (dev dvxMicInput, sinteger thr
 define_function dvxNotifyAudioMicOn (dev dvxMicInput, char status[])
 {
 	// dvxMicInput is the D:P:S of the audio mic input port on the DVX switcher. The mic input number can be taken from dvxMicInput.PORT
-	// status is the status of the microphone (cON | cOFF)
+	// status is the status of the microphone (STATUS_ON | STATUS_OFF)
 }
 */
 
@@ -1031,7 +1032,7 @@ define_function dvxNotifyAudioMicOn (dev dvxMicInput, char status[])
 define_function dvxNotifyAudioMicPhantomPower (dev dvxMicInput, char status[])
 {
 	// dvxMicInput is the D:P:S of the audio mic input port on the DVX switcher. The mic input number can be taken from dvxMicInput.PORT
-	// status is the phantom power setting of the microphone (cON | cOFF)
+	// status is the phantom power setting of the microphone (STATUS_ON | STATUS_OFF)
 }
 */
 
@@ -1153,12 +1154,12 @@ data_event[dvDvxMainPorts]  // dvDvxMainPorts should be the device (D:P:S) for p
 				
 				if (find_string(data.text,'LAUDIO',1) == 1)
 				{
-					type = cSIGNAL_TYPE_AUDIO
+					type = SIGNAL_TYPE_AUDIO
 					remove_string(data.text,'LAUDIOI',1)
 				}
 				else if (find_string(data.text,'LVIDEO',1) == 1)
 				{
-					type = cSIGNAL_TYPE_VIDEO
+					type = SIGNAL_TYPE_VIDEO
 					remove_string(data.text,'LVIDEOI',1)
 				}
 				input = atoi(data.text)
@@ -2106,7 +2107,7 @@ channel_event[dvDvxAudInPorts,0]
 			#if_defined INCLUDE_DVX_NOTIFY_AUDIO_IN_GAIN_MUTE_CALLBACK
 			case DVX_CHANNEL_AUDIO_INPUT_GAIN_MUTE:
 			{
-				dvxNotifyAudioInGainMute(channel.device, cENABLE)
+				dvxNotifyAudioInGainMute(channel.device, STATUS_ENABLE)
 			}
 			#end_if
 			
@@ -2124,7 +2125,7 @@ channel_event[dvDvxAudInPorts,0]
 			#if_defined INCLUDE_DVX_NOTIFY_AUDIO_IN_GAIN_MUTE_CALLBACK
 			case DVX_CHANNEL_AUDIO_INPUT_GAIN_MUTE:
 			{
-				dvxNotifyAudioInGainMute(channel.device, cDISABLE)
+				dvxNotifyAudioInGainMute(channel.device, STATUS_DISABLE)
 			}
 			#end_if
 			
@@ -2146,7 +2147,7 @@ channel_event[dvDvxAudOutPorts,0]
 			#if_defined INCLUDE_DVX_NOTIFY_AUDIO_OUT_MUTE_CALLBACK
 			case DVX_CHANNEL_AUDIO_OUTPUT_VOLUME_MUTE:
 			{
-				dvxNotifyAudioOutMute(channel.device, cENABLE)
+				dvxNotifyAudioOutMute(channel.device, STATUS_ENABLE)
 			}
 			#end_if
 			
@@ -2164,7 +2165,7 @@ channel_event[dvDvxAudOutPorts,0]
 			#if_defined INCLUDE_DVX_NOTIFY_AUDIO_OUT_MUTE_CALLBACK
 			case DVX_CHANNEL_AUDIO_OUTPUT_VOLUME_MUTE:
 			{
-				dvxNotifyAudioOutMute(channel.device, cDISABLE)
+				dvxNotifyAudioOutMute(channel.device, STATUS_DISABLE)
 			}
 			#end_if
 			
@@ -2186,7 +2187,7 @@ channel_event[dvDvxMicInPorts,0]
 			#if_defined INCLUDE_DVX_NOTIFY_AUDIO_MIC_ON_CALLBACK
 			case DVX_CHANNEL_AUDIO_MIC_ENABLE:
 			{
-				dvxNotifyAudioMicOn(channel.device, cON)
+				dvxNotifyAudioMicOn(channel.device, STATUS_ON)
 			}
 			#end_if
 			
@@ -2204,7 +2205,7 @@ channel_event[dvDvxMicInPorts,0]
 			#if_defined INCLUDE_DVX_NOTIFY_AUDIO_MIC_ON_CALLBACK
 			case DVX_CHANNEL_AUDIO_MIC_ENABLE:
 			{
-				dvxNotifyAudioMicOn(channel.device, cOFF)
+				dvxNotifyAudioMicOn(channel.device, STATUS_OFF)
 			}
 			#end_if
 			
@@ -2226,7 +2227,7 @@ channel_event[dvDvxVidInPorts,0]
 			#if_defined INCLUDE_DVX_NOTIFY_VIDEO_INPUT_BLACK_AND_WHITE_STATE_CALLBACK
 			case DVX_CHANNEL_VIDEO_INPUT_BLACK_AND_WHITE_STATE:
 			{
-				dvxNotifyVideoInputBlackAndWhiteState(channel.device, cENABLE)
+				dvxNotifyVideoInputBlackAndWhiteState(channel.device, STATUS_ENABLE)
 			}
 			#end_if
 			
@@ -2244,7 +2245,7 @@ channel_event[dvDvxVidInPorts,0]
 			#if_defined INCLUDE_DVX_NOTIFY_VIDEO_INPUT_BLACK_AND_WHITE_STATE_CALLBACK
 			case DVX_CHANNEL_VIDEO_INPUT_BLACK_AND_WHITE_STATE:
 			{
-				dvxNotifyVideoInputBlackAndWhiteState(channel.device, cDISABLE)
+				dvxNotifyVideoInputBlackAndWhiteState(channel.device, STATUS_DISABLE)
 			}
 			#end_if
 			
@@ -2266,28 +2267,28 @@ channel_event[dvDvxVidOutPorts,0]
 			#if_defined INCLUDE_DVX_NOTIFY_VIDEO_OUTPUT_ON_CALLBACK
 			case DVX_CHANNEL_VIDEO_OUTPUT_ENABLE:
 			{
-				dvxNotifyVideoOutputOn(channel.device, cON)
+				dvxNotifyVideoOutputOn(channel.device, STATUS_ON)
 			}
 			#end_if
 			
 			#if_defined INCLUDE_DVX_NOTIFY_VIDEO_OUTPUT_MUTE_CALLBACK
 			case DVX_CHANNEL_VIDEO_OUTPUT_MUTE_STATE:
 			{
-				dvxNotifyVideoOutputMute(channel.device, cENABLE)
+				dvxNotifyVideoOutputMute(channel.device, STATUS_ENABLE)
 			}
 			#end_if
 			
 			#if_defined INCLUDE_DVX_NOTIFY_VIDEO_OUTPUT_FREEZE_CALLBACK
 			case DVX_CHANNEL_VIDEO_OUTPUT_FREEZE_STATE:
 			{
-				dvxNotifyVideoOutputFreeze(channel.device, cENABLE)
+				dvxNotifyVideoOutputFreeze(channel.device, STATUS_ENABLE)
 			}
 			#end_if
 			
 			#if_defined INCLUDE_DVX_NOTIFY_VIDEO_OUTPUT_OSD_CALLBACK
 			case DVX_CHANNEL_VIDEO_OUTPUT_OSD_STATE:
 			{
-				dvxNotifyVideoOutputOsd(channel.device, cENABLE)
+				dvxNotifyVideoOutputOsd(channel.device, STATUS_ENABLE)
 			}
 			#end_if
 			
@@ -2305,28 +2306,28 @@ channel_event[dvDvxVidOutPorts,0]
 			#if_defined INCLUDE_DVX_NOTIFY_VIDEO_OUTPUT_ON_CALLBACK
 			case DVX_CHANNEL_VIDEO_OUTPUT_ENABLE:
 			{
-				dvxNotifyVideoOutputOn(channel.device, cOFF)
+				dvxNotifyVideoOutputOn(channel.device, STATUS_OFF)
 			}
 			#end_if
 			
 			#if_defined INCLUDE_DVX_NOTIFY_VIDEO_OUTPUT_MUTE_CALLBACK
 			case DVX_CHANNEL_VIDEO_OUTPUT_MUTE_STATE:
 			{
-				dvxNotifyVideoOutputMute(channel.device, cDISABLE)
+				dvxNotifyVideoOutputMute(channel.device, STATUS_DISABLE)
 			}
 			#end_if
 			
 			#if_defined INCLUDE_DVX_NOTIFY_VIDEO_OUTPUT_FREEZE_CALLBACK
 			case DVX_CHANNEL_VIDEO_OUTPUT_FREEZE_STATE:
 			{
-				dvxNotifyVideoOutputFreeze(channel.device, cDISABLE)
+				dvxNotifyVideoOutputFreeze(channel.device, STATUS_DISABLE)
 			}
 			#end_if
 			
 			#if_defined INCLUDE_DVX_NOTIFY_VIDEO_OUTPUT_OSD_CALLBACK
 			case DVX_CHANNEL_VIDEO_OUTPUT_OSD_STATE:
 			{
-				dvxNotifyVideoOutputOsd(channel.device, cDISABLE)
+				dvxNotifyVideoOutputOsd(channel.device, STATUS_DISABLE)
 			}
 			#end_if
 			
@@ -2475,7 +2476,7 @@ level_event[dvDvxAudOutPorts,0]
 		#if_defined INCLUDE_DVX_NOTIFY_SWITCH_CALLBACK
 		case DVX_LEVEL_AUDIO_OUTPUT_SWITCHING:
 		{
-			dvxNotifySwitch(level.input.device.number:1:level.input.device.system,cSIGNAL_TYPE_AUDIO,level.value,level.input.device.port)
+			dvxNotifySwitch(level.input.device.number:1:level.input.device.system,SIGNAL_TYPE_AUDIO,level.value,level.input.device.port)
 		}
 		#end_if
 		
@@ -2640,7 +2641,7 @@ level_event[dvDvxVidOutPorts,0]
 		#if_defined INCLUDE_DVX_NOTIFY_SWITCH_CALLBACK
 		case DVX_LEVEL_VIDEO_OUTPUT_SWITCHING:
 		{
-			dvxNotifySwitch(level.input.device.number:1:level.input.device.system,cSIGNAL_TYPE_VIDEO,level.value,level.input.device.port)
+			dvxNotifySwitch(level.input.device.number:1:level.input.device.system,SIGNAL_TYPE_VIDEO,level.value,level.input.device.port)
 		}
 		#end_if
 			

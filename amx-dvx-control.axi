@@ -18,6 +18,7 @@ char VERSION_AMX_DVX_CONTROL[] = 'v1.0.0'
 
 #include 'amx-dvx-api'
 #include 'amx-device-control'
+#include 'common'
 
 
 /*
@@ -69,7 +70,7 @@ define_function dvxRequestFrontPanelLockout (dev dvxPort1)
  */
 define_function dvxEnableFrontPanelLockout (dev dvxPort1)
 {
-	sendCommand (dvxPort1, "DVX_COMMAND_FRONT_PANEL_LOCKOUT,cENABLE")
+	sendCommand (dvxPort1, "DVX_COMMAND_FRONT_PANEL_LOCKOUT,STATUS_ENABLE")
 }
 
 /*
@@ -81,7 +82,7 @@ define_function dvxEnableFrontPanelLockout (dev dvxPort1)
  */
 define_function dvxDisableFrontPanelLockout (dev dvxPort1)
 {
-	sendCommand (dvxPort1, "DVX_COMMAND_FRONT_PANEL_LOCKOUT,cDISABLE")
+	sendCommand (dvxPort1, "DVX_COMMAND_FRONT_PANEL_LOCKOUT,STATUS_DISABLE")
 }
 
 /*
@@ -342,9 +343,9 @@ define_function dvxSwitchAll(dev dvxPort1, integer input, integer output)
  * Arguments:   dev dvxPort1 - port 1 on the DVX siwtcher device
  *              char cSignalType[] - signal type
  *                      Values:
- *                          cSIGNAL_TYPE_VIDEO
- *                          cSIGNAL_TYPE_AUDIO
- *                          cSIGNAL_TYPE_ALL
+ *                          SIGNAL_TYPE_VIDEO
+ *                          SIGNAL_TYPE_AUDIO
+ *                          SIGNAL_TYPE_ALL
  *              integer input - source input to send
  *              integer output - destination to send to
  *
@@ -356,9 +357,9 @@ define_function dvxSwitch (dev dvxPort1, char cSignalType[], integer input, inte
 {
 	switch (cSignalType)
 	{
-		case cSIGNAL_TYPE_VIDEO:	sendCommand (dvxPort1, "DVX_COMMAND_SWITCH_VIDEO_ONLY,itoa(input),'O',itoa(output)")
-		case cSIGNAL_TYPE_AUDIO:	sendCommand (dvxPort1, "DVX_COMMAND_SWITCH_AUDIO_ONLY,itoa(input),'O',itoa(output)")
-		case cSIGNAL_TYPE_ALL:		sendCommand (dvxPort1, "DVX_COMMAND_SWITCH_ALL,itoa(input),'O',itoa(output)")
+		case SIGNAL_TYPE_VIDEO:	sendCommand (dvxPort1, "DVX_COMMAND_SWITCH_VIDEO_ONLY,itoa(input),'O',itoa(output)")
+		case SIGNAL_TYPE_AUDIO:	sendCommand (dvxPort1, "DVX_COMMAND_SWITCH_AUDIO_ONLY,itoa(input),'O',itoa(output)")
+		case SIGNAL_TYPE_ALL:		sendCommand (dvxPort1, "DVX_COMMAND_SWITCH_ALL,itoa(input),'O',itoa(output)")
 	}
 }
 
@@ -381,7 +382,7 @@ define_function dvxSwitch (dev dvxPort1, char cSignalType[], integer input, inte
  */
 define_function dvxRequestInputVideo (dev dvxPort1, integer output)
 {
-	sendCommand (dvxPort1, "DVX_COMMAND_INPUT_REQUEST,cSIGNAL_TYPE_VIDEO,',',itoa(output)")
+	sendCommand (dvxPort1, "DVX_COMMAND_INPUT_REQUEST,SIGNAL_TYPE_VIDEO,',',itoa(output)")
 }
 
 /*
@@ -395,7 +396,7 @@ define_function dvxRequestInputVideo (dev dvxPort1, integer output)
  */
 define_function dvxRequestOutputVideo (dev dvxPort1, integer input)
 {
-	sendCommand (dvxPort1, "DVX_COMMAND_OUTPUT_REQUEST,cSIGNAL_TYPE_VIDEO,',',itoa(input)")
+	sendCommand (dvxPort1, "DVX_COMMAND_OUTPUT_REQUEST,SIGNAL_TYPE_VIDEO,',',itoa(input)")
 }
 
 /*
@@ -409,7 +410,7 @@ define_function dvxRequestOutputVideo (dev dvxPort1, integer input)
  */
 define_function dvxRequestInputAudio (dev dvxPort1, integer output)
 {
-	sendCommand (dvxPort1, "DVX_COMMAND_INPUT_REQUEST,cSIGNAL_TYPE_AUDIO,',',itoa(output)")
+	sendCommand (dvxPort1, "DVX_COMMAND_INPUT_REQUEST,SIGNAL_TYPE_AUDIO,',',itoa(output)")
 }
 
 /*
@@ -423,7 +424,7 @@ define_function dvxRequestInputAudio (dev dvxPort1, integer output)
  */
 define_function dvxRequestOutputAudio (dev dvxPort1, integer input)
 {
-	sendCommand (dvxPort1, "DVX_COMMAND_OUTPUT_REQUEST,cSIGNAL_TYPE_AUDIO,',',itoa(input)")
+	sendCommand (dvxPort1, "DVX_COMMAND_OUTPUT_REQUEST,SIGNAL_TYPE_AUDIO,',',itoa(input)")
 }
 
 /*
@@ -437,7 +438,7 @@ define_function dvxRequestOutputAudio (dev dvxPort1, integer input)
  */
 define_function dvxRequestOutputAll (dev dvxPort1, integer input)
 {
-	sendCommand (dvxPort1, "DVX_COMMAND_OUTPUT_REQUEST,cSIGNAL_TYPE_ALL,',',itoa(input)")
+	sendCommand (dvxPort1, "DVX_COMMAND_OUTPUT_REQUEST,SIGNAL_TYPE_ALL,',',itoa(input)")
 }
 
 /*
@@ -446,9 +447,9 @@ define_function dvxRequestOutputAll (dev dvxPort1, integer input)
  * Arguments:   dev dvxPort1 - port 1 on the DVX siwtcher device
  *              char cSignalType[] - signal type
  *                      Values:
- *                          cSIGNAL_TYPE_VIDEO
- *                          cSIGNAL_TYPE_AUDIO
- *                          cSIGNAL_TYPE_ALL
+ *                          SIGNAL_TYPE_VIDEO
+ *                          SIGNAL_TYPE_AUDIO
+ *                          SIGNAL_TYPE_ALL
  *              integer output - audio output
  *
  * Description: Requests the input that is switched to the
@@ -459,8 +460,8 @@ define_function dvxRequestInput (dev dvxPort1, char signalType[], integer output
 {
 	switch (signalType)
 	{
-		case cSIGNAL_TYPE_VIDEO:	sendCommand (dvxPort1, "DVX_COMMAND_INPUT_REQUEST,cSIGNAL_TYPE_VIDEO,',',itoa(output)")
-		case cSIGNAL_TYPE_AUDIO:	sendCommand (dvxPort1, "DVX_COMMAND_INPUT_REQUEST,cSIGNAL_TYPE_AUDIO,',',itoa(output)")
+		case SIGNAL_TYPE_VIDEO:	sendCommand (dvxPort1, "DVX_COMMAND_INPUT_REQUEST,SIGNAL_TYPE_VIDEO,',',itoa(output)")
+		case SIGNAL_TYPE_AUDIO:	sendCommand (dvxPort1, "DVX_COMMAND_INPUT_REQUEST,SIGNAL_TYPE_AUDIO,',',itoa(output)")
 	}
 }
 
@@ -470,9 +471,9 @@ define_function dvxRequestInput (dev dvxPort1, char signalType[], integer output
  * Arguments:   dev dvxPort1 - port 1 on the DVX siwtcher device
  *              char cSignalType[] - signal type
  *                      Values:
- *                          cSIGNAL_TYPE_VIDEO
- *                          cSIGNAL_TYPE_AUDIO
- *                          cSIGNAL_TYPE_ALL
+ *                          SIGNAL_TYPE_VIDEO
+ *                          SIGNAL_TYPE_AUDIO
+ *                          SIGNAL_TYPE_ALL
  *              integer input - audio input
  *
  * Description: Requests the output that the specified input is
@@ -483,9 +484,9 @@ define_function dvxRequestOutput (dev dvxPort1, char signalType[], integer input
 {
 	switch (signalType)
 	{
-		case cSIGNAL_TYPE_VIDEO:	sendCommand (dvxPort1, "DVX_COMMAND_OUTPUT_REQUEST,cSIGNAL_TYPE_VIDEO,',',itoa(input)")
-		case cSIGNAL_TYPE_AUDIO:	sendCommand (dvxPort1, "DVX_COMMAND_OUTPUT_REQUEST,cSIGNAL_TYPE_AUDIO,',',itoa(input)")
-		case cSIGNAL_TYPE_ALL:		sendCommand (dvxPort1, "DVX_COMMAND_OUTPUT_REQUEST,cSIGNAL_TYPE_ALL,',',itoa(input)")
+		case SIGNAL_TYPE_VIDEO:	sendCommand (dvxPort1, "DVX_COMMAND_OUTPUT_REQUEST,SIGNAL_TYPE_VIDEO,',',itoa(input)")
+		case SIGNAL_TYPE_AUDIO:	sendCommand (dvxPort1, "DVX_COMMAND_OUTPUT_REQUEST,SIGNAL_TYPE_AUDIO,',',itoa(input)")
+		case SIGNAL_TYPE_ALL:		sendCommand (dvxPort1, "DVX_COMMAND_OUTPUT_REQUEST,SIGNAL_TYPE_ALL,',',itoa(input)")
 	}
 }
 
@@ -651,7 +652,7 @@ define_function dvxRequestVideoOutputFreeze (dev dvxVideoOutputPort)
  */
 define_function dvxEnableVideoOutputFreeze (dev dvxVideoOutputPort)
 {
-	sendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_FREEZE,cENABLE")
+	sendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_FREEZE,STATUS_ENABLE")
 }
 
 /*
@@ -663,7 +664,7 @@ define_function dvxEnableVideoOutputFreeze (dev dvxVideoOutputPort)
  */
 define_function dvxDisableVideoOutputFreeze (dev dvxVideoOutputPort)
 {
-	sendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_FREEZE,cDISABLE")
+	sendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_FREEZE,STATUS_DISABLE")
 }
 
 /*
@@ -740,7 +741,7 @@ define_function dvxRequestVideoOutputMute (dev dvxVideoOutputPort)
  */
 define_function dvxEnableVideoOutputMute (dev dvxVideoOutputPort)
 {
-	sendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_MUTE,cENABLE")
+	sendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_MUTE,STATUS_ENABLE")
 }
 
 /*
@@ -752,7 +753,7 @@ define_function dvxEnableVideoOutputMute (dev dvxVideoOutputPort)
  */
 define_function dvxDisableVideoOutputMute (dev dvxVideoOutputPort)
 {
-	sendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_MUTE,cDISABLE")
+	sendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_MUTE,STATUS_DISABLE")
 }
 
 /*
@@ -776,7 +777,7 @@ define_function dvxRequestVideoOutputOn (dev dvxVideoOutputPort)
  */
 define_function dvxEnableVideoOutputOn (dev dvxVideoOutputPort)
 {
-	sendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_ON,cON")
+	sendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_ON,STATUS_ON")
 }
 
 /*
@@ -788,7 +789,7 @@ define_function dvxEnableVideoOutputOn (dev dvxVideoOutputPort)
  */
 define_function dvxDisableVideoOutputOn (dev dvxVideoOutputPort)
 {
-	sendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_ON,cOFF")
+	sendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_ON,STATUS_OFF")
 }
 
 /*
@@ -813,7 +814,7 @@ define_function dvxRequestVideoOutputOsd (dev dvxVideoOutputPort)
  */
 define_function dvxEnableVideoOutputOsd (dev dvxVideoOutputPort)
 {
-	sendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_OSD,cENABLE")
+	sendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_OSD,STATUS_ENABLE")
 }
 
 /*
@@ -825,7 +826,7 @@ define_function dvxEnableVideoOutputOsd (dev dvxVideoOutputPort)
  */
 define_function dvxDisableVideoOutputOsd (dev dvxVideoOutputPort)
 {
-	sendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_OSD,cDISABLE")
+	sendCommand (dvxVideoOutputPort, "DVX_COMMAND_VIDEO_OUT_OSD,STATUS_DISABLE")
 }
 
 /*
@@ -1167,7 +1168,7 @@ define_function dvxRequestVideoInputBlackAndWhiteState (dev dvxVideoInputPort)
  */
 define_function dvxEnableVideoInputBlackAndWhiteState (dev dvxVideoInputPort)
 {
-	sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_BLACK_AND_WHITE_STATE,cENABLE")
+	sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_BLACK_AND_WHITE_STATE,STATUS_ENABLE")
 }
 
 /*
@@ -1180,7 +1181,7 @@ define_function dvxEnableVideoInputBlackAndWhiteState (dev dvxVideoInputPort)
  */
 define_function dvxDisableVideoInputBlackAndWhite (dev dvxVideoInputPort)
 {
-	sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_BLACK_AND_WHITE_STATE,cDISABLE")
+	sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_BLACK_AND_WHITE_STATE,STATUS_DISABLE")
 }
 
 /*
@@ -1205,7 +1206,7 @@ define_function dvxRequestVideoInputColor (dev dvxVideoInputPort)
  */
 define_function dvxEnableVideoInputColor (dev dvxVideoInputPort)
 {
-	sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_COLOR,cENABLE")
+	sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_COLOR,STATUS_ENABLE")
 }
 
 /*
@@ -1217,7 +1218,7 @@ define_function dvxEnableVideoInputColor (dev dvxVideoInputPort)
  */
 define_function dvxDisableVideoInputColor (dev dvxVideoInputPort)
 {
-	sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_COLOR,cDISABLE")
+	sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_COLOR,STATUS_DISABLE")
 }
 
 /*
@@ -1305,7 +1306,7 @@ define_function dvxRequestEdidAutoUpdate (dev dvxVideoInputPort)
  */
 define_function dvxEnableEdidAutoUpdate (dev dvxVideoInputPort)
 {
-	sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_EDID_UPDATE_AUTO,cENABLE")
+	sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_EDID_UPDATE_AUTO,STATUS_ENABLE")
 }
 
 /*
@@ -1318,7 +1319,7 @@ define_function dvxEnableEdidAutoUpdate (dev dvxVideoInputPort)
  */
 define_function dvxDisableEdidAutoUpdate (dev dvxVideoInputPort)
 {
-	sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_EDID_UPDATE_AUTO,cDISABLE")
+	sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_EDID_UPDATE_AUTO,STATUS_DISABLE")
 }
 
 /*
@@ -1365,12 +1366,12 @@ define_function dvxRequestVideoFormat (dev dvxVideoInputPort)
  * Arguments:   dev dvxVideoInputPort - video input port on the DVX
  *              char signalFormat[] - signal format
  *                      Values:
- *                          cVIDEO_SIGNAL_FORMAT_HDMI
- *                          cVIDEO_SIGNAL_FORMAT_DVI
- *                          cVIDEO_SIGNAL_FORMAT_VGA
- *                          cVIDEO_SIGNAL_FORMAT_COMPOSITE
- *                          cVIDEO_SIGNAL_FORMAT_COMPONENT
- *                          cVIDEO_SIGNAL_FORMAT_SVIDEO
+ *                          VIDEO_SIGNAL_FORMAT_HDMI
+ *                          VIDEO_SIGNAL_FORMAT_DVI
+ *                          VIDEO_SIGNAL_FORMAT_VGA
+ *                          VIDEO_SIGNAL_FORMAT_COMPOSITE
+ *                          VIDEO_SIGNAL_FORMAT_COMPONENT
+ *                          VIDEO_SIGNAL_FORMAT_SVIDEO
  *
  * Description: Sets the input format of the video port.
  */
@@ -1378,12 +1379,12 @@ define_function dvxSetVideoInputFormat (dev dvxVideoInputPort, char signalFormat
 {
 	switch (signalFormat)
 	{
-		case cVIDEO_SIGNAL_FORMAT_HDMI:
-		case cVIDEO_SIGNAL_FORMAT_DVI:
-		case cVIDEO_SIGNAL_FORMAT_VGA:
-		case cVIDEO_SIGNAL_FORMAT_COMPOSITE:
-		case cVIDEO_SIGNAL_FORMAT_COMPONENT:
-		case cVIDEO_SIGNAL_FORMAT_SVIDEO:
+		case VIDEO_SIGNAL_FORMAT_HDMI:
+		case VIDEO_SIGNAL_FORMAT_DVI:
+		case VIDEO_SIGNAL_FORMAT_VGA:
+		case VIDEO_SIGNAL_FORMAT_COMPOSITE:
+		case VIDEO_SIGNAL_FORMAT_COMPONENT:
+		case VIDEO_SIGNAL_FORMAT_SVIDEO:
 		{
 			sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_FORMAT,signalFormat")
 		}
@@ -1411,7 +1412,7 @@ define_function dvxRequestVideoInputHdcpCompliance (dev dvxVideoInputPort)
  */
 define_function dvxEnableVideoInputHdcpCompliance (dev dvxVideoInputPort)
 {
-	sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_HDCP_COMPLIANCE,cENABLE")
+	sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_HDCP_COMPLIANCE,STATUS_ENABLE")
 }
 
 /*
@@ -1423,7 +1424,7 @@ define_function dvxEnableVideoInputHdcpCompliance (dev dvxVideoInputPort)
  */
 define_function dvxDisableVideoHdcpCompliance (dev dvxVideoInputPort)
 {
-	sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_HDCP_COMPLIANCE,cDISABLE")
+	sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_HDCP_COMPLIANCE,STATUS_DISABLE")
 }
 
 /*
@@ -1570,7 +1571,7 @@ define_function dvxRequestVideoInputResolutionAuto (dev dvxVideoInputPort)
  */
 define_function dvxEnableVideoInputResolutionAuto (dev dvxVideoInputPort)
 {
-	sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_RESOLUTION_AUTO,cENABLE")
+	sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_RESOLUTION_AUTO,STATUS_ENABLE")
 }
 
 /*
@@ -1583,7 +1584,7 @@ define_function dvxEnableVideoInputResolutionAuto (dev dvxVideoInputPort)
  */
 define_function dvxDisableVideoResolutionAuto (dev dvxVideoInputPort)
 {
-	sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_RESOLUTION_AUTO,cDISABLE")
+	sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_RESOLUTION_AUTO,STATUS_DISABLE")
 }
 
 /*
@@ -2351,7 +2352,7 @@ define_function dvxRequestAudioOutputMute (dev dvxAudioOutputPort)
  */
 define_function dvxEnableAudioOutputMute (dev dvxAudioOutputPort)
 {
-	sendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_MUTE,cENABLE")
+	sendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_MUTE,STATUS_ENABLE")
 }
 
 /*
@@ -2363,7 +2364,7 @@ define_function dvxEnableAudioOutputMute (dev dvxAudioOutputPort)
  */
 define_function dvxDisableAudioOutputMute (dev dvxAudioOutputPort)
 {
-	sendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_MUTE,cDISABLE")
+	sendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_MUTE,STATUS_DISABLE")
 }
 
 /*
@@ -2387,7 +2388,7 @@ define_function dvxRequestAudioOutputStereo (dev dvxAudioOutputPort)
  */
 define_function dvxEnableAudioOutputStereo (dev dvxAudioOutputPort)
 {
-	sendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_STEREO,cENABLE")
+	sendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_STEREO,STATUS_ENABLE")
 }
 
 /*
@@ -2399,7 +2400,7 @@ define_function dvxEnableAudioOutputStereo (dev dvxAudioOutputPort)
  */
 define_function dvxDisableAudioOutputStereo (dev dvxAudioOutputPort)
 {
-	sendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_STEREO,cDISABLE")
+	sendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_STEREO,STATUS_DISABLE")
 }
 
 /*
@@ -2545,7 +2546,7 @@ define_function dvxRequestAudioOutputHdmiEq (dev dvxAudioOutputPort)
  */
 define_function dvxEnableAudioOutputHdmiEq (dev dvxAudioOutputPort)
 {
-	sendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_HDMI_EQ,cON")
+	sendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_HDMI_EQ,STATUS_ON")
 }
 
 /*
@@ -2557,7 +2558,7 @@ define_function dvxEnableAudioOutputHdmiEq (dev dvxAudioOutputPort)
  */
 define_function dvxDisableAudioOutputHdmiEq (dev dvxAudioOutputPort)
 {
-	sendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_HDMI_EQ,cOFF")
+	sendCommand (dvxAudioOutputPort, "DVX_COMMAND_AUDIO_OUT_HDMI_EQ,STATUS_OFF")
 }
 
 /*
@@ -3373,7 +3374,7 @@ define_function dvxRequestAudioMicOn (dev dvxAudioMicPort)
  */
 define_function dvxEnableAudioMicOn (dev dvxAudioMicPort)
 {
-	sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_ON,cON")
+	sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_ON,STATUS_ON")
 }
 
 /*
@@ -3385,7 +3386,7 @@ define_function dvxEnableAudioMicOn (dev dvxAudioMicPort)
  */
 define_function dvxDisableAudioMicOn (dev dvxAudioMicPort)
 {
-	sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_ON,cOFF")
+	sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_ON,STATUS_OFF")
 }
 
 /*
@@ -3409,7 +3410,7 @@ define_function dvxRequestAudioMicPhantomPower (dev dvxAudioMicPort)
  */
 define_function dvxEnableAudioMicPhantomPower (dev dvxAudioMicPort)
 {
-	sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_PHANTOM_POWER,cON")
+	sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_PHANTOM_POWER,STATUS_ON")
 }
 
 /*
@@ -3421,7 +3422,7 @@ define_function dvxEnableAudioMicPhantomPower (dev dvxAudioMicPort)
  */
 define_function dvxDisableAudioMicPhantomPower (dev dvxAudioMicPort)
 {
-	sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_PHANTOM_POWER,cOFF")
+	sendCommand (dvxAudioMicPort, "DVX_COMMAND_AUDIO_MIC_PHANTOM_POWER,STATUS_OFF")
 }
 
 /*
