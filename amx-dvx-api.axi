@@ -169,6 +169,11 @@ structure _DvxSwitcher
 
 	_DvxVideoInput videoInputs[DVX_MAX_VIDEO_INPUTS]
 	_DvxVideoOutput videoOutputs[DVX_MAX_VIDEO_OUTPUTS]
+	
+	integer switchStatusVideoInputs[DVX_MAX_VIDEO_INPUTS]
+	integer switchStatusVideoOutputs[DVX_MAX_VIDEO_OUTPUTS]
+	integer switchStatusAudioInputs[DVX_MAX_AUDIO_INPUTS]
+	integer switchStatusAudioOutputs[DVX_MAX_AUDIO_OUTPUTS]
 }
 
 
