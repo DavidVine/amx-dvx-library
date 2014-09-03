@@ -1416,13 +1416,13 @@ define_function dvxEnableVideoInputHdcpCompliance (dev dvxVideoInputPort)
 }
 
 /*
- * Function:    dvxDisableVideoHdcpCompliance
+ * Function:    dvxDisableVideoInputHdcpCompliance
  *
  * Arguments:   dev dvxVideoInputPort - video input port on the DVX
  *
  * Description: Disable the HDCP compliance setting on the video port.
  */
-define_function dvxDisableVideoHdcpCompliance (dev dvxVideoInputPort)
+define_function dvxDisableVideoInputHdcpCompliance (dev dvxVideoInputPort)
 {
 	sendCommand (dvxVideoInputPort, "DVX_COMMAND_VIDEO_IN_HDCP_COMPLIANCE,STATUS_DISABLE")
 }
