@@ -15,6 +15,8 @@ define_constant
 
 char VERSION_AMX_DVX_LISTENER[] = 'v1.0.0'
 
+integer MAX_DVX_LISTENERS = 15
+
 include 'amx-dvx-api'
 #include 'common'
 
@@ -23,35 +25,36 @@ include 'amx-dvx-api'
 /*
  * --------------------
  * Device arrays
+ *
+ * Any components that are to be monitored should have the appropriate
+ * device array copied into the main program DEFINE_VARIABLE section and the 
+ * associated #DEFINE compiler directives should be copied to the top of the 
+ * main program, above the line of code that this include file is included 
+ * into the main program.
  * --------------------
  */
 
+
 define_variable
-
-#if_not_defined dvDvxMainPorts
+/*
+#DEFINE INCLUDE_DVX_MONITOR_SWITCHER_MAIN
 dev dvDvxMainPorts[] = { 5002:1:0 }
-#end_if
 
-#if_not_defined dvDvxVidOutPorts
+#DEFINE INCLUDE_DVX_MONITOR_SWITCHER_VIDEO_OUTPUTS
 dev dvDvxVidOutPorts[] = { 5002:1:0, 5002:2:0, 5002:3:0, 5002:4:0 }
-#end_if
 
-#if_not_defined dvDvxVidInPorts
+#DEFINE INCLUDE_DVX_MONITOR_SWITCHER_VIDEO_INPUTS
 dev dvDvxVidInPorts[] = { 5002:1:0, 5002:2:0, 5002:3:0, 5002:4:0, 5002:5:0, 5002:6:0, 5002:7:0, 5002:8:0, 5002:9:0, 5002:10:0 }
-#end_if
 
-#if_not_defined dvDvxAudOutPorts
+#DEFINE INCLUDE_DVX_MONITOR_SWITCHER_AUDIO_OUTPUTS
 dev dvDvxAudOutPorts[] = { 5002:1:0, 5002:2:0, 5002:3:0, 5002:4:0 }
-#end_if
 
-#if_not_defined dvDvxAudInPorts
+#DEFINE INCLUDE_DVX_MONITOR_SWITCHER_AUDIO_INPUTS
 dev dvDvxAudInPorts[] = { 5002:1:0, 5002:2:0, 5002:3:0, 5002:4:0, 5002:5:0, 5002:6:0, 5002:7:0, 5002:8:0, 5002:9:0, 5002:10:0, 5002:11:0, 5002:12:0, 5002:13:0, 5002:14:0 }
-#end_if
 
-#if_not_defined dvDvxMicInPorts
+#DEFINE INCLUDE_DVX_MONITOR_SWITCHER_MIC_INPUTS
 dev dvDvxMicInPorts[] = { 5002:1:0, 5002:2:0 }
-#end_if
-
+*/
 
 
 
@@ -1071,7 +1074,7 @@ define_event
  * --------------------
  */
 
-
+#if_defined INCLUDE_DVX_MONITOR_SWITCHER_MAIN
 data_event[dvDvxMainPorts]  // dvDvxMainPorts should be the device (D:P:S) for port 1 on the DVX or an array containing multiple devices for port 1 on multiple DVX's
 {
 	command:
@@ -1177,7 +1180,9 @@ data_event[dvDvxMainPorts]  // dvDvxMainPorts should be the device (D:P:S) for p
 		}
 	}
 }
+#end_if
 
+#if_defined INCLUDE_DVX_MONITOR_SWITCHER_VIDEO_OUTPUTS
 data_event[dvDvxVidOutPorts]    // dvDvxVidOutPorts should be a DEV array containing devices for each video output port on the DVX
 {
 	command:
@@ -1334,7 +1339,9 @@ data_event[dvDvxVidOutPorts]    // dvDvxVidOutPorts should be a DEV array contai
 		}
 	}
 }
+#end_if
 
+#if_defined INCLUDE_DVX_MONITOR_SWITCHER_VIDEO_INPUTS
 data_event[dvDvxVidInPorts] // dvDvxVidInPorts should be a DEV array containing devices for each video input port on the DVX
 {
 	command:
@@ -1488,7 +1495,9 @@ data_event[dvDvxVidInPorts] // dvDvxVidInPorts should be a DEV array containing 
 		}
 	}
 }
+#end_if
 
+#if_defined INCLUDE_DVX_MONITOR_SWITCHER_AUDIO_INPUTS
 data_event[dvDvxAudInPorts] // dvDvxAudInPorts should be a DEV array containing devices for each audio input port on the DVX
 {
 	command:
@@ -1559,7 +1568,9 @@ data_event[dvDvxAudInPorts] // dvDvxAudInPorts should be a DEV array containing 
 		}
 	}
 }
+#end_if
 
+#if_defined INCLUDE_DVX_MONITOR_SWITCHER_AUDIO_OUTPUTS
 data_event[dvDvxAudOutPorts]    // dvDvxAudOutPorts should be a DEV array containing devices for each audio output port on the DVX
 {
 	command:
@@ -1768,7 +1779,9 @@ data_event[dvDvxAudOutPorts]    // dvDvxAudOutPorts should be a DEV array contai
 		}
 	}
 }
+#end_if
 
+#if_defined INCLUDE_DVX_MONITOR_SWITCHER_MIC_INPUTS
 data_event[dvDvxMicInPorts] // dvDvxMicInPorts should be a DEV array containing devices for each mic input port on the DVX
 {
 	command:
@@ -2021,6 +2034,7 @@ data_event[dvDvxMicInPorts] // dvDvxMicInPorts should be a DEV array containing 
 		}
 	}
 }
+#end_if
 
 
 /*
@@ -2030,6 +2044,7 @@ data_event[dvDvxMicInPorts] // dvDvxMicInPorts should be a DEV array containing 
  */
 
 
+#if_defined INCLUDE_DVX_MONITOR_SWITCHER_MAIN
 channel_event[dvDvxMainPorts,0]
 {
 	on:
@@ -2097,7 +2112,9 @@ channel_event[dvDvxMainPorts,0]
 		}
 	}
 }
+#end_if
 
+#if_defined INCLUDE_DVX_MONITOR_SWITCHER_AUDIO_INPUTS
 channel_event[dvDvxAudInPorts,0]
 {
 	on:
@@ -2137,7 +2154,9 @@ channel_event[dvDvxAudInPorts,0]
 		}
 	}
 }
+#end_if
 
+#if_defined INCLUDE_DVX_MONITOR_SWITCHER_AUDIO_OUTPUTS
 channel_event[dvDvxAudOutPorts,0]
 {
 	on:
@@ -2177,7 +2196,9 @@ channel_event[dvDvxAudOutPorts,0]
 		}
 	}
 }
+#end_if
 
+#if_defined INCLUDE_DVX_MONITOR_SWITCHER_MIC_INPUTS
 channel_event[dvDvxMicInPorts,0]
 {
 	on:
@@ -2217,7 +2238,9 @@ channel_event[dvDvxMicInPorts,0]
 		}
 	}
 }
+#end_if
 
+#if_defined INCLUDE_DVX_MONITOR_SWITCHER_VIDEO_INPUTS
 channel_event[dvDvxVidInPorts,0]
 {
 	on:
@@ -2257,7 +2280,9 @@ channel_event[dvDvxVidInPorts,0]
 		}
 	}
 }
+#end_if
 
+#if_defined INCLUDE_DVX_MONITOR_SWITCHER_VIDEO_OUTPUTS
 channel_event[dvDvxVidOutPorts,0]
 {
 	on:
@@ -2339,6 +2364,7 @@ channel_event[dvDvxVidOutPorts,0]
 		}
 	}
 }
+#end_if
 
 
 /*
@@ -2348,6 +2374,7 @@ channel_event[dvDvxVidOutPorts,0]
  */
 
 
+#if_defined INCLUDE_DVX_MONITOR_SWITCHER_MAIN
 level_event[dvDvxMainPorts,0]
 {
 	switch (level.input.level)
@@ -2366,7 +2393,9 @@ level_event[dvDvxMainPorts,0]
 		}
 	}
 }
+#end_if
 
+#if_defined INCLUDE_DVX_MONITOR_SWITCHER_AUDIO_INPUTS
 level_event[dvDvxAudInPorts,0]
 {
 	switch (level.input.level)
@@ -2385,7 +2414,9 @@ level_event[dvDvxAudInPorts,0]
 		}
 	}
 }
+#end_if
 
+#if_defined INCLUDE_DVX_MONITOR_SWITCHER_AUDIO_OUTPUTS
 level_event[dvDvxAudOutPorts,0]
 {
 	switch (level.input.level)
@@ -2487,7 +2518,9 @@ level_event[dvDvxAudOutPorts,0]
 		}
 	}
 }
+#end_if
 
+#if_defined INCLUDE_DVX_MONITOR_SWITCHER_MIC_INPUTS
 level_event[dvDvxMicInPorts,0]
 {
 	switch (level.input.level)
@@ -2530,7 +2563,9 @@ level_event[dvDvxMicInPorts,0]
 		}
 	}
 }
+#end_if
 
+#if_defined INCLUDE_DVX_MONITOR_SWITCHER_VIDEO_INPUTS
 level_event[dvDvxVidInPorts,0]
 {
 	switch (level.input.level)
@@ -2584,7 +2619,9 @@ level_event[dvDvxVidInPorts,0]
 		}
 	}
 }
+#end_if
 
+#if_defined INCLUDE_DVX_MONITOR_SWITCHER_VIDEO_OUTPUTS
 level_event[dvDvxVidOutPorts,0]
 {
 	switch (level.input.level)
@@ -2652,5 +2689,6 @@ level_event[dvDvxVidOutPorts,0]
 		}
 	}
 }
+#end_if
 
 #end_if
